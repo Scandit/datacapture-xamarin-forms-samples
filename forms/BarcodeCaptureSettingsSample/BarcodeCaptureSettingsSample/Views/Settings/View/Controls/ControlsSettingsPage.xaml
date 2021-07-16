@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Controls"
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Controls.ControlsSettingsPage">
+	<ContentPage.BindingContext>
+		<vm:ControlsSettingsViewModel />
+	</ContentPage.BindingContext>
+	<NavigationPage.TitleView>
+        <Label Text="{x:Static resources:AppResources.Controls}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </NavigationPage.TitleView>
+	<ContentPage.Content>
+		<StackLayout Margin="0,10,0,0">
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" Grid.Row="1" VerticalOptions="Start" Padding="10">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="TorchButton_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Text="{x:Static resources:AppResources.TorchButton}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Switch IsToggled="{Binding IsTorchButtonEnabled}" OnColor="LimeGreen" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

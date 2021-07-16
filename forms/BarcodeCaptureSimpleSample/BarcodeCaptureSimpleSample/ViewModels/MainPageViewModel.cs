@@ -29,9 +29,10 @@ using Xamarin.Forms;
 
 namespace BarcodeCaptureSimpleSample.ViewModels
 {
-    public class MainPageViewModel : IBarcodeCaptureListener
+    public class MainPageViewModel : BaseViewModel, IBarcodeCaptureListener
     {
         private static IMessageService MessageService;
+        private IViewfinder viewfinder;
 
         public Camera Camera { get; private set; } = ScannerModel.Instance.CurrentCamera;
 
@@ -39,7 +40,15 @@ namespace BarcodeCaptureSimpleSample.ViewModels
 
         public BarcodeCapture BarcodeCapture { get; private set; } = ScannerModel.Instance.BarcodeCapture;
 
-        public IViewfinder Viewfinder { get; private set; }
+        public IViewfinder Viewfinder
+        {
+            get { return this.viewfinder; }
+            set
+            {
+                this.viewfinder = value;
+                this.OnPropertyChanged(nameof(Viewfinder));
+            }
+        }
 
         public MainPageViewModel()
         {

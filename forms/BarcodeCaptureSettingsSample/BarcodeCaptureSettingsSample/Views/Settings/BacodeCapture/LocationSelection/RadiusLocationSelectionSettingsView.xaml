@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.LocationSelection.RadiusLocationSelectionSettingsView">
+	<ContentView.Content>
+		<StackLayout>
+			<Label Text="{x:Static resources:AppResources.Radius}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0"/>
+			<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10" BackgroundColor="White">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Text="{x:Static resources:AppResources.Size}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Label Text="{Binding Size, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+			</StackLayout>
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
+             xmlns:scanditBarcode="clr-namespace:Scandit.DataCapture.Barcode.Tracking.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
+             xmlns:vm="clr-namespace:MatrixScanBubblesSample.ViewModels"
+             x:Class="MatrixScanBubblesSample.Views.MainPage">
+
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <scanditCore:DataCaptureView 
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                x:Name="DataCaptureView"
+                DataCaptureContext="{Binding DataCaptureContext}" >
+                <!-- Add a barcode tracking basic overlay to the data capture view to render the tracked barcodes on top of the video
+                     preview. This is optional, but recommended for better visual feedback. -->
+                <scanditBarcode:BarcodeTrackingBasicOverlay
+                    BarcodeTracking="{Binding BarcodeTracking}" Listener="{Binding .}" />
+                <!-- Add another barcode tracking advanced overlay to the data capture view to render other views. -->
+                <scanditBarcode:BarcodeTrackingAdvancedOverlay
+                    BarcodeTracking="{Binding BarcodeTracking}" Listener="{Binding .}" />
+            </scanditCore:DataCaptureView>
+            <ImageButton 
+                AbsoluteLayout.LayoutBounds="0,0.9,1,0.1"
+                AbsoluteLayout.LayoutFlags="All"
+                Source="freeze_enabled.png" 
+                BackgroundColor="Transparent" 
+                Command="{Binding ToggleFreezeButton}"
+                Clicked="FreezeButtonClicked"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

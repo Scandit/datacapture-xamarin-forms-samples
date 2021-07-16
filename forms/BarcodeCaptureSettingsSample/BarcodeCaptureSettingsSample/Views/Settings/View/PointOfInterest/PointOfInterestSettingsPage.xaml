@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.PointOfInterest"
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.PointOfInterest.PointOfInterestSettingsPage">
+	<ContentPage.BindingContext>
+		<vm:PointOfInterestSettingsViewModel />
+	</ContentPage.BindingContext>
+	<NavigationPage.TitleView>
+        <Label Text="{x:Static resources:AppResources.PointOfInterest}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </NavigationPage.TitleView>
+	<ContentPage.Content>
+		<ListView x:Name="pointOfInterestListView" SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="0,10,0,0" Grid.Row="0" BackgroundColor="White" VerticalScrollBarVisibility="Never" HeightRequest="90" ItemTapped="PointOfInterestListView_ItemTapped">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
+							<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding Value, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>

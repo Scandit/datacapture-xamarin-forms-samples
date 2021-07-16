@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.Symbologies.SymbologySettingsPage"
+    Title="{Binding Title}">
+	<ContentPage.Content>
+		<StackLayout Margin="0,10,0,0">
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" VerticalOptions="Start" Padding="20">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="IsEnabledGestureRecognizer_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Margin="0,0,0,0" Text="{x:Static resources:AppResources.Enabled}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Switch IsToggled="{Binding IsEnabled}" OnColor="LimeGreen" />
+			</StackLayout>
+
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" VerticalOptions="Start" Padding="20" IsVisible="{Binding ColorInvertedSettingsAvailable}">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="IsColorInvertedGestureRecognizer_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Margin="0,0,0,0" Text="{x:Static resources:AppResources.ColorInverted}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Switch IsToggled="{Binding IsColorInverted}" OnColor="LimeGreen" />
+			</StackLayout>
+
+			<StackLayout VerticalOptions="Start" Margin="0,5,0,5" IsVisible="{Binding IsRangeSettingsAvailable}" BackgroundColor="White">
+				<Label Margin="10,0,0,0"  Text="{x:Static resources:AppResources.Range}" Style="{DynamicResource Caption}" />
+				<StackLayout Orientation="Horizontal"  VerticalOptions="Start" Margin="20,0,0,0">
+					<Label Text="{x:Static resources:AppResources.Minimum}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+					<Picker Title="{x:Static resources:AppResources.Minimum_Select}" ItemsSource="{Binding AvailableMinimumRanges}" SelectedItem="{Binding CurrentMinimumRange, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="Center"  WidthRequest="130" />
+				</StackLayout>
+				<StackLayout Orientation="Horizontal" VerticalOptions="Start" Margin="20,0,0,0">
+					<Label Text="{x:Static resources:AppResources.Maximum}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+					<Picker Title="{x:Static resources:AppResources.Maximum_Select}" ItemsSource="{Binding AvailableMaximumRanges}" SelectedItem="{Binding CurrentMaximumRange, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="Center"  WidthRequest="130" />
+				</StackLayout>
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" VerticalOptions="Start" Margin="0,5,0,0" IsVisible="{Binding ExtensionsAvailable}">
+				<ListView x:Name="symbologyExtensionsList" ItemsSource="{Binding SymbologyExtensions}" SeparatorVisibility="None" SelectionMode="None" Margin="5" BackgroundColor="White" ItemTapped="symbologyExtensionsList_ItemTapped">
+					<ListView.Header>
+						<Label Text="{x:Static resources:AppResources.Extensions}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0"/>
+					</ListView.Header>
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
+									<Label Text="{Binding SymbologyExtensionName}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+									<Image IsVisible="{Binding IsSelected}" Source="check.png" />
+                                </StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

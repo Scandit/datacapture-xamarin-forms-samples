@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
+    xmlns:scanditBarcode="clr-namespace:Scandit.DataCapture.Barcode.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels" 
+    x:Class="BarcodeCaptureSettingsSample.Views.MainPage" Title="Barcode Capture Settings">
+	<ContentPage.BindingContext>
+		<vm:MainPageViewModel />
+	</ContentPage.BindingContext>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="Settings" Clicked="Settings_Clicked">
+			<ToolbarItem.IconImageSource>
+				<OnPlatform x:TypeArguments="ImageSource">
+					<On Platform="Android" Value="ic_settings" />
+				</OnPlatform>
+			</ToolbarItem.IconImageSource>
+		</ToolbarItem>
+	</ContentPage.ToolbarItems>
+	<ContentPage.Content>
+		<Grid>
+			<scanditCore:DataCaptureView x:Name="dataCaptureView"
+				DataCaptureContext="{Binding DataCaptureContext}"
+				ScanAreaMargins="{Binding ScanAreaMargins}"
+				PointOfInterest="{Binding PointOfInterest}"
+				LogoAnchor="{Binding LogoAnchor}"
+				LogoOffset="{Binding LogoOffset}">
+				<scanditBarcode:BarcodeCaptureOverlay 
+                    x:Name="Overlay"
+                    BarcodeCapture="{Binding BarcodeCapture}"
+                    Viewfinder="{Binding Viewfinder}"
+                    ShouldShowScanAreaGuides="{Binding ShouldShowScanAreaGuides}"
+                    Brush="{Binding CurrentBrush}"/>
+			</scanditCore:DataCaptureView>
+			<Label BackgroundColor="White" Style="{DynamicResource SubtitleStyle}" TextColor="Black" IsVisible="{Binding IsContinousScanLabelVisible}" VerticalTextAlignment="Center" Padding="10" Text="{Binding ScanResult}" VerticalOptions="Start" HorizontalOptions="Fill" />
+		</Grid>
+	</ContentPage.Content>
+</ContentPage>

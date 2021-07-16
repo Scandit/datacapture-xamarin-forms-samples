@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Rectangular.RectangularViewfinderSettingsView">
+	<ContentView.Content>
+		<ScrollView>
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
+
+				<Label Text="{x:Static resources:AppResources.Rectangular}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0" Grid.Row="0" />
+
+				<StackLayout  Margin="0,5,0,5" Grid.Row="1" BackgroundColor="White">
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.Style}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Picker Title="{x:Static resources:AppResources.Style_Select}" ItemsSource="{Binding AvailableStyles}" SelectedItem="{Binding CurrentStyle, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="End" WidthRequest="100" />
+					</StackLayout>
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.LineStyle}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Picker Title="{x:Static resources:AppResources.LineStyle_Select}" ItemsSource="{Binding AvailableLineStyles}" SelectedItem="{Binding CurrentLineStyle, Mode=TwoWay}"  HorizontalOptions="End" HorizontalTextAlignment="End" WidthRequest="100"  />
+					</StackLayout>
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.Dimming}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Entry Text="{Binding Dimming, Converter={StaticResource FloatConverter}}" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" HorizontalTextAlignment="End" />
+					</StackLayout>
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.Color}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Picker Title="{x:Static resources:AppResources.Color_Select}" ItemsSource="{Binding AvailableColors}" SelectedItem="{Binding CurrentColor, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="End" WidthRequest="100" />
+					</StackLayout>
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.DisabledColor}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Picker Title="{x:Static resources:AppResources.DisabledColor_Select}" ItemsSource="{Binding AvailableDisabledColors}" SelectedItem="{Binding CurrentDisabledColor, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="End"  WidthRequest="100"/>
+					</StackLayout>
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.Animation}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Switch HorizontalOptions="End" IsToggled="{Binding Animation}" OnColor="LimeGreen" />
+					</StackLayout>
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White" IsVisible="{Binding Animation}">
+						<Label Text="{x:Static resources:AppResources.Looping}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+						<Switch HorizontalOptions="End" IsToggled="{Binding Looping}" OnColor="LimeGreen" />
+					</StackLayout>
+				</StackLayout>
+
+				<StackLayout Margin="5" Grid.Row="2" BackgroundColor="White">
+					<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
+						<Label Text="{x:Static resources:AppResources.SizeSpecification}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+						<Picker Title="{x:Static resources:AppResources.SizeSpecification_Select}" ItemsSource="{Binding AvailableSizeSpecifications}" SelectedItem="{Binding CurrentSizeSpecification, Mode=TwoWay}" FontSize="Small" HorizontalOptions="End" HorizontalTextAlignment="End" />
+					</StackLayout>
+
+					<StackLayout x:Name="widthAndHeightContainer" IsVisible="{Binding IsSizeSpecificationWidthAndHeight}">
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer Tapped="WidthAndHeightContainer_WidthTapped"/>
+							</StackLayout.GestureRecognizers>
+							<Label Text="{x:Static resources:AppResources.Width}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding Width, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer Tapped="WidthAndHeightContainer_HeightTapped"/>
+							</StackLayout.GestureRecognizers>
+							<Label Text="{x:Static resources:AppResources.Height}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding Height, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						</StackLayout>
+					</StackLayout>
+
+					<StackLayout x:Name="widthAndHeightAspectContainer" IsVisible="{Binding IsSizeSpecificationWidthAndHeightAspect}">
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer Tapped="WidthAndHeightAspectContainer_WidthTapped"/>
+							</StackLayout.GestureRecognizers>
+							<Label Text="{x:Static resources:AppResources.Width}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding Width, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<Label Text="{x:Static resources:AppResources.HeightAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Entry Text="{Binding HeightAspect, Converter={StaticResource FloatConverter}}" Keyboard="Numeric" HorizontalOptions="End" VerticalOptions="End" WidthRequest="100" HorizontalTextAlignment="End" />
+						</StackLayout>
+					</StackLayout>
+
+					<StackLayout x:Name="heightAndWidthAspectContainer" IsVisible="{Binding IsSizeSpecificationHeightAndWidthAspect}">
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer Tapped="HeightAndWidthAspectContainer_HeightTapped"/>
+							</StackLayout.GestureRecognizers>
+							<Label Text="{x:Static resources:AppResources.Height}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding Height, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<Label Text="{x:Static resources:AppResources.WidthAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Entry Text="{Binding WidthAspect, Converter={StaticResource FloatConverter}}" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" HorizontalTextAlignment="End" />
+						</StackLayout>
+					</StackLayout>
+
+					<StackLayout x:Name="shorterDimensionLongerAspectContainer" IsVisible="{Binding IsSizeSpecificationShorterDimensionAndAspect}">
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<StackLayout.GestureRecognizers>
+								<TapGestureRecognizer Tapped="ShorterDimensionLongerAspectContainer_ShorterDimensionTapped"/>
+							</StackLayout.GestureRecognizers>
+							<Label Text="{x:Static resources:AppResources.ShorterDimension}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding ShorterDimension, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
+							<Label Text="{x:Static resources:AppResources.LongerDimensionAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Entry Text="{Binding LongerDimensionAspect, Converter={StaticResource FloatConverter}}" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" HorizontalTextAlignment="End" />
+						</StackLayout>
+					</StackLayout>
+
+				</StackLayout>
+			</Grid>
+		</ScrollView>
+	</ContentView.Content>
+</ContentView>

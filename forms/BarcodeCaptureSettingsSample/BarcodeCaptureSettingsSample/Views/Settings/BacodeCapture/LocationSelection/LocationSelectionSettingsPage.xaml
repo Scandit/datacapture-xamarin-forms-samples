@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+	xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture.LocationSelection"
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.LocationSelection.LocationSelectionSettingsPage">
+	<ContentPage.BindingContext>
+		<vm:LocationSelectionSettingsViewModel />
+	</ContentPage.BindingContext>
+	<NavigationPage.TitleView>
+        <Label Text="{x:Static resources:AppResources.Setting_LocationSelection}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </NavigationPage.TitleView>
+	<ContentPage.Content>
+		<ScrollView Orientation="Vertical">
+			<Grid>
+				<Grid.RowDefinitions>
+					<RowDefinition Height="25"/>
+					<RowDefinition Height="auto"/>
+					<RowDefinition Height="auto"/>
+				</Grid.RowDefinitions>
+				<Label Text="{x:Static resources:AppResources.Type}" Style="{DynamicResource CaptionStyle}" Margin="10,5,0,0" Grid.Row="0"/>
+				<ListView x:Name="locationSelectionList" ItemsSource="{Binding AvailableLocationSelections}" SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="5" BackgroundColor="White" Grid.Row="1" HeightRequest="140"  ItemTapped="locationSelectionList_ItemTapped">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell>
+								<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
+									<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+									<Image IsVisible="{Binding IsSelected}" Source="check.png" />
+                                </StackLayout>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+				<StackLayout Margin="5" x:Name="locationSelectionContainer" Grid.Row="2">
+
+				</StackLayout>
+			</Grid>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

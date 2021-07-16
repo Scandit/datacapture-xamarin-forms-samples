@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+	xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture.Feedback" 
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.Feedback.FeedbackSettingsPage">
+	<ContentPage.BindingContext>
+		<vm:FeedbackSettingsViewModel />
+	</ContentPage.BindingContext>
+	<NavigationPage.TitleView>
+        <Label Text="{x:Static resources:AppResources.Setting_Feedback}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </NavigationPage.TitleView>
+	<ContentPage.Content>
+		<StackLayout Margin="0,10,0,0">
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" Grid.Row="1" VerticalOptions="Start" Margin="0,10,0,0" Padding="10">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="SoundSwitch_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.Sound}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Switch IsToggled="{Binding IsSoundEnabled}" OnColor="LimeGreen" />
+			</StackLayout>
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" Grid.Row="1" VerticalOptions="Start" Margin="0,5,0,0" Padding="10">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="VibrationSwitch_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.Vibration}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Switch IsToggled="{Binding IsVibrationEnabled}" OnColor="LimeGreen" />
+			</StackLayout>
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>

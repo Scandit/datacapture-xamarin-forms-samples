@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+	<resheader name="resmimetype">
+		<value>text/microsoft-resx</value>
+	</resheader>
+	<resheader name="version">
+		<value>2.0</value>
+	</resheader>
+	<resheader name="reader">
+		<value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<resheader name="writer">
+		<value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+	</resheader>
+	<data name="Setting_View" xml:space="preserve">
+        <value>View</value>
+    </data>
+	<data name="Setting_Camera" xml:space="preserve">
+        <value>Camera</value>
+    </data>
+	<data name="Setting_BarcodeCapture" xml:space="preserve">
+        <value>Barcode Capture</value>
+    </data>
+	<data name="Setting_Result" xml:space="preserve">
+        <value>Result</value>
+    </data>
+	<data name="Setting_ScanArea" xml:space="preserve">
+        <value>Scan Area</value>
+    </data>
+	<data name="Setting_PointOfInterest" xml:space="preserve">
+        <value>Point of Interest</value>
+    </data>
+	<data name="Setting_Overlay" xml:space="preserve">
+        <value>Overlay</value>
+    </data>
+	<data name="Setting_Viewfinder" xml:space="preserve">
+        <value>Viewfinder</value>
+    </data>
+	<data name="Setting_Logo" xml:space="preserve">
+        <value>Logo</value>
+    </data>
+	<data name="Setting_Gestures" xml:space="preserve">
+        <value>Gestures</value>
+    </data>
+	<data name="Setting_Controls" xml:space="preserve">
+        <value>Controls</value>
+    </data>
+	<data name="Margins" xml:space="preserve">
+        <value>Margins</value>
+    </data>
+	<data name="Margin_Top" xml:space="preserve">
+        <value>Top</value>
+    </data>
+	<data name="Margin_Right" xml:space="preserve">
+        <value>Right</value>
+    </data>
+	<data name="Margin_Bottom" xml:space="preserve">
+        <value>Bottom</value>
+    </data>
+	<data name="Margin_Left" xml:space="preserve">
+        <value>Left</value>
+    </data>
+	<data name="ShouldShowScanAreaGuides" xml:space="preserve">
+        <value>Should Show Scan Area Guides</value>
+	</data>
+	<data name="Value" xml:space="preserve">
+        <value>Value</value>
+	</data>
+	<data name="Settings" xml:space="preserve">
+        <value>Settings</value>
+	</data>
+	<data name="Overlay" xml:space="preserve">
+        <value>Overlay</value>
+	</data>
+	<data name="PointOfInterest" xml:space="preserve">
+        <value>Point of Interest</value>
+	</data>
+	<data name="Brush" xml:space="preserve">
+        <value>Brush</value>
+	</data>
+	<data name="Brush_Defaults" xml:space="preserve">
+        <value>Default</value>
+	</data>
+	<data name="Brush_Red" xml:space="preserve">
+        <value>Red</value>
+	</data>
+	<data name="Brush_Green" xml:space="preserve">
+        <value>Green</value>
+	</data>
+	<data name="Brush_Select" xml:space="preserve">
+        <value>Select a Brush</value>
+	</data>
+	<data name="Viewfinder" xml:space="preserve">
+        <value>Viewfinder</value>
+	</data>
+	<data name="Rectangular" xml:space="preserve">
+        <value>Rectangular</value>
+	</data>
+	<data name="WidthAndHeight" xml:space="preserve">
+        <value>Width and Height</value>
+	</data>
+	<data name="WidthAndHeightAspect" xml:space="preserve">
+        <value>Width and Height Aspec</value>
+	</data>
+	<data name="HeightAndWidthAspect" xml:space="preserve">
+        <value>Height and Width Aspec</value>
+	</data>
+	<data name="ShorterDimensionAndAspect" xml:space="preserve">
+        <value>Shorter Dimension And Aspect Ratio</value>
+	</data>
+	<data name="Type" xml:space="preserve">
+        <value>Type</value>
+	</data>
+	<data name="Style" xml:space="preserve">
+        <value>Style</value>
+	</data>
+	<data name="Style_Select" xml:space="preserve">
+        <value>Select a style</value>
+	</data>
+	<data name="LineStyle" xml:space="preserve">
+        <value>Line Style</value>
+	</data>
+	<data name="LineStyle_Select" xml:space="preserve">
+        <value>Select a Line Style</value>
+	</data>
+	<data name="Dimming" xml:space="preserve">
+        <value>Dimming (0.0 - 1.0) </value>
+	</data>
+	<data name="Color" xml:space="preserve">
+        <value>Color</value>
+	</data>
+	<data name="Color_Select" xml:space="preserve">
+        <value>Select a color</value>
+	</data>
+	<data name="DisabledColor" xml:space="preserve">
+        <value>Disabled Color</value>
+	</data>
+	<data name="DisabledColor_Select" xml:space="preserve">
+        <value>Select a Disabled Color</value>
+	</data>
+	<data name="Animation" xml:space="preserve">
+        <value>Animation</value>
+	</data>
+	<data name="Looping" xml:space="preserve">
+        <value>Looping</value>
+	</data>
+	<data name="SizeSpecification" xml:space="preserve">
+        <value>Size Specification</value>
+	</data>
+	<data name="SizeSpecification_Select" xml:space="preserve">
+        <value>Select Size Specification</value>
+	</data>
+	<data name="Width" xml:space="preserve">
+        <value>Width</value>
+	</data>
+	<data name="Height" xml:space="preserve">
+        <value>Height</value>
+	</data>
+	<data name="HeightAspect" xml:space="preserve">
+        <value>Height Aspect</value>
+	</data>
+	<data name="WidthAspect" xml:space="preserve">
+        <value>Width Aspect</value>
+	</data>
+	<data name="ShorterDimension" xml:space="preserve">
+		<value>Shorter Dimension</value>
+	</data>
+	<data name="LongerDimensionAspect" xml:space="preserve">
+        <value>Longer Dimension Aspect</value>
+	</data>
+	<data name="Aimer" xml:space="preserve">
+        <value>Aimer</value>
+	</data>
+	<data name="FrameColor" xml:space="preserve">
+        <value>Frame Color</value>
+	</data>
+	<data name="FrameColor_Select" xml:space="preserve">
+        <value>Select Frame Color</value>
+	</data>
+	<data name="DotColor" xml:space="preserve">
+        <value>Dot Color</value>
+	</data>
+	<data name="DotColor_Select" xml:space="preserve">
+        <value>Select Dot Color</value>
+	</data>
+	<data name="Laserline" xml:space="preserve">
+        <value>Laserline</value>
+	</data>
+	<data name="EnabledColor" xml:space="preserve">
+        <value>Enabled Color</value>
+	</data>
+	<data name="EnabledColor_Select" xml:space="preserve">
+        <value>Select Enabled Color</value>
+	</data>
+	<data name="Anchor" xml:space="preserve">
+        <value>Anchor</value>
+	</data>
+	<data name="Anchor_Select" xml:space="preserve">
+        <value>Select Anchor</value>
+	</data>
+	<data name="Logo" xml:space="preserve">
+        <value>Logo</value>
+	</data>
+	<data name="Gestures" xml:space="preserve">
+        <value>Gestures</value>
+	</data>
+	<data name="TapToFocus" xml:space="preserve">
+        <value>Tap to Focus</value>
+	</data>
+	<data name="SwipeToZoom" xml:space="preserve">
+        <value>Swipe to Zoom</value>
+	</data>
+	<data name="Controls" xml:space="preserve">
+        <value>Controls</value>
+	</data>
+	<data name="TorchButton" xml:space="preserve">
+        <value>Torch Button</value>
+	</data>
+	<data name="Camera" xml:space="preserve">
+        <value>Camera</value>
+	</data>
+	<data name="CameraPosition" xml:space="preserve">
+        <value>Camera Position</value>
+	</data>
+	<data name="DesiredTorchState" xml:space="preserve">
+        <value>Desired Torch State</value>
+	</data>
+	<data name="DesiredTorchState_Select" xml:space="preserve">
+        <value>Select Desired Torch State</value>
+	</data>
+	<data name="CameraSettings" xml:space="preserve">
+        <value>Camera Settings</value>
+	</data>
+	<data name="PreferredResolution" xml:space="preserve">
+        <value>Preferred Resolution</value>
+	</data>
+	<data name="PreferredResolution_Select" xml:space="preserve">
+        <value>Select Preferred Resolution</value>
+	</data>
+	<data name="ZoomFactor" xml:space="preserve">
+        <value>Zoom Factor</value>
+	</data>
+	<data name="ZoomGestureZoomFactor" xml:space="preserve">
+        <value>Zoom Gesture Zoom Factor</value>
+	</data>
+	<data name="FocusGestureStrategy" xml:space="preserve">
+        <value>Focus Gesture Strategy</value>
+	</data>
+	<data name="FocusGestureStrategy_Select" xml:space="preserve">
+        <value>Select Focus Gesture Strategy</value>
+	</data>
+	<data name="Setting_Symbologies" xml:space="preserve">
+        <value>Symbologies</value>
+	</data>
+	<data name="Setting_CompositeTypes" xml:space="preserve">
+        <value>Composite Types</value>
+	</data>
+	<data name="Setting_LocationSelection" xml:space="preserve">
+        <value>Location Selection</value>
+	</data>
+	<data name="Setting_Feedback" xml:space="preserve">
+        <value>Feedback</value>
+	</data>
+	<data name="Setting_CodeDuplicateFilter" xml:space="preserve">
+        <value>Code Duplicate Filter</value>
+	</data>
+	<data name="EnableAll" xml:space="preserve">
+        <value>Enable All</value>
+	</data>
+	<data name="DisableAll" xml:space="preserve">
+        <value>Disable All</value>
+	</data>
+	<data name="Symbology_Enabled" xml:space="preserve">
+        <value>On</value>
+	</data>
+	<data name="Symbology_Disabled" xml:space="preserve">
+        <value>Off</value>
+	</data>
+	<data name="Enabled" xml:space="preserve">
+        <value>Enabled</value>
+	</data>
+	<data name="ColorInverted" xml:space="preserve">
+        <value>Color Inverted</value>
+	</data>
+	<data name="Range" xml:space="preserve">
+        <value>Range</value>
+	</data>
+	<data name="Minimum" xml:space="preserve">
+        <value>Minimum</value>
+	</data>
+	<data name="Minimum_Select" xml:space="preserve">
+        <value>Select Minimum</value>
+	</data>
+	<data name="Maximum" xml:space="preserve">
+        <value>Maximum</value>
+	</data>
+	<data name="Maximum_Select" xml:space="preserve">
+        <value>Select Maximum</value>
+	</data>
+	<data name="Extensions" xml:space="preserve">
+        <value>Extensions</value>
+	</data>
+	<data name="Radius" xml:space="preserve">
+		  <value>Radius</value>
+	</data>
+	<data name="Size" xml:space="preserve">
+		  <value>Size</value>
+	</data>
+	<data name="Sound" xml:space="preserve">
+		  <value>Sound</value>
+	</data>
+	<data name="Vibration" xml:space="preserve">
+		  <value>Vibration</value>
+	</data>
+	<data name="ScanResult" xml:space="preserve">
+		  <value>Scan Result</value>
+	</data>
+	<data name="ContinuousScanning" xml:space="preserve">
+		  <value>Continuous Scanning</value>
+		  </data>
+	<data name="ResultParametrised_Symbology" xml:space="preserve">
+		  <value>{0}: {1}</value>
+	</data>
+	<data name="ResultParametrised_SymbolCount" xml:space="preserve">
+		  <value>Symbol count: {0}</value>
+	</data>
+	<data name="CcResultParametrised_Type" xml:space="preserve">
+		  <value>CC Type {0}</value>
+	</data>
+	<data name="CcResultParametrised_Symbology" xml:space="preserve">
+		  <value>{0}: {1}</value>
+	</data>
+	<data name="CcResultParametrised_SymbolCount" xml:space="preserve">
+		  <value>Symbol count: {0}</value>
+	</data>
+</root>

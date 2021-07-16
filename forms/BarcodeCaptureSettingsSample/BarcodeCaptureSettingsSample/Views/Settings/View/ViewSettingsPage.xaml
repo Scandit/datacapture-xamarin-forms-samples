@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings" 
+    x:Class="BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.ViewSettingsPage">
+	<ContentPage.BindingContext>
+		<vm:ViewSettingsViewModel />
+	</ContentPage.BindingContext>
+	<NavigationPage.TitleView>
+        <Label Text="{x:Static resources:AppResources.Setting_View}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
+            </Label.GestureRecognizers>
+        </Label>
+    </NavigationPage.TitleView>
+	<ContentPage.Content>
+		<ListView x:Name="viewSettingsList" ItemsSource="{Binding Source}" SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="5" ItemTapped="ViewSettingsList_ItemTapped">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<Label Text="{Binding DisplayNameResource, Converter={StaticResource StringResourceConverter}}" Style="{DynamicResource ListItemTextStyle}" VerticalTextAlignment="Center" Margin="20,0,0,0" HorizontalOptions="StartAndExpand" />
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</ContentPage.Content>
+</ContentPage>
