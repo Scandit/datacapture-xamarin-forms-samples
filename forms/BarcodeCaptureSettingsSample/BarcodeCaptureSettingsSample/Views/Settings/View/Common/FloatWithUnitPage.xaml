@@ -5,7 +5,7 @@
 	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
     x:Class="BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Common.FloatWithUnitPage">
 	<NavigationPage.TitleView>
-        <Label Text="{Binding Title}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+        <Label Text="{Binding Title}" Style="{DynamicResource TitleStyle}" VerticalTextAlignment="Center" TextColor="Black">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
             </Label.GestureRecognizers>

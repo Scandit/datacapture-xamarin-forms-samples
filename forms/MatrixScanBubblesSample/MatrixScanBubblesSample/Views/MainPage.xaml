@@ -28,6 +28,8 @@
                 AbsoluteLayout.LayoutBounds="0,0.9,1,0.1"
                 AbsoluteLayout.LayoutFlags="All"
                 Source="freeze_enabled.png" 
+                HorizontalOptions="Center"
+                WidthRequest="111"
                 BackgroundColor="Transparent" 
                 Command="{Binding ToggleFreezeButton}"
                 Clicked="FreezeButtonClicked"/>

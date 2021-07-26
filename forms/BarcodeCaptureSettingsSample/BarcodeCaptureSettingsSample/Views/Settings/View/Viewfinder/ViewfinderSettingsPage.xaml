@@ -9,7 +9,7 @@
 		<vm:ViewfinderSettingsViewModel />
 	</ContentPage.BindingContext>
 	<NavigationPage.TitleView>
-        <Label Text="{x:Static resources:AppResources.Viewfinder}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+        <Label Text="{x:Static resources:AppResources.Viewfinder}" Style="{DynamicResource TitleStyle}" VerticalTextAlignment="Center" TextColor="Black">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
             </Label.GestureRecognizers>

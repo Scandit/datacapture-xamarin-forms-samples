@@ -448,7 +448,7 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
 
         public override string ToString()
         {
-            return Enum.GetName(typeof(RectangularViewfinderColorItem.Type), this.ColorType);
+            return Enum.GetName(typeof(RectangularViewfinderDisabledColorItem.Type), this.ColorType);
         }
 
         public enum Type

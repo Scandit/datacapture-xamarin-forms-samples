@@ -16,7 +16,8 @@
                 DataCaptureContext="{Binding DataCaptureContext}" >
                 <scanditBarcode:BarcodeCaptureOverlay 
                     BarcodeCapture="{Binding BarcodeCapture}" 
-                    Viewfinder="{Binding Viewfinder}" />
+                    Viewfinder="{Binding Viewfinder}"
+                    Brush="{Binding HighlightingBrush}" />
             </scanditCore:DataCaptureView>
         </AbsoluteLayout>
     </ContentPage.Content>

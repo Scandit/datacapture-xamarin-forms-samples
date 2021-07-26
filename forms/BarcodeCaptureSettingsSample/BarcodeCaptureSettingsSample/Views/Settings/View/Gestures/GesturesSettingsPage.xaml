@@ -9,7 +9,7 @@
 		<vm:GesturesSettingsViewModel />
 	</ContentPage.BindingContext>
 	<NavigationPage.TitleView>
-        <Label Text="{x:Static resources:AppResources.Gestures}" Style="{DynamicResource TitleStyle}"  TextColor="Black">
+        <Label Text="{x:Static resources:AppResources.Gestures}" Style="{DynamicResource TitleStyle}" VerticalTextAlignment="Center" TextColor="Black">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
             </Label.GestureRecognizers>

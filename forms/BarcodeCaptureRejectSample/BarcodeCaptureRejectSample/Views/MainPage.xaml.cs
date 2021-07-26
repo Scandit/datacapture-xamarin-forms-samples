@@ -32,8 +32,8 @@ namespace BarcodeCaptureRejectSample.Views
             this.viewModel.AcceptedCode += (object sender, EventArgs e) =>
             {
                 // If the code is accepted, we want to make sure to use
-                // the default brush to highlight the code.
-                this.Overlay.Brush = BarcodeCaptureOverlay.DefaultBrush;
+                // a brush to highlight the code.
+                this.Overlay.Brush = this.viewModel.HighlightingBrush;
             };
 
             this.viewModel.RejectedCode += (object sender, EventArgs e) =>

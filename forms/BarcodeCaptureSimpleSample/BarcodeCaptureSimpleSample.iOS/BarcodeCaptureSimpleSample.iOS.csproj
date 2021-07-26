@@ -122,13 +122,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.csproj">
-      <Project>{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}</Project>
+      <Project>{101E3060-8799-4119-8A7A-4F86A01C0C84}</Project>
       <Name>BarcodeCaptureSimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.9.0-beta.1" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.9.0-beta.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.9.0-beta.2" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.9.0-beta.2" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatrixScanSimpleSample.Views.ResultsPage"
+             xmlns:vm="clr-namespace:MatrixScanSimpleSample.ViewModels"
+             BindingContext="{StaticResource MainPageViewModel}"
+             Title="Scan Results">
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <ListView ItemsSource="{Binding ScanResults}"
+                      AbsoluteLayout.LayoutBounds="0,0,1,1"
+                      AbsoluteLayout.LayoutFlags="All"
+                      Background="White"
+                      HorizontalScrollBarVisibility="Never"
+                      VerticalScrollBarVisibility="Default"
+                      SelectionMode="None"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows="True"
+                      VerticalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="15, 15, 15, 5">
+                                <Label Text="{Binding Data}" FontSize="Medium" TextColor="Black" />
+                                <Label Text="{Binding Symbology}" FontSize="Small" TextColor="#58B5C2" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="SCAN AGAIN"
+                    Clicked="ButtonClicked"
+                    WidthRequest="300"
+                    AbsoluteLayout.LayoutBounds="0,0.9,1,0.1"
+                    AbsoluteLayout.LayoutFlags="All"
+                    BackgroundColor="#58B5C2"
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>
