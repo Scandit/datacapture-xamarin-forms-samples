@@ -111,20 +111,27 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.ScanArea
                 case MarginItem.Type.Top:
                     return settings.ScanAreaMargins.Top.Unit;
                 case MarginItem.Type.Right:
-                    return settings.ScanAreaMargins.Top.Unit;
+                    return settings.ScanAreaMargins.Right.Unit;
                 case MarginItem.Type.Bottom:
-                    return settings.ScanAreaMargins.Top.Unit;
+                    return settings.ScanAreaMargins.Bottom.Unit;
                 case MarginItem.Type.Left:
-                    return settings.ScanAreaMargins.Top.Unit;
+                    return settings.ScanAreaMargins.Left.Unit;
                 default:
                     throw new IndexOutOfRangeException($"No maring item found for {Enum.GetName(typeof(MarginItem.Type), marginItem.MarginItemType)}");
             }
         }
 
-        public IList<MeasureUnitItem> MeasureUnitSource => new List<MeasureUnitItem>  {
-                new MeasureUnitItem(MeasureUnit.Dip, this.CurrentMeasureUnit == MeasureUnit.Dip),
-                new MeasureUnitItem(MeasureUnit.Fraction, this.CurrentMeasureUnit == MeasureUnit.Fraction),
-                new MeasureUnitItem(MeasureUnit.Pixel, this.CurrentMeasureUnit == MeasureUnit.Pixel)
-            };
+        public IList<MeasureUnitItem> MeasureUnitSource
+        {
+            get
+            {
+                return new List<MeasureUnitItem>  {
+                    new MeasureUnitItem(MeasureUnit.Dip, this.CurrentMeasureUnit == MeasureUnit.Dip),
+                    new MeasureUnitItem(MeasureUnit.Fraction, this.CurrentMeasureUnit == MeasureUnit.Fraction),
+                    new MeasureUnitItem(MeasureUnit.Pixel, this.CurrentMeasureUnit == MeasureUnit.Pixel)
+                };
+            }
+        }
+
     }
 }

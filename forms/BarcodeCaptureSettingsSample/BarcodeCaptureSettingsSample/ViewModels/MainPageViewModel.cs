@@ -107,6 +107,16 @@ namespace BarcodeCaptureSettingsSample.ViewModels
             set { settings.CurrentBrush = value; }
         }
 
+        public bool IsSwipeToZoomEnabled
+        {
+            get { return settings.IsSwipeToZoomEnabled; }
+        }
+
+        public bool IsTapToFocusEnabled
+        {
+            get { return settings.IsTapToFocusEnabled; }
+        }
+
         public Task OnSleep()
         {
             return settings.CurrentCamera?.SwitchToDesiredStateAsync(FrameSourceState.Off);

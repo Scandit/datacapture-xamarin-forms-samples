@@ -47,8 +47,8 @@ namespace BarcodeCaptureSettingsSample.Models
 
         public IViewfinder CurrentViewfinder { get; set; }
 
-        public FloatWithUnit RectangularViewfinderWidth { get; set; }
-        public FloatWithUnit RectangularViewfinderHeight { get; set; }
+        public FloatWithUnit RectangularViewfinderWidth { get; set; } = new FloatWithUnit(0.80f, MeasureUnit.Fraction);
+        public FloatWithUnit RectangularViewfinderHeight { get; set; } = new FloatWithUnit(0.32f, MeasureUnit.Fraction);
         public FloatWithUnit RectangularViewfinderShorterDimension { get; set; }
         public float RectangularViewfinderWidthAspect { get; set; }
         public float RectangularViewfinderHeightAspect { get; set; }

@@ -28,16 +28,8 @@ namespace MatrixScanBubblesSample.Views
             this.Barcode.Text = barcode;
             this.Description.Text = string.Format("Shelf: {0} Back room: {1}", shelfCount, backRoom);
 
-            if (Device.RuntimePlatform == Device.Android)
-            {
-                this.HeightRequest = 150;
-                this.WidthRequest = 600;
-            }
-            else if (Device.RuntimePlatform == Device.iOS)
-            {
-                this.HeightRequest = 50;
-                this.WidthRequest = 300;
-            }
+            this.HeightRequest = 50;
+            this.WidthRequest = 250;
         }
 
         private void TapGestureRecognizerTapped(object sender, System.EventArgs e)

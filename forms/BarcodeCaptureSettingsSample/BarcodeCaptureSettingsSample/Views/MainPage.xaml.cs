@@ -15,6 +15,7 @@
 using System;
 using BarcodeCaptureSettingsSample.ViewModels;
 using BarcodeCaptureSettingsSample.Views.Settings;
+using Scandit.DataCapture.Core.UI.Gestures.Unified;
 using Scandit.DataCapture.Core.UI.Unified;
 using Xamarin.Forms;
 
@@ -46,6 +47,9 @@ namespace BarcodeCaptureSettingsSample.Views
             {
                 this.dataCaptureView.RemoveControl(torchSwitchControl);
             }
+
+            this.dataCaptureView.ZoomGesture = this.viewModel.IsSwipeToZoomEnabled ? new SwipeToZoom() : null;
+            this.dataCaptureView.FocusGesture = this.viewModel.IsTapToFocusEnabled ? new TapToFocus() : null;
         }
 
         protected override void OnDisappearing()
