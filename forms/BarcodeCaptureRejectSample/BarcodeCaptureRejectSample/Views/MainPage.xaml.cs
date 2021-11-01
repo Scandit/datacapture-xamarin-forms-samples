@@ -28,12 +28,13 @@ namespace BarcodeCaptureRejectSample.Views
         {
             this.InitializeComponent();
             this.viewModel = this.BindingContext as MainPageViewModel;
+            var defaultBrush = this.Overlay.Brush;
 
             this.viewModel.AcceptedCode += (object sender, EventArgs e) =>
             {
                 // If the code is accepted, we want to make sure to use
                 // a brush to highlight the code.
-                this.Overlay.Brush = this.viewModel.HighlightingBrush;
+                this.Overlay.Brush = defaultBrush;
             };
 
             this.viewModel.RejectedCode += (object sender, EventArgs e) =>

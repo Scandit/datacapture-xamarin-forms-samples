@@ -17,7 +17,8 @@
                      preview. This is optional, but recommended for better visual feedback. -->
                 <scanditBarcode:BarcodeTrackingBasicOverlay
                     BarcodeTracking="{Binding BarcodeTracking}" 
-                    Listener="{Binding .}" />
+                    Listener="{Binding .}"
+                    Style="Frame"/>
             </scanditCore:DataCaptureView>
             <Button Text="DONE"
                     WidthRequest="300"

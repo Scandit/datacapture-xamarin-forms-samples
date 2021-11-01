@@ -29,9 +29,10 @@
 				<scanditBarcode:BarcodeCaptureOverlay 
                     x:Name="Overlay"
                     BarcodeCapture="{Binding BarcodeCapture}"
+                    Style="{Binding OverlayStyle}"
                     Viewfinder="{Binding Viewfinder}"
                     ShouldShowScanAreaGuides="{Binding ShouldShowScanAreaGuides}"
-                    Brush="{Binding CurrentBrush}"/>
+                    Brush="{Binding CurrentBrush, Mode=TwoWay}" />
 			</scanditCore:DataCaptureView>
 			<Label BackgroundColor="White" Style="{DynamicResource SubtitleStyle}" TextColor="Black" IsVisible="{Binding IsContinousScanLabelVisible}" VerticalTextAlignment="Center" Padding="10" Text="{Binding ScanResult}" VerticalOptions="Start" HorizontalOptions="Fill" />
 		</Grid>

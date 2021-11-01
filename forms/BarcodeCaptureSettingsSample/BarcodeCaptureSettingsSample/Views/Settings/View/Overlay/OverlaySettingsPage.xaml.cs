@@ -12,6 +12,8 @@
  * limitations under the License.
  */
 
+using System.Threading.Tasks;
+using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay;
 using Xamarin.Forms;
 
 namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Overlay
@@ -26,6 +28,14 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Overlay
         async void Title_Tapped(System.Object sender, System.EventArgs e)
         {
             await Navigation.PopToRootAsync();
+        }
+
+        private async void OnStyleSelected(object sender, ItemTappedEventArgs e)
+        {
+            await Task.Run(() =>
+            {
+                ((OverlaySettingsViewModel)this.BindingContext).CurrentStyle = e.Item as OverlaySetingsStyleItem;
+            });
         }
     }
 }

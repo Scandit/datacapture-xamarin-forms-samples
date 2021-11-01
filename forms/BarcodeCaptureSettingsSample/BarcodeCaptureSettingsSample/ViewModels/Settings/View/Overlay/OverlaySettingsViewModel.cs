@@ -13,10 +13,14 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using BarcodeCaptureSettingsSample.Models;
 using BarcodeCaptureSettingsSample.Resources;
+using Scandit.DataCapture.Barcode.Capture.Unified;
+using Scandit.DataCapture.Barcode.UI.Unified;
 using Scandit.DataCapture.Core.UI.Style.Unified;
 
 namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
@@ -25,16 +29,40 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
     {
         private static SettingsManager settings = SettingsManager.Instance;
 
-        private readonly IList<OverlaySettingsBrushItem> availableBrushes = new List<OverlaySettingsBrushItem>
+        private static Brush DefaultBrush()
         {
-            new OverlaySettingsBrushItem(settings.DefaultBrush, AppResources.Brush_Defaults),
-            // Transparent Red and Red colors used here
-             new OverlaySettingsBrushItem(new Brush(fillColor: Xamarin.Forms.Color.FromHex("#33FF0000"),strokeColor: Xamarin.Forms.Color.FromHex("#FFFF0000"), strokeWidth: settings.DefaultBrush.StrokeWidth), AppResources.Brush_Red),
-            // Transparent Green and Green colors used here
-             new OverlaySettingsBrushItem(new Brush(fillColor: Xamarin.Forms.Color.FromHex("#3300FF00"),strokeColor: Xamarin.Forms.Color.FromHex("#FF00FF00"), strokeWidth: settings.DefaultBrush.StrokeWidth), AppResources.Brush_Green)
-        };
+            return BarcodeCaptureOverlay.Create(
+                Scandit.DataCapture.Barcode.Capture.Unified.BarcodeCapture.Create(null, BarcodeCaptureSettings.Create()), null, settings.OverlayStyle).Brush;
+        }
 
+        private IList<OverlaySettingsBrushItem> availableBrushes =
+            new Lazy<IList<OverlaySettingsBrushItem>>(GetBrushes).Value;
+
+        private static IList<OverlaySettingsBrushItem> GetBrushes()
+        {
+            var defaultBrush = DefaultBrush();
+            return new List<OverlaySettingsBrushItem>
+            {
+                new OverlaySettingsBrushItem(defaultBrush, AppResources.Brush_Defaults),
+                // Transparent Red and Red colors used here
+                new OverlaySettingsBrushItem(
+                    new Brush(fillColor: Xamarin.Forms.Color.FromHex("#33FF0000"),
+                        strokeColor: Xamarin.Forms.Color.FromHex("#FFFF0000"),
+                        strokeWidth: defaultBrush.StrokeWidth), AppResources.Brush_Red),
+                // Transparent Green and Green colors used here
+                new OverlaySettingsBrushItem(
+                    new Brush(fillColor: Xamarin.Forms.Color.FromHex("#3300FF00"),
+                        strokeColor: Xamarin.Forms.Color.FromHex("#FF00FF00"),
+                        strokeWidth: defaultBrush.StrokeWidth), AppResources.Brush_Green)
+            };            
+        }
         public IList<OverlaySettingsBrushItem> AvailableBrushes => availableBrushes;
+
+        public IList<OverlaySetingsStyleItem> AvailableStyles => new[]
+        {
+            new OverlaySetingsStyleItem(BarcodeCaptureOverlayStyle.Legacy, "Legacy"),
+            new OverlaySetingsStyleItem(BarcodeCaptureOverlayStyle.Frame, "Frame")
+        };
 
         public OverlaySettingsBrushItem CurrentBrush
         {
@@ -44,14 +72,26 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
             }
             set
             {
-                Brush brush = this.GetSettingsBrush(value.Brush)?.Brush ?? this.AvailableBrushes[0].Brush;
+                Brush brush = this.GetSettingsBrush(value?.Brush)?.Brush ?? this.AvailableBrushes[0].Brush;
                 settings.CurrentBrush = brush;
+            }
+        }
+
+        public OverlaySetingsStyleItem CurrentStyle
+        {
+            get => this.AvailableStyles.First(style => settings.OverlayStyle == style.Style);
+            set
+            {
+                settings.OverlayStyle = value.Style;
+                OnPropertyChanged(nameof(this.AvailableStyles));
+                OnPropertyChanged(nameof(this.AvailableBrushes));
+                OnPropertyChanged(nameof(this.CurrentBrush));
             }
         }
 
         private OverlaySettingsBrushItem GetSettingsBrush(Brush brush)
         {
-            return this.AvailableBrushes.FirstOrDefault(item => eq(item.Brush, brush));
+            return brush == null ? this.AvailableBrushes.First() : this.AvailableBrushes.FirstOrDefault(item => eq(item.Brush, brush));
         }
 
         private static bool eq(Brush first, Brush other)
@@ -61,8 +101,8 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
                 return false;
             }
 
-            return first.FillColor == other.FillColor &&
-                   first.StrokeColor == other.StrokeColor &&
+            return first.FillColor.Equals(other.FillColor)  &&
+                   first.StrokeColor.Equals(other.StrokeColor) &&
                    first.StrokeWidth == other.StrokeWidth;
         }
     }
@@ -83,5 +123,20 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
         {
             return DisplayText;
         }
+    }
+
+    public class OverlaySetingsStyleItem
+    {
+        public OverlaySetingsStyleItem(BarcodeCaptureOverlayStyle style, string displayText)
+        {
+            this.Style = style;
+            this.DisplayText = displayText;
+        }
+        
+        public BarcodeCaptureOverlayStyle Style { get; }
+            
+        public string DisplayText { get; }
+
+        public bool IsSelected => SettingsManager.Instance.OverlayStyle == this.Style;
     }
 }

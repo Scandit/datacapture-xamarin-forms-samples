@@ -17,7 +17,8 @@
                 <scanditBarcode:BarcodeCaptureOverlay 
                     x:Name="Overlay"
                     BarcodeCapture="{Binding BarcodeCapture}"
-                    Viewfinder="{Binding Viewfinder}" />
+                    Viewfinder="{Binding Viewfinder}"
+                    Style="Frame"/>
             </scanditCore:DataCaptureView>
         </AbsoluteLayout>
     </ContentPage.Content>

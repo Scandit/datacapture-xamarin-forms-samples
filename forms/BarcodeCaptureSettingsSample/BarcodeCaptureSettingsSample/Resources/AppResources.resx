@@ -216,6 +216,9 @@
 	<data name="TorchButton" xml:space="preserve">
         <value>Torch Button</value>
 	</data>
+	<data name="ZoomSwitchButton" xml:space="preserve">
+		<value>Zoom Switch Button</value>
+	</data>
 	<data name="Camera" xml:space="preserve">
         <value>Camera</value>
 	</data>

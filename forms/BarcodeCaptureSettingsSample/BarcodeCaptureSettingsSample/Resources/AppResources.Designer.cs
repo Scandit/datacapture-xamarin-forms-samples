@@ -455,6 +455,12 @@ namespace BarcodeCaptureSettingsSample.Resources {
             }
         }
         
+        internal static string ZoomSwitchButton {
+            get {
+                return ResourceManager.GetString("ZoomSwitchButton", resourceCulture);
+            }
+        }
+        
         internal static string Camera {
             get {
                 return ResourceManager.GetString("Camera", resourceCulture);

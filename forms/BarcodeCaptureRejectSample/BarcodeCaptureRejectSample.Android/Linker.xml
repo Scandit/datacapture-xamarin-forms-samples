@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linker>
+  <assembly fullname="BarcodeCaptureRejectSample">
+    <type fullname="BarcodeCaptureRejectSample.ViewModels.MainPageViewModel">
+    </type>
+  </assembly>
+</linker>

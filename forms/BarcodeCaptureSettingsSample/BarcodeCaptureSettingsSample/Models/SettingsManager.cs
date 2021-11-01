@@ -129,9 +129,9 @@ namespace BarcodeCaptureSettingsSample.Models
 
         #region Overlay Settings
 
-        public Brush DefaultBrush => BarcodeCaptureOverlay.DefaultBrush;
-
         public Brush CurrentBrush { get; set; }
+
+        public BarcodeCaptureOverlayStyle OverlayStyle { get; set; } = BarcodeCaptureOverlayStyle.Frame;
 
         #endregion
 
@@ -154,6 +154,8 @@ namespace BarcodeCaptureSettingsSample.Models
         #region Controls
 
         public bool IsTorchButtonEnabled { get; set; } = false;
+        
+        public bool IsZoomSwitchControlEnabled { get; set; } = false;
 
         #endregion
 

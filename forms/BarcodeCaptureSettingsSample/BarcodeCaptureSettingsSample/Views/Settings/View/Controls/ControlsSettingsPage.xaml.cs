@@ -37,5 +37,10 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Controls
         {
             await Navigation.PopToRootAsync();
         }
+
+        void ZoomSwitchButton_Tapped(object sender, System.EventArgs e)
+        {
+            this.viewModel.IsZoomSwitchControlEnabled = !this.viewModel.IsZoomSwitchControlEnabled;
+        }
     }
 }

@@ -22,14 +22,14 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Controls
 
         public bool IsTorchButtonEnabled
         {
-            get
-            {
-                return settings.IsTorchButtonEnabled;
-            }
-            set
-            {
-                settings.IsTorchButtonEnabled = value;
-            }
+            get => settings.IsTorchButtonEnabled;
+            set => settings.IsTorchButtonEnabled = value;
+        }
+
+        public bool IsZoomSwitchControlEnabled
+        {
+            get => settings.IsZoomSwitchControlEnabled;
+            set => settings.IsZoomSwitchControlEnabled = value;
         }
     }
 }

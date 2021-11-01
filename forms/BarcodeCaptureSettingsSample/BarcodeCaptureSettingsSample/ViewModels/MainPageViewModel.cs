@@ -20,6 +20,7 @@ using BarcodeCaptureSettingsSample.Resources;
 using BarcodeCaptureSettingsSample.Services;
 using Scandit.DataCapture.Barcode.Capture.Unified;
 using Scandit.DataCapture.Barcode.Data.Unified;
+using Scandit.DataCapture.Barcode.UI.Unified;
 using Scandit.DataCapture.Core.Capture.Unified;
 using Scandit.DataCapture.Core.Common.Geometry.Unified;
 using Scandit.DataCapture.Core.Data.Unified;
@@ -101,11 +102,9 @@ namespace BarcodeCaptureSettingsSample.ViewModels
             }
         }
 
-        public Brush CurrentBrush
-        {
-            get { return settings.CurrentBrush; }
-            set { settings.CurrentBrush = value; }
-        }
+        public Brush CurrentBrush => settings.CurrentBrush;
+
+        public BarcodeCaptureOverlayStyle OverlayStyle => settings.OverlayStyle;
 
         public bool IsSwipeToZoomEnabled
         {
@@ -122,13 +121,9 @@ namespace BarcodeCaptureSettingsSample.ViewModels
             return settings.CurrentCamera?.SwitchToDesiredStateAsync(FrameSourceState.Off);
         }
 
-        public bool IsTorchButtonEnabled
-        {
-            get
-            {
-                return settings.IsTorchButtonEnabled;
-            }
-        }
+        public bool IsTorchButtonEnabled => settings.IsTorchButtonEnabled;
+
+        public bool IsZoomSwitchButtonEnabled => settings.IsZoomSwitchControlEnabled;
 
         public async Task OnResumeAsync()
         {
@@ -149,11 +144,12 @@ namespace BarcodeCaptureSettingsSample.ViewModels
             OnPropertyChanged(nameof(this.ShouldShowScanAreaGuides));
             OnPropertyChanged(nameof(this.BarcodeCapture));
             OnPropertyChanged(nameof(this.Viewfinder));
-            OnPropertyChanged(nameof(this.CurrentBrush));
             OnPropertyChanged(nameof(this.ScanAreaMargins));
             OnPropertyChanged(nameof(this.PointOfInterest));
             OnPropertyChanged(nameof(this.LogoAnchor));
             OnPropertyChanged(nameof(this.LogoOffset));
+            OnPropertyChanged(nameof(this.CurrentBrush));
+            OnPropertyChanged(nameof(this.OverlayStyle));
         }
 
         private Task ResumeFrameSource()

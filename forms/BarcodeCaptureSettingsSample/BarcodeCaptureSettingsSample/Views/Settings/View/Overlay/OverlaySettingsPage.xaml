@@ -16,9 +16,29 @@
         </Label>
     </NavigationPage.TitleView>
 	<ContentPage.Content>
-		<StackLayout Orientation="Horizontal" Margin="0,10,0,0" VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White">
-			<Label Text="{x:Static resources:AppResources.Brush}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
-			<Picker Title="{x:Static resources:AppResources.Brush_Select}" ItemsSource="{Binding AvailableBrushes}" SelectedItem="{Binding CurrentBrush, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="Center" />
-		</StackLayout>
+		<Grid>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="25"/>
+				<RowDefinition Height="auto"/>
+				<RowDefinition Height="auto"/>
+			</Grid.RowDefinitions>
+			<Label Text="{x:Static resources:AppResources.Style}" Style="{DynamicResource CaptionStyle}" Margin="10,5,0,0" Grid.Row="0"/>
+			<ListView ItemsSource="{Binding AvailableStyles}" SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="5" BackgroundColor="White" Grid.Row="1" HeightRequest="180"  ItemTapped="OnStyleSelected">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
+								<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+								<Image IsVisible="{Binding IsSelected}" Source="check.png" />
+							</StackLayout>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<StackLayout Orientation="Horizontal" Margin="0,10,0,0" VerticalOptions="StartAndExpand" Padding="10" BackgroundColor="White" Grid.Row="2">
+				<Label Text="{x:Static resources:AppResources.Brush}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand"  Margin="10,0,0,0" />
+				<Picker Title="{x:Static resources:AppResources.Brush_Select}" ItemsSource="{Binding AvailableBrushes}" SelectedItem="{Binding CurrentBrush, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="Center" />
+			</StackLayout>
+		</Grid>
 	</ContentPage.Content>
 </ContentPage>

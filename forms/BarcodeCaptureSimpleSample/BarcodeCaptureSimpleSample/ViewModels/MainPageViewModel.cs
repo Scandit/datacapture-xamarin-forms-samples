@@ -35,7 +35,6 @@ namespace BarcodeCaptureSimpleSample.ViewModels
     {
         private static IMessageService MessageService;
         private IViewfinder viewfinder;
-        private ScanditStyle.Brush highlightingBrush;
 
         public Camera Camera { get; private set; } = ScannerModel.Instance.CurrentCamera;
 
@@ -50,16 +49,6 @@ namespace BarcodeCaptureSimpleSample.ViewModels
             {
                 this.viewfinder = value;
                 this.OnPropertyChanged(nameof(Viewfinder));
-            }
-        }
-
-        public ScanditStyle.Brush HighlightingBrush
-        {
-            get { return this.highlightingBrush; }
-            set
-            {
-                this.highlightingBrush = value;
-                this.OnPropertyChanged(nameof(HighlightingBrush));
             }
         }
 
@@ -106,12 +95,6 @@ namespace BarcodeCaptureSimpleSample.ViewModels
             // Rectangular viewfinder with an embedded Scandit logo.
             // The rectangular viewfinder is displayed when the recognition is active and hidden when it is not.
             this.Viewfinder = new RectangularViewfinder(RectangularViewfinderStyle.Square, RectangularViewfinderLineStyle.Light);
-
-            // Adjust the overlay's barcode highlighting to match the new viewfinder styles and improve the visibility of feedback.
-            // With 6.10 we will introduce this visual treatment as a new style for the overlay.
-            this.HighlightingBrush = new ScanditStyle.Brush(fillColor: Color.Transparent,
-                                                            strokeColor: Color.White,
-                                                            strokeWidth: 3);
         }
 
         private Task ResumeFrameSource()

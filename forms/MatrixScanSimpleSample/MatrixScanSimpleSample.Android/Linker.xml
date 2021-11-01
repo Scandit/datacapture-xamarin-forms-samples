@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linker>
+  <assembly fullname="MatrixScanSimpleSample">
+    <type fullname="MatrixScanSimpleSample.ViewModels.MainPageViewModel">
+    </type>
+  </assembly>
+</linker>

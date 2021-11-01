@@ -24,6 +24,13 @@
 				<Label Text="{x:Static resources:AppResources.TorchButton}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
 				<Switch IsToggled="{Binding IsTorchButtonEnabled}" OnColor="LimeGreen" />
 			</StackLayout>
+			<StackLayout Orientation="Horizontal" BackgroundColor="White" Grid.Row="2" VerticalOptions="Start" Padding="10">
+				<StackLayout.GestureRecognizers>
+					<TapGestureRecognizer Tapped="ZoomSwitchButton_Tapped"/>
+				</StackLayout.GestureRecognizers>
+				<Label Text="{x:Static resources:AppResources.ZoomSwitchButton}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Switch IsToggled="{Binding IsZoomSwitchControlEnabled}" OnColor="LimeGreen"></Switch>
+			</StackLayout>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
