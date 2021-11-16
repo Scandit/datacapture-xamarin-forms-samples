@@ -95,11 +95,25 @@ namespace IdCaptureSimpleSample.ViewModels
             DependencyService.Get<IMessageService>().ShowAsync(GetErrorMessage(error), () => this.IdCapture.Enabled = true);
         }
 
+        public void OnIdLocalized(IdCapture mode, IdCaptureSession session, IFrameData frameData)
+        {
+            // In this sample we are not interested in this callback.
+        }
+
+        public void OnIdRejected(IdCapture mode, IdCaptureSession session, IFrameData frameData)
+        {
+            // In this sample we are not interested in this callback.
+        }
+
         public void OnObservationStarted(IdCapture idCapture)
-        { }
+        {
+            // In this sample we are not interested in this callback.
+        }
 
         public void OnObservationStopped(IdCapture idCapture)
-        { }
+        {
+            // In this sample we are not interested in this callback.
+        }
         #endregion
 
         public Task OnSleepAsync()

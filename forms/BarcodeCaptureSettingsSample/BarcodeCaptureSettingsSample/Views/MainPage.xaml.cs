@@ -29,7 +29,6 @@ namespace BarcodeCaptureSettingsSample.Views
 
         private readonly ZoomSwitchControl zoomSwitchControl = new ZoomSwitchControl();
 
-
         public MainPage()
         {
             InitializeComponent();
@@ -41,6 +40,10 @@ namespace BarcodeCaptureSettingsSample.Views
         {
             base.OnAppearing();
             _ = this.viewModel.OnResumeAsync();
+
+            this.dataCaptureView.ZoomGesture = this.viewModel.IsSwipeToZoomEnabled ? new SwipeToZoom() : null;
+            this.dataCaptureView.FocusGesture = this.viewModel.IsTapToFocusEnabled ? new TapToFocus() : null;
+
             if (this.viewModel.IsTorchButtonEnabled)
             {
                 this.dataCaptureView.AddControl(torchSwitchControl);
@@ -58,9 +61,6 @@ namespace BarcodeCaptureSettingsSample.Views
             {
                 this.dataCaptureView.RemoveControl(this.zoomSwitchControl);
             }
-
-            this.dataCaptureView.ZoomGesture = this.viewModel.IsSwipeToZoomEnabled ? new SwipeToZoom() : null;
-            this.dataCaptureView.FocusGesture = this.viewModel.IsTapToFocusEnabled ? new TapToFocus() : null;
         }
 
         protected override void OnDisappearing()
