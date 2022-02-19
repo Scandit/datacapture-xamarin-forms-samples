@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:effects="clr-namespace:MatrixScanBubblesSample.Effects"
              x:Class="MatrixScanBubblesSample.Views.StockOverlay">
     <ContentView.Content>
-        <StackLayout>
+        <StackLayout effects:RoundCornersEffect.CornerRadius="25"
+                     BackgroundColor="White">
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizerTapped"/>
             </StackLayout.GestureRecognizers>
@@ -14,13 +16,13 @@
                 </Grid.ColumnDefinitions>
                 <Image
                     Grid.Column="0"
+                    effects:RoundCornersEffect.CornerRadius="25"
                     x:Name="StockCountImage"
                     HeightRequest="50"
                     WidthRequest="50"
                     Source="stock_count.png" />
                 <StackLayout
                     Grid.Column="1"
-                    BackgroundColor="White"
                     Padding="5,5"
                     Spacing="0">
                     <Label x:Name="Title" Text="Report stock count" FontAttributes="Bold" FontSize="15" />

@@ -20,8 +20,7 @@
     <AndroidEnableSGenConcurrent>true</AndroidEnableSGenConcurrent>
     <AndroidUseAapt2>true</AndroidUseAapt2>
     <AndroidHttpClientHandlerType>Xamarin.Android.Net.AndroidClientHandler</AndroidHttpClientHandlerType>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <UseShortFileNames>True</UseShortFileNames>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -82,9 +81,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.10.1" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.10.1" />
-    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin" Version="6.10.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.11.0" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.11.0" />
+    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin" Version="6.11.0" />
   </ItemGroup>
- <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
+  <ItemGroup>
+    <LinkDescription Include="Linker.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

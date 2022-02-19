@@ -23,18 +23,19 @@ namespace BarcodeCaptureRejectSample.Views
     public partial class MainPage : ContentPage
     {
         private readonly MainPageViewModel viewModel;
+        private readonly BarcodeCaptureOverlayStyle overlayStyle = BarcodeCaptureOverlayStyle.Frame;
 
         public MainPage()
         {
             this.InitializeComponent();
             this.viewModel = this.BindingContext as MainPageViewModel;
-            var defaultBrush = this.Overlay.Brush;
+            this.Overlay.Style = this.overlayStyle;
 
             this.viewModel.AcceptedCode += (object sender, EventArgs e) =>
             {
                 // If the code is accepted, we want to make sure to use
                 // a brush to highlight the code.
-                this.Overlay.Brush = defaultBrush;
+                this.Overlay.Brush = BarcodeCaptureOverlay.DefaultBrushForStyle(this.overlayStyle);
             };
 
             this.viewModel.RejectedCode += (object sender, EventArgs e) =>

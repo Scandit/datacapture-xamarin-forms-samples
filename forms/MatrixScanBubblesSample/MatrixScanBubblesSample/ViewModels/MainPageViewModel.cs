@@ -32,12 +32,12 @@ using Xamarin.Forms;
 
 namespace MatrixScanBubblesSample.ViewModels
 {
-    public class MainPageViewModel : IBarcodeTrackingListener, IBarcodeTrackingBasicOverlayListener, IBarcodeTrackingAdvancedOverlayListener
+    public class MainPageViewModel : IBarcodeTrackingListener, IBarcodeTrackingAdvancedOverlayListener
     {
-        private readonly Scandit.DataCapture.Core.UI.Style.Unified.Brush highlightedBrush;
         private readonly IDictionary<int, View> overlays = new Dictionary<int, View>();
         private readonly int shelfCount = 4;
         private readonly int backRoom = 8;
+        private bool cameraPaused = false;
 
         public Camera Camera { get; private set; } = ScannerModel.Instance.CurrentCamera;
         public DataCaptureContext DataCaptureContext { get; private set; } = ScannerModel.Instance.DataCaptureContext;
@@ -49,18 +49,19 @@ namespace MatrixScanBubblesSample.ViewModels
             this.InitializeScanner();
             this.SubscribeToAppMessages();
 
-            this.highlightedBrush = new Scandit.DataCapture.Core.UI.Style.Unified.Brush(Color.Transparent, Color.White, 2.0f);
             this.ToggleFreezeButton = new Command(() =>
             {
                 if (this.BarcodeTracking.Enabled)
                 {
                     this.BarcodeTracking.Enabled = false;
                     this.Camera.SwitchToDesiredStateAsync(FrameSourceState.Off);
+                    this.cameraPaused = true;
                 }
                 else
                 {
                     this.BarcodeTracking.Enabled = true;
                     this.Camera.SwitchToDesiredStateAsync(FrameSourceState.On);
+                    this.cameraPaused = false;
                 }
             });
         }
@@ -104,9 +105,14 @@ namespace MatrixScanBubblesSample.ViewModels
 
         private Task ResumeFrameSource()
         {
-            // Switch camera on to start streaming frames.
-            // The camera is started asynchronously and will take some time to completely turn on.
-            return this.Camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
+            if (!this.cameraPaused)
+            {
+                // Switch camera on to start streaming frames.
+                // The camera is started asynchronously and will take some time to completely turn on.
+                return this.Camera?.SwitchToDesiredStateAsync(FrameSourceState.On);
+            }
+
+            return Task.FromResult(false);
         }
 
         #region IBarcodeTrackingListener
@@ -141,16 +147,6 @@ namespace MatrixScanBubblesSample.ViewModels
                 }
             });
         }
-        #endregion
-
-        #region IBarcodeTrackingBasicOverlayListener
-        public Scandit.DataCapture.Core.UI.Style.Unified.Brush BrushForTrackedBarcode(BarcodeTrackingBasicOverlay overlay, TrackedBarcode trackedBarcode)
-        {
-            return this.highlightedBrush;
-        }
-
-        public void OnTrackedBarcodeTapped(BarcodeTrackingBasicOverlay overlay, TrackedBarcode trackedBarcode)
-        { }
         #endregion
 
         #region IBarcodeTrackingAdvancedOverlay

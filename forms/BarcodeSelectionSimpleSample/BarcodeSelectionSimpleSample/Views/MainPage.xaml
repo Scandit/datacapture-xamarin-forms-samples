@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
+             xmlns:scanditBarcode="clr-namespace:Scandit.DataCapture.Barcode.Selection.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
+             xmlns:vm="clr-namespace:BarcodeSelectionSimpleSample.ViewModels" 
+             x:Class="BarcodeSelectionSimpleSample.Views.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    <AbsoluteLayout x:Name="Layout">
+        <scanditCore:DataCaptureView
+            AbsoluteLayout.LayoutBounds="0,0,1,0.85"
+            AbsoluteLayout.LayoutFlags="All"
+            DataCaptureContext="{Binding DataCaptureContext}" >
+            <scanditBarcode:BarcodeSelectionBasicOverlay 
+                BarcodeSelection="{Binding BarcodeSelection}" 
+                Style="Frame" />
+        </scanditCore:DataCaptureView>
+        <Grid BackgroundColor="Black"
+              AbsoluteLayout.LayoutBounds="0,1,1,0.15"
+              AbsoluteLayout.LayoutFlags="All">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0"
+                    x:Name="AimToSelectButton"
+                    Text="Aim To Select"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Clicked="AimToSelectButtonClicked"/>
+            <Button Grid.Column="1"
+                    x:Name="TapToSelectButton"
+                    Text="Tap To Select"
+                    BackgroundColor="Black"
+                    TextColor="White"
+                    Clicked="TapToSelectButtonClicked"/>
+        </Grid>
+        <Frame
+            AbsoluteLayout.LayoutBounds="0.5,0.5,250,100"
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            x:Name="ScanResults"
+            IsVisible="false"
+            BorderColor="Gray"
+            BackgroundColor="White">
+            <StackLayout Margin="-10, -10">
+                <Label Text="Scan Results" FontAttributes="Bold"/>
+                <Label x:Name="Label" Text="" />
+            </StackLayout>
+        </Frame>
+    </AbsoluteLayout>
+</ContentPage>

@@ -29,31 +29,26 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
     {
         private static SettingsManager settings = SettingsManager.Instance;
 
-        private static Brush DefaultBrush()
-        {
-            return BarcodeCaptureOverlay.Create(
-                Scandit.DataCapture.Barcode.Capture.Unified.BarcodeCapture.Create(null, BarcodeCaptureSettings.Create()), null, settings.OverlayStyle).Brush;
-        }
+        private static Brush DefaultBrush => BarcodeCaptureOverlay.DefaultBrushForStyle(settings.OverlayStyle);
 
         private IList<OverlaySettingsBrushItem> availableBrushes =
             new Lazy<IList<OverlaySettingsBrushItem>>(GetBrushes).Value;
 
         private static IList<OverlaySettingsBrushItem> GetBrushes()
         {
-            var defaultBrush = DefaultBrush();
             return new List<OverlaySettingsBrushItem>
             {
-                new OverlaySettingsBrushItem(defaultBrush, AppResources.Brush_Defaults),
+                new OverlaySettingsBrushItem(DefaultBrush, AppResources.Brush_Defaults),
                 // Transparent Red and Red colors used here
                 new OverlaySettingsBrushItem(
                     new Brush(fillColor: Xamarin.Forms.Color.FromHex("#33FF0000"),
                         strokeColor: Xamarin.Forms.Color.FromHex("#FFFF0000"),
-                        strokeWidth: defaultBrush.StrokeWidth), AppResources.Brush_Red),
+                        strokeWidth: DefaultBrush.StrokeWidth), AppResources.Brush_Red),
                 // Transparent Green and Green colors used here
                 new OverlaySettingsBrushItem(
                     new Brush(fillColor: Xamarin.Forms.Color.FromHex("#3300FF00"),
                         strokeColor: Xamarin.Forms.Color.FromHex("#FF00FF00"),
-                        strokeWidth: defaultBrush.StrokeWidth), AppResources.Brush_Green)
+                        strokeWidth: DefaultBrush.StrokeWidth), AppResources.Brush_Green)
             };            
         }
         public IList<OverlaySettingsBrushItem> AvailableBrushes => availableBrushes;

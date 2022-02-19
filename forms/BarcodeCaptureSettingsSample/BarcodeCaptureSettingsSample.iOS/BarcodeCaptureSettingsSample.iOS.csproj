@@ -105,8 +105,12 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\check.imageset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\check.imageset\check.png" />
+    <ImageAsset Include="Assets.xcassets\check.imageset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\check.imageset\check.png">
+      <Visible>false</Visible>
+    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -127,12 +131,15 @@
       <Project>{095CD664-8283-4980-817B-DA28877DC658}</Project>
       <Name>BarcodeCaptureSettingsSample</Name>
     </ProjectReference>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.10.1" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.10.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.11.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.11.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
     <Folder Include="Assets.xcassets\check.imageset\" />
+  </ItemGroup>
+  <ItemGroup>
+    <LinkDescription Include="Linker.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
