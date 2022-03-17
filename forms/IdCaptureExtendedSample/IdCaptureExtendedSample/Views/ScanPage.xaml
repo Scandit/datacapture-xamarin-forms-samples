@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
+             xmlns:vm="clr-namespace:IdCaptureExtendedSample.ViewModels"
+             x:Class="IdCaptureExtendedSample.Views.ScanPage"
+             Title="IdCaptureExtendedSample">
+    <ContentPage.BindingContext>
+        <vm:ScanViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <Grid BackgroundColor="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <scanditCore:DataCaptureView
+                x:Name="dataCaptureView"
+                Grid.Row="0"
+                DataCaptureContext="{Binding DataCaptureContext}">
+            </scanditCore:DataCaptureView>
+            <StackLayout x:Name="buttonsLayout"
+                         Grid.Row="1"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center">
+                <Button Text="Barcode" Clicked="ButtonClicked" BorderColor="White" />
+                <Button Text="MRZ" Clicked="ButtonClicked" BorderColor="White" />
+                <Button Text="VIZ" Clicked="ButtonClicked" BorderColor="White" />
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

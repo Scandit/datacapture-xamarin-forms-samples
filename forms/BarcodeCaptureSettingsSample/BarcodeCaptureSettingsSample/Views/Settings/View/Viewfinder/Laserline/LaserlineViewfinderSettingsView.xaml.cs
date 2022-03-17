@@ -12,6 +12,7 @@
  * limitations under the License.
  */
 
+using System;
 using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfinder.Laserline;
 using BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Common;
 using Xamarin.Forms;
@@ -25,13 +26,22 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.La
             InitializeComponent();
         }
 
+        public event EventHandler Dissapering;
+
         async void OnWidthTapped(System.Object sender, System.EventArgs e)
         {
             var page = new FloatWithUnitPage
             {
                 BindingContext = new LaserlineViewfinderWidthViewModel()
             };
+
+            page.Disappearing += PageDisappearing;
             await Navigation.PushAsync(page);
+        }
+
+        private void PageDisappearing(object sender, EventArgs args)
+        {
+            this.Dissapering?.Invoke(sender, args);
         }
     }
 }

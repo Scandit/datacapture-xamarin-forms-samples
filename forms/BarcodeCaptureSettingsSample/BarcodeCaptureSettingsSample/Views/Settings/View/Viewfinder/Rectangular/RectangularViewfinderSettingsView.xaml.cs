@@ -12,6 +12,7 @@
  * limitations under the License.
  */
 
+using System;
 using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfinder.Rectangular;
 using BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Common;
 using Xamarin.Forms;
@@ -25,12 +26,16 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Re
             InitializeComponent();
         }
 
+        public event EventHandler Dissapering;
+
         async void WidthAndHeightContainer_WidthTapped(System.Object sender, System.EventArgs e)
         {
             var page = new FloatWithUnitPage()
             {
                 BindingContext = new SizeSpecificationWidthAndHeightViewModel(SizeSpecificationWidthAndHeightViewModel.SizeSpecificationValue.Width)
             };
+
+            page.Disappearing += PageDisappearing;
             await Navigation.PushAsync(page);
 
         }
@@ -41,6 +46,8 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Re
             {
                 BindingContext = new SizeSpecificationWidthAndHeightViewModel(SizeSpecificationWidthAndHeightViewModel.SizeSpecificationValue.Height)
             };
+
+            page.Disappearing += PageDisappearing;
             await Navigation.PushAsync(page);
         }
 
@@ -50,6 +57,8 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Re
             {
                 BindingContext = new SizeSpecificationWidthAndHeightViewModel(SizeSpecificationWidthAndHeightViewModel.SizeSpecificationValue.Width)
             };
+
+            page.Disappearing += PageDisappearing;
             await Navigation.PushAsync(page);
         }
 
@@ -59,6 +68,8 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Re
             {
                 BindingContext = new SizeSpecificationWidthAndHeightViewModel(SizeSpecificationWidthAndHeightViewModel.SizeSpecificationValue.Height)
             };
+
+            page.Disappearing += PageDisappearing;
             await Navigation.PushAsync(page);
         }
 
@@ -68,7 +79,14 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Re
             {
                 BindingContext = new SizeSpecificationShorterDimensionViewModel()
             };
+
+            page.Disappearing += PageDisappearing;
             await Navigation.PushAsync(page);
+        }
+
+        private void PageDisappearing(object sender, EventArgs args)
+        {
+            this.Dissapering?.Invoke(sender, args);
         }
     }
 }

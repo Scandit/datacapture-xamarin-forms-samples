@@ -21,13 +21,11 @@
                     Style="Frame"/>
             </scanditCore:DataCaptureView>
             <Button Text="DONE"
-                    WidthRequest="300"
-                    AbsoluteLayout.LayoutBounds="0,0.9,1,0.1"
-                    AbsoluteLayout.LayoutFlags="All"
+                    AbsoluteLayout.LayoutBounds="0.5,0.9,300,45"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
                     Clicked="ButtonClicked"
                     BackgroundColor="#58B5C2"
-                    TextColor="White"
-                    HorizontalOptions="Center" />
+                    TextColor="White" />
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
