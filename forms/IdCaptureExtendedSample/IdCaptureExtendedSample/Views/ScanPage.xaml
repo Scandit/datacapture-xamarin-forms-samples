@@ -12,7 +12,7 @@
         <Grid BackgroundColor="Black">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="40"/>
+                <RowDefinition Height="60"/>
             </Grid.RowDefinitions>
             <scanditCore:DataCaptureView
                 x:Name="dataCaptureView"

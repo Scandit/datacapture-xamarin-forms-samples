@@ -33,6 +33,8 @@ namespace IdCaptureExtendedSample.ViewModels
         public ImageSource? IdFrontImage { get; private set; }
         public ImageSource? IdBackImage { get; private set; }
 
+        public bool ImagesVisible { get; private set; }
+
         public ResultViewModel(CapturedId capturedId)
         {
             IResultPresenter resultPresenter = this.factory.Create(capturedId);
@@ -40,7 +42,9 @@ namespace IdCaptureExtendedSample.ViewModels
             this.Items = resultPresenter.Rows.ToList();
             this.FaceImage = capturedId.GetImageBitmapForType(IdImageType.Face)?.Source;
             this.IdFrontImage = capturedId.GetImageBitmapForType(IdImageType.IdFront)?.Source;
-            this.IdBackImage = capturedId.GetImageBitmapForType(IdImageType.IdBack)?.Source;   
+            this.IdBackImage = capturedId.GetImageBitmapForType(IdImageType.IdBack)?.Source;
+
+            this.ImagesVisible = this.FaceImage != null || this.IdFrontImage != null || this.IdBackImage != null;
         }
     }
 }

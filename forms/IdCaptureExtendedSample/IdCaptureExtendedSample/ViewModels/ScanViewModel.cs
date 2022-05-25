@@ -72,6 +72,7 @@ namespace IdCaptureExtendedSample.ViewModels
             else
             {
                 this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
+                this.isScanningBackSide = false;
             }
         }
 

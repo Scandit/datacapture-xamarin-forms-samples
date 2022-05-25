@@ -27,7 +27,7 @@ namespace TextCaptureSample.Models
          * reasonable regex. If recognizing such codes is your use-case, then you probably don't need
          * to recognize just any GS1 AI, but a specific kind.
          */
-        public static TextType GS1_AI = new TextType("(\\\\([0-9]+\\\\)[A-Za-z0-9])", "GS1 AI");
+        public static TextType GS1_AI = new TextType("((?:\\\\([0-9]+\\\\)[A-Za-z0-9]+)+)", "GS1 AI");
         public static TextType LOT = new TextType("([A-Z0-9]{6,8})", "LOT");
 
         public string Regex { get; }

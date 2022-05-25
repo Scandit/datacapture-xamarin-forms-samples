@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linker>
+  <assembly fullname="TextCaptureSample">
+    <type fullname="TextCaptureSample.ViewModels.MainPageViewModel" />
+    <type fullname="TextCaptureSample.Services.MessageService" />
+  </assembly>
+</linker>

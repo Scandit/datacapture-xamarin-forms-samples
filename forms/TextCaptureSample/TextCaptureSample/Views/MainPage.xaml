@@ -5,7 +5,7 @@
              xmlns:scanditText="clr-namespace:Scandit.DataCapture.Text.UI.Unified;assembly=ScanditTextCaptureUnified"
              xmlns:vm="clr-namespace:TextCaptureSample.ViewModels" 
              x:Class="TextCaptureSample.Views.MainPage"
-             Title="Text Recognition">
+             Title="Text Capture">
     <ContentPage.BindingContext>
         <vm:MainPageViewModel x:Name="viewModel"/>
     </ContentPage.BindingContext>

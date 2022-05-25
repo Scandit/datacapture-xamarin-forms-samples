@@ -2,5 +2,6 @@
 <linker>
   <assembly fullname="IdCaptureExtendedSample">
     <type fullname="IdCaptureExtendedSample.ViewModels.MainPageViewModel" />
+    <type fullname="IdCaptureExtendedSample.Services.MessageService" />
   </assembly>
 </linker>

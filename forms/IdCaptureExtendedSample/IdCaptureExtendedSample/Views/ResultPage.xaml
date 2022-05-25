@@ -5,7 +5,10 @@
              Title="Scan Results">
     <ContentPage.Content>
         <StackLayout>
-            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" HeightRequest="75">
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         HeightRequest="75"
+                         IsVisible="{Binding ImagesVisible}">
                 <Image Source="{Binding FaceImage}" />
                 <Image Source="{Binding IdFrontImage}" />
                 <Image Source="{Binding IdBackImage}" />

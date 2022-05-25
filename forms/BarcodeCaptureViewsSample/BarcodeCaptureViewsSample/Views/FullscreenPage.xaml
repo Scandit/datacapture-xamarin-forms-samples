@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:BarcodeCaptureViewsSample.Controls"
+             xmlns:view_models="clr-namespace:BarcodeCaptureViewsSample.ViewModels" 
+             x:Class="BarcodeCaptureViewsSample.Views.FullscreenPage">
+    <ContentPage.BindingContext>
+        <view_models:FullscreenPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <controls:ScannerView ControlTemplate="{StaticResource DataCaptureViewTemplate}"
+                                  DataCaptureContext="{Binding DataCaptureContext}"
+                                  BarcodeCapture="{Binding BarcodeCapture}"
+                                  AbsoluteLayout.LayoutBounds="0,0,1,1"
+                                  AbsoluteLayout.LayoutFlags="All" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

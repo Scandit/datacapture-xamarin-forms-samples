@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" ?>
 <linker>
   <assembly fullname="BarcodeCaptureSimpleSample">
-    <type fullname="BarcodeCaptureSimpleSample.ViewModels.MainPageViewModel">
-    </type>
+    <type fullname="BarcodeCaptureSimpleSample.ViewModels.MainPageViewModel" />
+    <type fullname="BarcodeCaptureSimpleSample.Services.MessageService" />
   </assembly>
 </linker>
