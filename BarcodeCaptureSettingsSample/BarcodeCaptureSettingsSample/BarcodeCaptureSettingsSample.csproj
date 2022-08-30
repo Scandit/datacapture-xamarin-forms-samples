@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.14.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.14.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Services\" />
+    <Folder Include="ViewModels\" />
+    <Folder Include="Views\" />
+    <Folder Include="Views\Settings\" />
+    <Folder Include="ViewModels\Settings\" />
+    <Folder Include="Converters\" />
+    <Folder Include="ViewModels\Settings\View\" />
+    <Folder Include="Views\Settings\View\" />
+    <Folder Include="Views\Settings\View\ScanArea\" />
+    <Folder Include="ViewModels\Settings\View\ScanArea\" />
+    <Folder Include="Resources\" />
+    <Folder Include="Views\Settings\View\PointOfInterest\" />
+    <Folder Include="ViewModels\Settings\View\PointOfInterest\" />
+    <Folder Include="ViewModels\Settings\Common\" />
+    <Folder Include="ViewModels\Settings\View\Overlay\" />
+    <Folder Include="Views\Settings\View\Overlay\" />
+    <Folder Include="Views\Settings\View\Viewfinder\" />
+    <Folder Include="ViewModels\Settings\View\Viewfinder\" />
+    <Folder Include="Views\Settings\View\Viewfinder\Rectangular\" />
+    <Folder Include="ViewModels\Settings\View\Viewfinder\Rectangular\" />
+    <Folder Include="ViewModels\Settings\View\Viewfinder\Laserline\" />
+    <Folder Include="ViewModels\Settings\View\Viewfinder\Aimer\" />
+    <Folder Include="Views\Settings\View\Common\" />
+    <Folder Include="Views\Settings\View\Viewfinder\Aimer\" />
+    <Folder Include="Views\Settings\View\Viewfinder\Laserline\" />
+    <Folder Include="Views\Settings\View\Logo\" />
+    <Folder Include="ViewModels\Settings\View\Logo\" />
+    <Folder Include="Views\Settings\View\Gestures\" />
+    <Folder Include="ViewModels\Settings\View\Gestures\" />
+    <Folder Include="Views\Settings\View\Controls\" />
+    <Folder Include="ViewModels\Settings\View\Controls\" />
+    <Folder Include="Views\Settings\Camera\" />
+    <Folder Include="ViewModels\Settings\Camera\" />
+    <Folder Include="Views\Settings\BacodeCapture\" />
+    <Folder Include="ViewModels\Settings\BarcodeCapture\" />
+    <Folder Include="ViewModels\Settings\BarcodeCapture\Symbologies\" />
+    <Folder Include="Views\Settings\BacodeCapture\Symbologies\" />
+    <Folder Include="Views\Settings\BacodeCapture\LocationSelection\" />
+    <Folder Include="ViewModels\Settings\BarcodeCapture\LocationSelection\" />
+    <Folder Include="ViewModels\Settings\BarcodeCapture\Feedback\" />
+    <Folder Include="Views\Settings\BacodeCapture\Feedback\" />
+    <Folder Include="ViewModels\Settings\BarcodeCapture\CompositeTypes\" />
+    <Folder Include="Views\Settings\BacodeCapture\CompositeTypes\" />
+    <Folder Include="ViewModels\Settings\BarcodeCapture\DuplicateFilter\" />
+    <Folder Include="Views\Settings\BacodeCapture\DuplicateFilter\" />
+    <Folder Include="ViewModels\Settings\Result\" />
+    <Folder Include="Views\Settings\Result\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resources\AppResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Condition=" '$(EnableDefaultCompileItems)' == 'true' " Update="Resources\AppResources.Designer.cs">
+      <DependentUpon>AppResources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>

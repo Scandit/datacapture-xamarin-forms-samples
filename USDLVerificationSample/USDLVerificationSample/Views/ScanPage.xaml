@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
+             xmlns:scanditId="clr-namespace:Scandit.DataCapture.ID.UI.Unified;assembly=ScanditIdCaptureUnified"
+             xmlns:vm="clr-namespace:USDLVerificationSample.ViewModels"
+             x:Class="USDLVerificationSample.Views.ScanPage"
+             Title="US DL Verification">
+    <ContentPage.BindingContext>
+        <vm:ScanViewModel x:Name="viewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <scanditCore:DataCaptureView
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                DataCaptureContext="{Binding DataCaptureContext}" >
+                <scanditId:IdCaptureOverlay IdCapture="{Binding IdCapture}" IdLayoutStyle="Square" />
+            </scanditCore:DataCaptureView>
+            <Label x:Name = "ScanLabel"
+                   FontSize="Large"
+                   TextColor="White"
+                   AbsoluteLayout.LayoutBounds="0.5,0.1"
+                   AbsoluteLayout.LayoutFlags="PositionProportional" />
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

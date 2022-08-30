@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<linker>
+  <assembly fullname="USDLVerificationSample">
+    <type fullname="USDLVerificationSample.ViewModels.MainPageViewModel" />
+    <type fullname="USDLVerificationSample.Services.MessageService" />
+  </assembly>
+</linker>

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="USDLVerificationSample.Views.ResultPage"
+             Title="Scan Results">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Vertical"
+                         HorizontalOptions="Start"
+                         Padding="10">
+                <Label x:Name="ExpirationLabel"
+                       Text="{Binding ExpirationText}"
+                       FontSize="Default"
+                       IsVisible="{Binding ExpirationVisible}" />
+                <Label x:Name="VerificationLabel"
+                       Text="{Binding VerificationText}"
+                       FontSize="Default"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         HeightRequest="75"
+                         IsVisible="{Binding ImagesVisible}">
+                <Image Source="{Binding FaceImage}" />
+                <Image Source="{Binding IdFrontImage}" />
+                <Image Source="{Binding IdBackImage}" />
+            </StackLayout>
+            <ListView ItemsSource="{Binding Items}"
+                      Background="White"
+                      HorizontalScrollBarVisibility="Never"
+                      VerticalScrollBarVisibility="Default"
+                      SelectionMode="None"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows="True"
+                      VerticalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="15, 15, 15, 5">
+                                <Label Text="{Binding Value}" FontSize="Medium" TextColor="Black" />
+                                <Label Text="{Binding Title}" FontSize="Small" TextColor="#58B5C2" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
