@@ -18,7 +18,7 @@
 				<RowDefinition Height="auto"/>
 			</Grid.RowDefinitions>
 			<StackLayout Orientation="Horizontal" BackgroundColor="White" VerticalOptions="StartAndExpand" Grid.Row="0" Padding="10">
-				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.Value}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.Value}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 				<Entry Text="{Binding Value, Converter={StaticResource FloatConverter}}"
                        Keyboard="Numeric"
                        HorizontalOptions="End"
@@ -31,7 +31,7 @@
 					<DataTemplate>
 						<ViewCell>
 							<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
-								<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+								<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 								<Image IsVisible="{Binding IsSelected}" Source="check.png" />
                             </StackLayout>
 						</ViewCell>

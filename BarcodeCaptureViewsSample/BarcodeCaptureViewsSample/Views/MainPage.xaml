@@ -10,12 +10,14 @@
     <StackLayout BackgroundColor="LightGray">
         <Frame Margin="0, 10" CornerRadius="0">
             <StackLayout BackgroundColor="White">
-                <Label Text="{x:Static resources:AppResources.Fullscreen}" Padding="5, 15" FontSize="16">
+                <Label Text="{x:Static resources:AppResources.Fullscreen}"
+                       Padding="5, 15" FontSize="16" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnFullscreenLabelTapped" />
                     </Label.GestureRecognizers>
                 </Label>
-                <Label Text="{x:Static resources:AppResources.SplitView}" Padding="5, 15" FontSize="16">
+                <Label Text="{x:Static resources:AppResources.SplitView}"
+                       Padding="5, 15" FontSize="16" TextColor="Black">
                     <Label.GestureRecognizers>
                         <TapGestureRecognizer Tapped="OnSplitViewLabelTapped" />
                     </Label.GestureRecognizers>

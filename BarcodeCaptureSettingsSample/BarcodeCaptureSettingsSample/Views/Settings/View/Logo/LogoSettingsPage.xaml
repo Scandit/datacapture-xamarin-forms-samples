@@ -18,7 +18,7 @@
 	<ContentPage.Content>
 		<StackLayout  Margin="0,10,0,0">
 			<StackLayout Orientation="Horizontal"  VerticalOptions="Start" Padding="10"  BackgroundColor="White">
-				<Label Text="{x:Static resources:AppResources.Anchor}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Label Text="{x:Static resources:AppResources.Anchor}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 				<Picker Title="{x:Static resources:AppResources.Anchor_Select}" ItemsSource="{Binding AvailableAnchors}" SelectedItem="{Binding CurrentAnchor, Mode=TwoWay}" HorizontalOptions="End" HorizontalTextAlignment="Center"  WidthRequest="130" />
 			</StackLayout>
 
@@ -27,16 +27,16 @@
 					<StackLayout.GestureRecognizers>
 						<TapGestureRecognizer Tapped="OnAnchorXOffsetTapped"/>
 					</StackLayout.GestureRecognizers>
-					<Label Text="X" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-					<Label Text="{Binding AnchorXOffset, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+					<Label Text="X" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+					<Label Text="{Binding AnchorXOffset, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 				</StackLayout>
 
 				<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10">
 					<StackLayout.GestureRecognizers>
 						<TapGestureRecognizer Tapped="OnAnchorYOffsetTapped"/>
 					</StackLayout.GestureRecognizers>
-					<Label Text="Y" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-					<Label Text="{Binding AnchorYOffset, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+					<Label Text="Y" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+					<Label Text="{Binding AnchorYOffset, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 				</StackLayout>
 			</StackLayout>
 		</StackLayout>

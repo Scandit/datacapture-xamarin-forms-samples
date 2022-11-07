@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
-	xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.Result" 
+	xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.Result"
     x:Class="BarcodeCaptureSettingsSample.Views.Settings.Result.ResultSettingsPage">
 	<ContentPage.BindingContext>
 		<vm:ResultSettingsViewModel />
@@ -20,7 +20,7 @@
 			<StackLayout.GestureRecognizers>
 				<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
 			</StackLayout.GestureRecognizers>
-			<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.ContinuousScanning}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+			<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.ContinuousScanning}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 			<Switch IsToggled="{Binding ContinuousScanningEnabled}" OnColor="LimeGreen" />
 		</StackLayout>
 	</ContentPage.Content>

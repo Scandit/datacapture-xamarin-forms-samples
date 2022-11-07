@@ -180,7 +180,7 @@ namespace IdCaptureExtendedSample.ViewModels
 
         private void DisplayBackOfCardAlert(CapturedId capturedId)
         {
-            string message = "This documents has additional data in the visual inspection zone on the back of the card";
+            string message = "This document has additional data on the back of the card";
             DependencyService.Get<IMessageService>()
                              .ShowDialogAsync(title: "Back of card", message)
                              .ContinueWith((Task<bool> scanningBackSide) =>

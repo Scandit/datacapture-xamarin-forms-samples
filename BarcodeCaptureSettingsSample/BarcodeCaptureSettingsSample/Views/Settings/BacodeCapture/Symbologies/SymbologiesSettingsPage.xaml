@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
-    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture.Symbologies" 
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture.Symbologies"
     x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.Symbologies.SymbologiesSettingsPage">
 	<ContentPage.BindingContext>
 		<vm:SymbologiesSettingsViewModel />
@@ -30,8 +30,8 @@
 					<DataTemplate>
 						<ViewCell>
 							<StackLayout Orientation="Horizontal" Margin="20,0,5,5">
-								<Label Text="{Binding DisplayName}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-								<Label Text="{Binding IsEnabled, Converter={StaticResource SymbologyStateConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+								<Label Text="{Binding DisplayName}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+								<Label Text="{Binding IsEnabled, Converter={StaticResource SymbologyStateConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>

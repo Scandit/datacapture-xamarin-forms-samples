@@ -29,7 +29,7 @@
 						<DataTemplate>
 							<ViewCell>
 								<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
-									<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+									<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 									<Image IsVisible="{Binding IsSelected}" Source="check.png" />
                                 </StackLayout>
 							</ViewCell>

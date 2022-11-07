@@ -3,13 +3,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
-    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture" 
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture"
     x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.BarcodeCaptureSettingsPage">
 	<ContentPage.BindingContext>
 		<vm:BarcodeCaptureSettingsViewModel />
 	</ContentPage.BindingContext>
 	<NavigationPage.TitleView>
-        <Label Text="{x:Static resources:AppResources.Setting_BarcodeCapture}" Style="{DynamicResource TitleStyle}" VerticalTextAlignment="Center"  TextColor="Black">
+        <Label Text="{x:Static resources:AppResources.Setting_BarcodeCapture}" Style="{DynamicResource TitleStyle}" VerticalTextAlignment="Center" TextColor="Black">
             <Label.GestureRecognizers>
                 <TapGestureRecognizer NumberOfTapsRequired="2" Tapped="Title_Tapped" />
             </Label.GestureRecognizers>
@@ -21,7 +21,7 @@
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
-							<Label Text="{Binding DisplayNameResource, Converter={StaticResource StringResourceConverter}}" Style="{DynamicResource ListItemTextStyle}" VerticalTextAlignment="Center" Margin="20,0,0,0" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding DisplayNameResource, Converter={StaticResource StringResourceConverter}}" Style="{DynamicResource ListItemTextStyle}" VerticalTextAlignment="Center" Margin="20,0,0,0" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>

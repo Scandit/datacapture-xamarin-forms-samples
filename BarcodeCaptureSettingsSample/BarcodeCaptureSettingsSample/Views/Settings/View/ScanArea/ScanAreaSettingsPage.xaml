@@ -24,14 +24,14 @@
 
 			<ListView x:Name="viewSettingsList" SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="5" Grid.Row="0" BackgroundColor="White" HeightRequest="{Binding Height}" ItemTapped="ViewSettingsList_ItemTapped">
 				<ListView.Header>
-					<Label Text="{x:Static resources:AppResources.Margins}" Style="{DynamicResource CaptionStyle}" Padding="10,0,0,0"/>
+					<Label Text="{x:Static resources:AppResources.Margins}" Style="{DynamicResource CaptionStyle}" Padding="10,0,0,0" TextColor="Black"/>
 				</ListView.Header>
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<ViewCell>
 							<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
-								<Label Text="{Binding DisplayNameResource, Converter={StaticResource StringResourceConverter}}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-								<Label Text="{Binding Value, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+								<Label Text="{Binding DisplayNameResource, Converter={StaticResource StringResourceConverter}}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+								<Label Text="{Binding Value, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 							</StackLayout>
 						</ViewCell>
 					</DataTemplate>
@@ -42,7 +42,7 @@
 				<StackLayout.GestureRecognizers>
 					<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
 				</StackLayout.GestureRecognizers>
-				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.ShouldShowScanAreaGuides}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.ShouldShowScanAreaGuides}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 				<Switch IsToggled="{Binding ShouldShowScanAreaGuides}" OnColor="LimeGreen" />
 			</StackLayout>
 		</Grid>

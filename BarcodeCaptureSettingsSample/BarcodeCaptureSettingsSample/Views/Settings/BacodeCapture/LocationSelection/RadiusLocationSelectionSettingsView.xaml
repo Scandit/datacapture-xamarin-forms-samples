@@ -6,13 +6,13 @@
     x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.LocationSelection.RadiusLocationSelectionSettingsView">
 	<ContentView.Content>
 		<StackLayout>
-			<Label Text="{x:Static resources:AppResources.Radius}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0"/>
+			<Label Text="{x:Static resources:AppResources.Radius}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0" TextColor="Black"/>
 			<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10" BackgroundColor="White">
 				<StackLayout.GestureRecognizers>
 					<TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
 				</StackLayout.GestureRecognizers>
-				<Label Text="{x:Static resources:AppResources.Size}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-				<Label Text="{Binding Size, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+				<Label Text="{x:Static resources:AppResources.Size}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+				<Label Text="{Binding Size, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 			</StackLayout>
 		</StackLayout>
 	</ContentView.Content>

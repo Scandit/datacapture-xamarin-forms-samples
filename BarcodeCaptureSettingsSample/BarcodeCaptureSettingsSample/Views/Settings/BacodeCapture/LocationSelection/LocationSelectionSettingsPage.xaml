@@ -23,13 +23,13 @@
 					<RowDefinition Height="auto"/>
 					<RowDefinition Height="auto"/>
 				</Grid.RowDefinitions>
-				<Label Text="{x:Static resources:AppResources.Type}" Style="{DynamicResource CaptionStyle}" Margin="10,5,0,0" Grid.Row="0"/>
+				<Label Text="{x:Static resources:AppResources.Type}" Style="{DynamicResource CaptionStyle}" Margin="10,5,0,0" Grid.Row="0" TextColor="Black"/>
 				<ListView x:Name="locationSelectionList" ItemsSource="{Binding AvailableLocationSelections}" SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="5" BackgroundColor="White" Grid.Row="1" HeightRequest="140"  ItemTapped="locationSelectionList_ItemTapped">
 					<ListView.ItemTemplate>
 						<DataTemplate>
 							<ViewCell>
 								<StackLayout Orientation="Horizontal" Margin="20,0,5,0">
-									<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+									<Label Text="{Binding DisplayText}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 									<Image IsVisible="{Binding IsSelected}" Source="check.png" />
                                 </StackLayout>
 							</ViewCell>

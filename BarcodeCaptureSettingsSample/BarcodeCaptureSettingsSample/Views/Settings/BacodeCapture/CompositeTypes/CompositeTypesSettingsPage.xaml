@@ -3,7 +3,7 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:resources="clr-namespace:BarcodeCaptureSettingsSample.Resources"
-    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture.CompositeTypes" 
+    xmlns:vm="clr-namespace:BarcodeCaptureSettingsSample.ViewModels.Settings.BarcodeCapture.CompositeTypes"
     x:Class="BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture.CompositeTypes.CompositeTypesSettingsPage">
 	<ContentPage.BindingContext>
 		<vm:CompositeTypesSettingsViewModel />
@@ -18,13 +18,13 @@
 	<ContentPage.Content>
 		<ListView x:Name="compositeTypesList" ItemsSource="{Binding Source}" HeightRequest="150" SeparatorVisibility="None" HorizontalOptions="Start" VerticalOptions="Start" SelectionMode="None" ItemTapped="CompositeTypesList_ItemTapped" BackgroundColor="White" Margin="0,10,0,0">
 			<ListView.Header>
-				<Label Text="{x:Static resources:AppResources.Type}" Style="{DynamicResource CaptionStyle}" Padding="10,0,0,0"/>
+				<Label Text="{x:Static resources:AppResources.Type}" Style="{DynamicResource CaptionStyle}" Padding="10,0,0,0" TextColor="Black"/>
 			</ListView.Header>
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
 						<StackLayout Orientation="Horizontal" Margin="20,0,10,5">
-							<Label Text="{Binding DisplayName}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+							<Label Text="{Binding DisplayName}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 							<Image IsVisible="{Binding IsSelected}" Source="check.png" />
                         </StackLayout>
 					</ViewCell>

@@ -11,11 +11,11 @@
 				<RowDefinition Height="auto"/>
 			</Grid.RowDefinitions>
 
-			<Label Text="{x:Static resources:AppResources.Rectangular}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0" Grid.Row="0" />
+			<Label Text="{x:Static resources:AppResources.Rectangular}" Style="{DynamicResource CaptionStyle}" Margin="10,0,0,0" Grid.Row="0" TextColor="Black"/>
 
 			<StackLayout Grid.Row="1" BackgroundColor="White">
 				<StackLayout Orientation="Horizontal"  VerticalOptions="StartAndExpand" BackgroundColor="White" Padding="10">
-					<Label Text="{x:Static resources:AppResources.SizeSpecification}"  Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+					<Label Text="{x:Static resources:AppResources.SizeSpecification}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 					<Picker Title="{x:Static resources:AppResources.SizeSpecification_Select}" ItemsSource="{Binding AvailableSizeSpecifications}" SelectedItem="{Binding CurrentSizeSpecification, Mode=TwoWay}" FontSize="Small" HorizontalOptions="End" HorizontalTextAlignment="End" />
 				</StackLayout>
 
@@ -24,15 +24,15 @@
 						<StackLayout.GestureRecognizers>
 							<TapGestureRecognizer Tapped="WidthAndHeightContainer_WidthTapped"/>
 						</StackLayout.GestureRecognizers>
-						<Label Text="{x:Static resources:AppResources.Width}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-						<Label Text="{Binding Width, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						<Label Text="{x:Static resources:AppResources.Width}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+						<Label Text="{Binding Width, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 					</StackLayout>
 					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  Padding="10" >
 						<StackLayout.GestureRecognizers>
 							<TapGestureRecognizer Tapped="WidthAndHeightContainer_HeightTapped"/>
 						</StackLayout.GestureRecognizers>
-						<Label Text="{x:Static resources:AppResources.Height}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-						<Label Text="{Binding Height, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						<Label Text="{x:Static resources:AppResources.Height}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+						<Label Text="{Binding Height, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 					</StackLayout>
 				</StackLayout>
 
@@ -41,11 +41,11 @@
 						<StackLayout.GestureRecognizers>
 							<TapGestureRecognizer Tapped="WidthAndHeightAspectContainer_WidthTapped"/>
 						</StackLayout.GestureRecognizers>
-						<Label Text="{x:Static resources:AppResources.Width}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-						<Label Text="{Binding Width, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						<Label Text="{x:Static resources:AppResources.Width}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+						<Label Text="{Binding Width, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 					</StackLayout>
 					<StackLayout Orientation="Horizontal" VerticalOptions="Start"  Padding="10" >
-						<Label Text="{x:Static resources:AppResources.HeightAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+						<Label Text="{x:Static resources:AppResources.HeightAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 						<Entry Text="{Binding HeightAspect, Converter={StaticResource FloatConverter}}" Keyboard="Numeric" HorizontalOptions="End" VerticalOptions="End" WidthRequest="100" HorizontalTextAlignment="End" />
 					</StackLayout>
 				</StackLayout>
@@ -55,11 +55,11 @@
 						<StackLayout.GestureRecognizers>
 							<TapGestureRecognizer Tapped="HeightAndWidthAspectContainer_HeightTapped"/>
 						</StackLayout.GestureRecognizers>
-						<Label Text="{x:Static resources:AppResources.Height}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
-						<Label Text="{Binding Height, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" />
+						<Label Text="{x:Static resources:AppResources.Height}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
+						<Label Text="{Binding Height, Converter={StaticResource FloatWithUnitConverter}}" Style="{DynamicResource ListItemDetailTextStyle}"  VerticalOptions="Center" HorizontalOptions="End" TextColor="Black"/>
 					</StackLayout>
 					<StackLayout Orientation="Horizontal" VerticalOptions="Start" Padding="10" >
-						<Label Text="{x:Static resources:AppResources.WidthAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+						<Label Text="{x:Static resources:AppResources.WidthAspect}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 						<Entry Text="{Binding WidthAspect, Converter={StaticResource FloatConverter}}" Keyboard="Numeric" HorizontalOptions="End" WidthRequest="100" HorizontalTextAlignment="End" />
 					</StackLayout>
 				</StackLayout>

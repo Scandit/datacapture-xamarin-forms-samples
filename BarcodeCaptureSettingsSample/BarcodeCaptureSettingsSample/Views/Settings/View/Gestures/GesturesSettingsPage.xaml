@@ -21,14 +21,14 @@
 				<StackLayout.GestureRecognizers>
 					<TapGestureRecognizer Tapped="TapToFocus_Tapped"/>
 				</StackLayout.GestureRecognizers>
-				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.TapToFocus}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.TapToFocus}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 				<Switch IsToggled="{Binding IsTapToFocusEnabled}" OnColor="LimeGreen" />
 			</StackLayout>
 			<StackLayout Orientation="Horizontal" BackgroundColor="White" Grid.Row="1" VerticalOptions="Start" Margin="0,5,0,0" Padding="10">
 				<StackLayout.GestureRecognizers>
 					<TapGestureRecognizer Tapped="SwipeToZoom_Tapped"/>
 				</StackLayout.GestureRecognizers>
-				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.SwipeToZoom}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+				<Label Margin="10,0,0,0" Text="{x:Static resources:AppResources.SwipeToZoom}" Style="{DynamicResource ListItemTextStyle}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" TextColor="Black"/>
 				<Switch IsToggled="{Binding IsSwipeToZoomEnabled}" OnColor="LimeGreen" />
 			</StackLayout>
 		</StackLayout>
