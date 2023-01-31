@@ -48,7 +48,6 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.Camera
         public IList<DesiredTorchStateItem> AvailableDesiredTorchStates =>
             Enum.GetValues(typeof(TorchState))
                 .OfType<TorchState>()
-                .Where(torchState => IsValidTorchState(torchState))
                 .Select(t => new DesiredTorchStateItem(t)).ToList();
 
         public DesiredTorchStateItem CurrentDesiredTorchState
@@ -74,12 +73,6 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.Camera
         {
             // UHD4K is not supported in the Android Camera API 1.
             return !(Device.Android == Device.RuntimePlatform && videoResolution == VideoResolution.Uhd4k);
-        }
-
-        private static bool IsValidTorchState(TorchState torchState)
-        {
-            // TorchState.Auto is not supported in the Android Camera API 1.
-            return !(Device.Android == Device.RuntimePlatform && torchState == TorchState.Auto);
         }
 
         public PreferredResolutionItem CurrentPreferredResolution

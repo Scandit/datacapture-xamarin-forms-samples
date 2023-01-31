@@ -122,8 +122,8 @@
       <Project>{E58C8A46-D93C-41D2-9530-14318517B20B}</Project>
       <Name>BarcodeCaptureViewsSample</Name>
     </ProjectReference>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.16.0" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.16.0" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.15.2" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.15.2" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

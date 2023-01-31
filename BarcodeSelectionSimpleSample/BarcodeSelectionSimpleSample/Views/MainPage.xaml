@@ -45,8 +45,8 @@
             BorderColor="Gray"
             BackgroundColor="White">
             <StackLayout Margin="-10, -10">
-                <Label Text="Scan Results" FontAttributes="Bold" TextColor="Black" />
-                <Label x:Name="Label" Text="" TextColor="Black" />
+                <Label Text="Scan Results" FontAttributes="Bold"/>
+                <Label x:Name="Label" Text="" />
             </StackLayout>
         </Frame>
     </AbsoluteLayout>
