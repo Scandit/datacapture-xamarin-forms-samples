@@ -120,6 +120,11 @@ namespace IdCaptureExtendedSample.ViewModels
                              });
         }
 
+        public void OnIdCaptureTimedOut(IdCapture mode, IdCaptureSession session, IFrameData data)
+        {
+            // In this sample we are not interested in this callback.
+        }
+
         public void OnObservationStarted(IdCapture idCapture)
         {
             // In this sample we are not interested in this callback.

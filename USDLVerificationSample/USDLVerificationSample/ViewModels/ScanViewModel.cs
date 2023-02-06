@@ -167,6 +167,11 @@ namespace USDLVerificationSample.ViewModels
 
             // In this sample we are not interested in this callback.
         }
+
+        public void OnIdCaptureTimedOut(IdCapture idCapture, IdCaptureSession session, IFrameData frameData)
+        {
+            // In this sample we are not interested in this callback.
+        }
         #endregion
 
         private Task ResumeFrameSourceAsync()
