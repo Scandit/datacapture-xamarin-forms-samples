@@ -23,9 +23,9 @@
                          Grid.Row="1"
                          Orientation="Horizontal"
                          HorizontalOptions="Center">
-                <Button Text="Barcode" Clicked="ButtonClicked" BorderColor="White" />
-                <Button Text="MRZ" Clicked="ButtonClicked" BorderColor="White" />
-                <Button Text="VIZ" Clicked="ButtonClicked" BorderColor="White" />
+                <Button Text="Barcode" Clicked="ButtonClicked" BorderColor="White" WidthRequest="100" />
+                <Button Text="MRZ" Clicked="ButtonClicked" BorderColor="White" WidthRequest="100" />
+                <Button Text="VIZ" Clicked="ButtonClicked" BorderColor="White" WidthRequest="100" />
             </StackLayout>
         </Grid>
     </ContentPage.Content>

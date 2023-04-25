@@ -41,6 +41,7 @@ namespace IdCaptureExtendedSample.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            this.ConfigureIdCaptureOverlay();
             _ = this.viewModel.OnResumeAsync();
         }
 
@@ -70,8 +71,10 @@ namespace IdCaptureExtendedSample.Views
                 this.dataCaptureView?.RemoveOverlay(this.idCaptureOverlay);
             }
 
-            this.idCaptureOverlay = IdCaptureOverlay.Create(this.viewModel.IdCapture, this.dataCaptureView);
+            this.idCaptureOverlay = IdCaptureOverlay.Create(this.viewModel.IdCapture);
             this.idCaptureOverlay.IdLayoutStyle = IdLayoutStyle.Rounded;
+
+            this.dataCaptureView.AddOverlay(this.idCaptureOverlay);
         }
 
         private void UpdateButtonsState(Mode currentMode)

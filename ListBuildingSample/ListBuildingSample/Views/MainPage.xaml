@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scandit="clr-namespace:Scandit.DataCapture.Barcode.Spark.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
+             xmlns:vm="clr-namespace:ListBuildingSample.ViewModels" 
+             x:Class="ListBuildingSample.Views.MainPage">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <Label Text="{Binding ItemCount}"
+                   FontAttributes="Bold"
+                   AbsoluteLayout.LayoutBounds="0,25,AutoSize,35"
+                   Margin="10, 0, 0, 0"/>
+            <ListView ItemsSource="{Binding ScanResults}"
+                      AbsoluteLayout.LayoutBounds="0,60,1,0.75"
+                      AbsoluteLayout.LayoutFlags="SizeProportional"
+                      Background="White"
+                      HorizontalScrollBarVisibility="Never"
+                      VerticalScrollBarVisibility="Default"
+                      SelectionMode="None"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows="True"
+                      VerticalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" Padding="10, 0, 0, 5">
+                                <Label Text="{Binding Title}" FontSize="Medium" TextColor="Black" />
+                                <Label Text="{Binding Line}" FontSize="Small" TextColor="Gray" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="CLEAR LIST"
+                    Clicked="ButtonClicked"
+                    AbsoluteLayout.LayoutBounds="0.5,0.95,300,45"
+                    AbsoluteLayout.LayoutFlags="PositionProportional"
+                    BackgroundColor="White"
+                    BorderColor="Black"
+                    BorderWidth="2"
+                    TextColor="Black">
+            </Button>
+            <scandit:SparkScanView
+                x:Name="SparkScanView"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                DataCaptureContext="{Binding DataCaptureContext}"
+                SparkScan="{Binding SparkScan}"
+                SparkScanViewSettings="{Binding ViewSettings}">
+            </scandit:SparkScanView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

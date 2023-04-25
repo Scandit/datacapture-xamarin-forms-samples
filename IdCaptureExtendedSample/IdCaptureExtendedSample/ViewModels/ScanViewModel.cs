@@ -30,7 +30,6 @@ namespace IdCaptureExtendedSample.ViewModels
     public class ScanViewModel : BaseViewModel, IIdCaptureListener
     {
         private readonly ScannerModel model = ScannerModel.Instance;
-        private bool isScanningBackSide = false;
 
         public DataCaptureContext DataCaptureContext => this.model.DataCaptureContext;
         public IdCapture IdCapture => this.model.IdCapture;
@@ -49,31 +48,19 @@ namespace IdCaptureExtendedSample.ViewModels
         {
             CapturedId capturedId = session.NewlyCapturedId;
 
-            // Pause the idCapture to not capture while showing the result.
-            idCapture.Enabled = false;
-
             // Viz documents support multiple sides scanning.
             // In case the back side is supported and not yet captured we inform the user about the feature.
             if (capturedId.Viz != null &&
                 capturedId.Viz.BackSideCaptureSupported &&
                 capturedId.Viz.CapturedSides == SupportedSides.FrontOnly)
             {
-                // Until the back side is scanned, IdCapture will keep reporting the front side.
-                // If we are looking for the back side we just return.
-                if (this.isScanningBackSide)
-                {
-                    idCapture.Enabled = true;
-                }
-                else
-                {
-                    this.DisplayBackOfCardAlert(capturedId);
-                }
+                return;
             }
-            else
-            {
-                this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
-                this.isScanningBackSide = false;
-            }
+
+            // Pause the idCapture to not capture while showing the result.
+            idCapture.Enabled = false;
+
+            this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
         }
 
         public void OnErrorEncountered(IdCapture idCapture, IdCaptureError error, IdCaptureSession session, IFrameData frameData)
@@ -162,7 +149,6 @@ namespace IdCaptureExtendedSample.ViewModels
 
         public void ConfigureIdCapture(Mode mode)
         {
-            this.isScanningBackSide = false;
             this.model.IdCapture?.RemoveListener(this);
             this.model.ConfigureIdCapture(mode);
             this.model.IdCapture.AddListener(this);
@@ -174,35 +160,15 @@ namespace IdCaptureExtendedSample.ViewModels
             MessagingCenter.Subscribe(this, App.MessageKeys.OnSleep, callback: async (App app) => await this.OnSleepAsync());
         }
 
-        private Task ResumeFrameSourceAsync()
+        private async Task ResumeFrameSourceAsync()
         {
             this.model.IdCapture.Enabled = true;
 
             // Switch camera on to start streaming frames.
             // The camera is started asynchronously and will take some time to completely turn on.
-            return this.model.CurrentCamera?.SwitchToDesiredStateAsync(FrameSourceState.On);
+            await this.model.CurrentCamera?.SwitchToDesiredStateAsync(FrameSourceState.On);
         }
 
-        private void DisplayBackOfCardAlert(CapturedId capturedId)
-        {
-            string message = "This document has additional data on the back of the card";
-            DependencyService.Get<IMessageService>()
-                             .ShowDialogAsync(title: "Back of card", message)
-                             .ContinueWith((Task<bool> scanningBackSide) =>
-                             {
-                                 if (scanningBackSide.Result == true)
-                                 {
-                                     this.isScanningBackSide = true;
-                                     this.model.IdCapture.Enabled = true;
-                                 }
-                                 else
-                                 {
-                                     this.model.IdCapture.Reset();
-                                     this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
-                                 }
-                             });
-        }
-    
         private static string GetErrorMessage(IdCaptureError error)
         {
             return new StringBuilder(error.Type.ToString()).Append($": {error.Message}").ToString();
