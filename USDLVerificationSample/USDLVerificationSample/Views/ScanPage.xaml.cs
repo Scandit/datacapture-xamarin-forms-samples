@@ -20,13 +20,9 @@ namespace USDLVerificationSample.Views
 {
     public partial class ScanPage : ContentPage
     {
-        public readonly string AlignFrontText = "Align front of document";
-        public readonly string AlignBackText = "Align back of document";
-
         public ScanPage()
         {
             this.InitializeComponent();
-            this.viewModel.AlignBack += AlignBack;
         }
 
         public event EventHandler<CapturedIdEventArgs> IdCaptured
@@ -39,7 +35,6 @@ namespace USDLVerificationSample.Views
         {
             base.OnAppearing();
 
-            this.ScanLabel.Text = AlignFrontText;
             this.viewModel.IdCapture.Reset();
             _ = this.viewModel.OnResumeAsync();
         }
@@ -48,14 +43,6 @@ namespace USDLVerificationSample.Views
         {
             base.OnDisappearing();
             this.viewModel.OnSleepAsync();
-        }
-
-        private void AlignBack(object sender, EventArgs e)
-        {
-            Dispatcher.BeginInvokeOnMainThread(() =>
-            {
-                this.ScanLabel.Text = AlignBackText;
-            });
         }
     }
 }

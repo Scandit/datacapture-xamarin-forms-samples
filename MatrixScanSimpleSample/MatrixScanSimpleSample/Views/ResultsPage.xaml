@@ -2,12 +2,10 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MatrixScanSimpleSample.Views.ResultsPage"
-             xmlns:vm="clr-namespace:MatrixScanSimpleSample.ViewModels"
-             BindingContext="{StaticResource MainPageViewModel}"
              Title="Scan Results">
     <ContentPage.Content>
         <AbsoluteLayout>
-            <ListView ItemsSource="{Binding ScanResults}"
+            <ListView x:Name="listView"
                       AbsoluteLayout.LayoutBounds="0,0,1,1"
                       AbsoluteLayout.LayoutFlags="All"
                       Background="White"

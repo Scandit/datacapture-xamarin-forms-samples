@@ -23,7 +23,6 @@ namespace USDLVerificationSample.Models
 {
     public class DataCaptureManager
     {
-        // Enter your Scandit License key here.
         public const string SCANDIT_LICENSE_KEY = "-- ENTER YOUR SCANDIT LICENSE KEY HERE --";
 
         private static readonly Lazy<DataCaptureManager> instance = new Lazy<DataCaptureManager>(() => new DataCaptureManager(), LazyThreadSafetyMode.PublicationOnly);

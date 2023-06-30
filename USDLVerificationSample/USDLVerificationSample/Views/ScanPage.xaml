@@ -17,11 +17,6 @@
                 DataCaptureContext="{Binding DataCaptureContext}" >
                 <scanditId:IdCaptureOverlay IdCapture="{Binding IdCapture}" IdLayoutStyle="Square" />
             </scanditCore:DataCaptureView>
-            <Label x:Name = "ScanLabel"
-                   FontSize="Large"
-                   TextColor="White"
-                   AbsoluteLayout.LayoutBounds="0.5,0.1"
-                   AbsoluteLayout.LayoutFlags="PositionProportional" />
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

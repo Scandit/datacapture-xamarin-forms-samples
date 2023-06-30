@@ -23,7 +23,6 @@ namespace IdCaptureExtendedSample.Models
 {
     public class ScannerModel
     {
-        // Enter your Scandit License key here.
         public const string SCANDIT_LICENSE_KEY = "-- ENTER YOUR SCANDIT LICENSE KEY HERE --";
 
         private static readonly Lazy<ScannerModel> instance = new Lazy<ScannerModel>(() => new ScannerModel(), LazyThreadSafetyMode.PublicationOnly);

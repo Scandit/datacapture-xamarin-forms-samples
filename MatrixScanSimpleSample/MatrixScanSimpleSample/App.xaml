@@ -4,7 +4,6 @@
              x:Class="MatrixScanSimpleSample.App"
              xmlns:local="clr-namespace:MatrixScanSimpleSample.ViewModels">
     <Application.Resources>
-        <local:MainPageViewModel x:Key="MainPageViewModel" />
         <ResourceDictionary>
             <Color x:Key="primary-back-title-color">#58B5C2</Color>
             <Color x:Key="primary-title-color">#FFFFFF</Color>

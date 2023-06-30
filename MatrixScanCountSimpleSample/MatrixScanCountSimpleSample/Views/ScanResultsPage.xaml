@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MatrixScanCountSimpleSample.Views.ScanResultsPage">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="120"/>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" x:Name="itemsCountLabel" FontSize="Micro" TextColor="Black" Margin="10,5"/>
+            <ListView x:Name="MyListView"
+                      Grid.Row="1"
+                      ItemsSource="{Binding Items}"
+                      CachingStrategy="RecycleElement"
+                      Background="White"
+                      HorizontalScrollBarVisibility="Never"
+                      VerticalScrollBarVisibility="Default"
+                      SelectionMode="None"
+                      SeparatorVisibility="Default"
+                      HasUnevenRows="True"
+                      VerticalOptions="StartAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="65" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="60" />
+                                </Grid.ColumnDefinitions>
+                                <Frame Grid.Column="0" Margin="10" BackgroundColor="LightGray"  HasShadow="False" />
+                                <StackLayout Grid.Column="1" Orientation="Vertical" Padding="0,10">
+                                    <Label Text="{Binding Label}" TextColor="Black" FontAttributes="Bold" FontSize="Medium"/>
+                                    <Label Text="{Binding Detail}" TextColor="Gray" FontSize="Small"/>
+                                </StackLayout>
+                                <Label Grid.Column="2" Text="{Binding QuantityText}" IsVisible="{Binding ShouldShowQuantity}" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </ViewCell> 
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <StackLayout Grid.Row="2" Orientation="Vertical" Padding="20,10">
+                <Button x:Name="scanButton" TextTransform="Uppercase" Clicked="ScanButtonClicked" TextColor="White" BackgroundColor="Black" />
+                <Button Text="Clear List" TextTransform="Uppercase" Clicked="ClearButtonClicked" TextColor="Black"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

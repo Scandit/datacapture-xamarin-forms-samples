@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:scandit="clr-namespace:Scandit.DataCapture.Barcode.Count.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
+             xmlns:viewmodels="clr-namespace:MatrixScanCountSimpleSample.ViewModels"
+             x:DataType="viewmodels:BarcodeCountPageViewModel"
+             x:Class="MatrixScanCountSimpleSample.BarcodeCountPage">
+    <ContentPage.BindingContext>
+        <viewmodels:BarcodeCountPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <scandit:BarcodeCountView
+                x:Name="barcodeCountView"
+                AbsoluteLayout.LayoutBounds="0,0,1,1"
+                AbsoluteLayout.LayoutFlags="All"
+                DataCaptureContext="{Binding DataCaptureContext}"
+                BarcodeCount="{Binding BarcodeCount}"
+                Style="Icon">
+            </scandit:BarcodeCountView>
+        </AbsoluteLayout>
+    </ContentPage.Content>
+</ContentPage>

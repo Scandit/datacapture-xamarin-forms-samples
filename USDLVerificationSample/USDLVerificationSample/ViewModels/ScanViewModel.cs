@@ -36,7 +36,6 @@ namespace USDLVerificationSample.ViewModels
         public IdCapture IdCapture => this.model.IdCapture;
 
         public event EventHandler<CapturedIdEventArgs> IdCaptured;
-        public event EventHandler AlignBack;
 
         public ScanViewModel()
         {
@@ -87,8 +86,8 @@ namespace USDLVerificationSample.ViewModels
             // Pause the idCapture to not capture while showing the result.
             capture.Enabled = false;
 
-            if (capturedId.DocumentType == DocumentType.DrivingLicense && 
-                capturedId.IssuingCountryIso.ToUpper() == "USA" && 
+            if (capturedId.DocumentType == DocumentType.DrivingLicense &&
+                capturedId.IssuingCountryIso.ToUpper() == "USA" &&
                 capturedId.Viz != null &&
                 capturedId.Viz.BackSideCaptureSupported)
             {
@@ -96,8 +95,6 @@ namespace USDLVerificationSample.ViewModels
                 // If we are looking for the back side we just return.
                 if (capturedId.Viz.CapturedSides == SupportedSides.FrontOnly)
                 {
-                    // Scan the back side of the docuemt.
-                    this.AlignBack?.Invoke(this, EventArgs.Empty);
                     capture.Enabled = true;
                 }
                 else

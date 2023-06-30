@@ -6,7 +6,7 @@ using Android.App;
 [assembly: AssemblyTitle("IdCaptureExtendedSample.Android")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("Scandit AG")]
 [assembly: AssemblyProduct("IdCaptureExtendedSample.Android")]
 [assembly: AssemblyCopyright("Copyright © Scandit 2022")]
 [assembly: AssemblyTrademark("")]

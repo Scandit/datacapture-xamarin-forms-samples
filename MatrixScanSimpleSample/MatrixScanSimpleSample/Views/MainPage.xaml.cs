@@ -19,12 +19,9 @@ namespace MatrixScanSimpleSample.Views
 {
     public partial class MainPage : ContentPage
     {
-        private readonly MainPageViewModel viewModel;
-
         public MainPage()
         {
             this.InitializeComponent();
-            this.viewModel = this.BindingContext as MainPageViewModel;
         }
 
         protected override void OnAppearing()
@@ -41,7 +38,7 @@ namespace MatrixScanSimpleSample.Views
 
         private void ButtonClicked(object sender, System.EventArgs e)
         {
-            ((NavigationPage)Application.Current.MainPage).PushAsync(new ResultsPage());
+            ((NavigationPage)Application.Current.MainPage).PushAsync(new ResultsPage(this.viewModel.ScanResults));
         }
     }
 }

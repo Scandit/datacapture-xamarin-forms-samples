@@ -12,15 +12,22 @@
  * limitations under the License.
  */
 
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using MatrixScanSimpleSample.Models;
 using Xamarin.Forms;
 
 namespace MatrixScanSimpleSample.Views
 {
     public partial class ResultsPage : ContentPage
     {
-        public ResultsPage()
+        private readonly ObservableCollection<ScanResult> scanResults;
+
+        public ResultsPage(IEnumerable<ScanResult> scanResults)
         {
             this.InitializeComponent();
+            this.scanResults = new ObservableCollection<ScanResult>(scanResults);
+            this.listView.ItemsSource = this.scanResults;
         }
 
         private void ButtonClicked(object sender, System.EventArgs e)

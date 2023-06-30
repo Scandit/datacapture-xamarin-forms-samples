@@ -4,9 +4,11 @@
              xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
              xmlns:scanditBarcode="clr-namespace:Scandit.DataCapture.Barcode.Tracking.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
              xmlns:vm="clr-namespace:MatrixScanSimpleSample.ViewModels"
-             x:Class="MatrixScanSimpleSample.Views.MainPage" 
-             BindingContext="{StaticResource MainPageViewModel}"
+             x:Class="MatrixScanSimpleSample.Views.MainPage"
              Title="MatrixScan Simple">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel x:Name="viewModel" />
+    </ContentPage.BindingContext>
     <ContentPage.Content>
         <AbsoluteLayout>
             <scanditCore:DataCaptureView 
