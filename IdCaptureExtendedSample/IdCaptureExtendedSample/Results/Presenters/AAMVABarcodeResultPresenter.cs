@@ -61,7 +61,7 @@ namespace IdCaptureExtendedSample.Results.Presenters
                 new ResultEntry(value: aamvaBarcodeResult.VehicleClass, title: "Vehicle Class"),
                 new ResultEntry(value: aamvaBarcodeResult.RestrictionsCode, title: "Restrictions Code"),
                 new ResultEntry(value: aamvaBarcodeResult.EndorsementsCode, title: "Endorsements Code"),
-                new ResultEntry(value: aamvaBarcodeResult.CardRevisionDate?.Date.ToShortDateString(), title: "Card Revision Date"),
+                new ResultEntry(value: aamvaBarcodeResult.CardRevisionDate?.LocalDate.ToShortDateString(), title: "Card Revision Date"),
                 new ResultEntry(value: aamvaBarcodeResult.MiddleName, title: "Middle Name"),
                 new ResultEntry(value: aamvaBarcodeResult.DriverNameSuffix, title: "Driver Name Suffix"),
                 new ResultEntry(value: aamvaBarcodeResult.DriverNamePrefix, title: "Driver Name Prefix"),
