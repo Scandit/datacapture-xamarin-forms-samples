@@ -12,23 +12,24 @@
  * limitations under the License.
  */
 
+using System;
 using System.Text;
 using System.Threading.Tasks;
-using USDLVerificationSample.Models;
-using USDLVerificationSample.Services;
 using Scandit.DataCapture.Core.Capture.Unified;
+using Scandit.DataCapture.Core.Data.Unified;
 using Scandit.DataCapture.Core.Source.Unified;
 using Scandit.DataCapture.ID.Capture.Unified;
 using Scandit.DataCapture.ID.Data.Unified;
+using Scandit.DataCapture.ID.Verification.AamvaBarcode.Unified;
 using Scandit.DataCapture.ID.Verification.AamvaVizBarcode.Unified;
+using USDLVerificationSample.Models;
+using USDLVerificationSample.Services;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using System;
-using Scandit.DataCapture.Core.Data.Unified;
 
 namespace USDLVerificationSample.ViewModels
 {
-    public class ScanViewModel : BaseViewModel, IIdCaptureListener
+    public class ScanViewModel : BaseViewModel
     {
         private readonly DataCaptureManager model = DataCaptureManager.Instance;
 
@@ -69,7 +70,8 @@ namespace USDLVerificationSample.ViewModels
 
         private void SubscribeToScannerMessages()
         {
-            this.IdCapture.AddListener(this);
+            this.IdCapture.IdCaptured += this.OnIdCaptured;
+            this.IdCapture.IdRejected += this.OnIdRejected;
         }
 
         private void SubscribeToAppMessages()
@@ -79,12 +81,17 @@ namespace USDLVerificationSample.ViewModels
         }
 
         #region IIdCaptureListener
-        public void OnIdCaptured(IdCapture capture, IdCaptureSession session, IFrameData frameData)
+        public void OnIdCaptured(object sender, IdCaptureEventArgs args)
         {
-            CapturedId capturedId = session.NewlyCapturedId;
+            if (args.Session.NewlyCapturedId == null)
+            {
+                return;
+            }
+
+            CapturedId capturedId = args.Session.NewlyCapturedId;
 
             // Pause the idCapture to not capture while showing the result.
-            capture.Enabled = false;
+            args.IdCapture.Enabled = false;
 
             if (capturedId.DocumentType == DocumentType.DrivingLicense &&
                 capturedId.IssuingCountryIso.ToUpper() == "USA" &&
@@ -95,38 +102,20 @@ namespace USDLVerificationSample.ViewModels
                 // If we are looking for the back side we just return.
                 if (capturedId.Viz.CapturedSides == SupportedSides.FrontOnly)
                 {
-                    capture.Enabled = true;
+                    args.IdCapture.Enabled = true;
                 }
                 else
                 {
-                    // Front and back were scanned; perform a verification of the captured ID.
-                    var result = AamvaVizBarcodeComparisonVerifier.Create().Verify(capturedId);
-                    this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId, result));
+                    this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
                 }
             }
             else
             {
-                this.OnIdRejected(capture, session, frameData);
+                this.OnIdRejected(sender, args);
             }
         }
 
-        public void OnErrorEncountered(IdCapture capture, IdCaptureError error, IdCaptureSession session, IFrameData frameData)
-        {
-            // Don't capture unnecessarily when the error is displayed.
-            capture.Enabled = false;
-
-            // Implement to handle an error encountered during the capture process.
-            // The error message can be retrieved from the IdCaptureError class type.
-            DependencyService.Get<IMessageService>()
-                             .ShowAlertAsync(GetErrorMessage(error))
-                             .ContinueWith((Task t) =>
-                             {
-                                 // On alert dialog completion resume the IdCapture.
-                                 capture.Enabled = true;
-                             });
-        }
-
-        public void OnIdRejected(IdCapture capture, IdCaptureSession session, IFrameData frameData)
+        public void OnIdRejected(object sender, IdCaptureEventArgs args)
         {
             // Implement to handle documents recognized in a frame, but rejected.
             // A document or its part is considered rejected when (a) it's valid, but not enabled in the settings,
@@ -134,40 +123,16 @@ namespace USDLVerificationSample.ViewModels
             // but the data is encoded in an unexpected/incorrect format.
 
             // Pause the IdCapture to not capture while showing the result.
-            capture.Enabled = false;
+            args.IdCapture.Enabled = false;
 
             DependencyService.Get<IMessageService>()
                              .ShowAlertAsync("Document is not a US driver’s license.")
                              .ContinueWith((Task t) =>
                              {
                                  // On alert dialog completion resume the IdCapture.
-                                 capture.Reset();
-                                 capture.Enabled = true;
+                                 args.IdCapture.Reset();
+                                 args.IdCapture.Enabled = true;
                              });
-        }
-
-        public void OnObservationStarted(IdCapture idCapture)
-        {
-            // In this sample we are not interested in this callback.
-        }
-
-        public void OnObservationStopped(IdCapture idCapture)
-        {
-            // In this sample we are not interested in this callback.
-        }
-
-        public void OnIdLocalized(IdCapture capture, IdCaptureSession session, IFrameData frameData)
-        {
-            // Implement to handle a personal identification document or its part localized within
-            // a frame. A document or its part is considered localized when it's detected in a frame,
-            // but its data is not yet extracted.
-
-            // In this sample we are not interested in this callback.
-        }
-
-        public void OnIdCaptureTimedOut(IdCapture idCapture, IdCaptureSession session, IFrameData frameData)
-        {
-            // In this sample we are not interested in this callback.
         }
         #endregion
 
@@ -178,11 +143,6 @@ namespace USDLVerificationSample.ViewModels
             // Switch camera on to start streaming frames.
             // The camera is started asynchronously and will take some time to completely turn on.
             return this.model.CurrentCamera?.SwitchToDesiredStateAsync(FrameSourceState.On);
-        }
-
-        private static string GetErrorMessage(IdCaptureError error)
-        {
-            return new StringBuilder(error.Type.ToString()).Append($": {error.Message}").ToString();
         }
     }
 }

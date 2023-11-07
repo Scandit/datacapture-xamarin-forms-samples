@@ -17,6 +17,15 @@
                 DataCaptureContext="{Binding DataCaptureContext}" >
                 <scanditId:IdCaptureOverlay IdCapture="{Binding IdCapture}" IdLayoutStyle="Square" />
             </scanditCore:DataCaptureView>
+            <Label x:Name = "VerificationCheckLabel"
+                   FontSize="Large"
+                   TextColor="White"
+                   BackgroundColor="Gray"
+                   Opacity="0.5"
+                   IsVisible="false"
+                   Text="Running verification checks"
+                   AbsoluteLayout.LayoutBounds="0.5,0.5"
+                   AbsoluteLayout.LayoutFlags="PositionProportional" />
         </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>

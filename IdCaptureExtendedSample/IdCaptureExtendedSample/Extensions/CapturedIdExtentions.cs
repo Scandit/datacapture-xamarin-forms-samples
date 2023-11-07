@@ -14,6 +14,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using IdCaptureExtendedSample.Results;
 using Scandit.DataCapture.ID.Data.Unified;
 
@@ -36,7 +37,7 @@ namespace IdCaptureExtendedSample.Extensions
                 new ResultEntry(value: capturedId.DateOfBirth?.LocalDate.ToShortDateString(), title: "Date of Birth"),
                 new ResultEntry(value: capturedId.Nationality, title: "Nationality"),
                 new ResultEntry(value: capturedId.Address, title: "Address"),
-                new ResultEntry(value: capturedId.CapturedResultType.GetName(), title: "Captured Result Type"),
+                new ResultEntry(value: capturedId.CapturedResultTypes.GetResultTypes(), title: "Captured Result Types"),
                 new ResultEntry(value: capturedId.DocumentType.GetName(), title: "Document Type"),
                 new ResultEntry(value: capturedId.IssuingCountryIso, title: "Issuing Country ISO"),
                 new ResultEntry(value: capturedId.IssuingCountry, title: "Issuing Country"),

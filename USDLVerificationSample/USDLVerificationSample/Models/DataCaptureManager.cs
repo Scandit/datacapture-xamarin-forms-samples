@@ -44,7 +44,7 @@ namespace USDLVerificationSample.Models
         public DataCaptureContext DataCaptureContext { get; private set; }
         #endregion
 
-        #region CamerSettings
+        #region CameraSettings
         public Camera CurrentCamera { get; set; } = Camera.GetCamera(CameraPosition.WorldFacing);
         public CameraSettings CameraSettings { get; set; } = IdCapture.RecommendedCameraSettings;
         #endregion

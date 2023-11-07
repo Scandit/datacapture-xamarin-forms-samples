@@ -31,11 +31,20 @@ namespace USDLVerificationSample.Views
             remove { this.viewModel.IdCaptured -= value; }
         }
 
+        public void VerificationChecksRunning()
+        {
+            this.VerificationCheckLabel.IsVisible = true;
+        }
+
+        public void VerificationChecksCompleted()
+        {
+            this.VerificationCheckLabel.IsVisible = false;
+        }
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            this.viewModel.IdCapture.Reset();
             _ = this.viewModel.OnResumeAsync();
         }
 

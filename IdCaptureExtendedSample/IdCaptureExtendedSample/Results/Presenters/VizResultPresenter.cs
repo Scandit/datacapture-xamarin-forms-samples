@@ -31,14 +31,12 @@ namespace IdCaptureExtendedSample.Results.Presenters
                 throw new ArgumentNullException(nameof(capturedId));
             }
 
-            if (capturedId.CapturedResultType != CapturedResultType.VizResult)
+            if (!capturedId.CapturedResultTypes.HasFlag(CapturedResultType.VizResult))
             {
                 throw new ArgumentException("Unexpected null VizResult");
             }
 
-            this.Rows = capturedId.GetCommonRows()
-                                  .Concat(GetMrzRows(capturedId))
-                                  .ToList();
+            this.Rows = this.GetMrzRows(capturedId).ToList();
         }
 
         private IList<ResultEntry> GetMrzRows(CapturedId capturedId)
