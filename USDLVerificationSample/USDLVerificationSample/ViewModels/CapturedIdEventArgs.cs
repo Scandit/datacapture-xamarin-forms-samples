@@ -22,9 +22,12 @@ namespace USDLVerificationSample.ViewModels
     {
         public CapturedId CapturedId { get; private set; }
 
-        public CapturedIdEventArgs(CapturedId capturedId)
+        public AamvaVizBarcodeComparisonResult VerificationResult { get; private set; }
+
+        public CapturedIdEventArgs(CapturedId capturedId, AamvaVizBarcodeComparisonResult result)
         {
             this.CapturedId = capturedId ?? throw new ArgumentNullException(nameof(capturedId));
+            this.VerificationResult = result ?? throw new ArgumentNullException(nameof(result));
         }
     }
 }

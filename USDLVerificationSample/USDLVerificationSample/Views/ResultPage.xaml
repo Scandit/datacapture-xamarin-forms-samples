@@ -12,13 +12,9 @@
                        Text="{Binding ExpirationText}"
                        FontSize="Default"
                        IsVisible="{Binding ExpirationVisible}" />
-                <Label x:Name="FrontAndBackMatchLabel"
-                       Text="{Binding FrontAndBackMatchText}"
+                <Label x:Name="VerificationLabel"
+                       Text="{Binding VerificationText}"
                        FontSize="Default"/>
-                <Label x:Name="BarcodeVerificationLabel"
-                       Text="{Binding BarcodeVerificationText}"
-                       FontSize="Default"
-                       IsVisible="{Binding BarcodeVerificationVisible}"/>
             </StackLayout>
             <StackLayout Orientation="Horizontal"
                          HorizontalOptions="Center"

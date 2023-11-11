@@ -15,8 +15,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Scandit.DataCapture.ID.Data.Unified;
 using USDLVerificationSample.Extensions;
+using Scandit.DataCapture.ID.Data.Unified;
 
 namespace USDLVerificationSample.Results.Presenters
 {
@@ -24,7 +24,7 @@ namespace USDLVerificationSample.Results.Presenters
     {
         public VizResultPresenter(CapturedId capturedId) : base(capturedId)
         {
-            if (!capturedId.CapturedResultTypes.HasFlag(CapturedResultType.VizResult))
+            if (capturedId.CapturedResultType != CapturedResultType.VizResult)
             {
                 throw new ArgumentException("Unexpected null VizResult");
             }

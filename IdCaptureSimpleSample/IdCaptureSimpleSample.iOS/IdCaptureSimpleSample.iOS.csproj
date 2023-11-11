@@ -119,14 +119,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IdCaptureSimpleSample\IdCaptureSimpleSample.csproj">
-      <Project>{5DB84356-F14A-4CC9-AE93-49634A8E15DC}</Project>
+      <Project>{177775D0-B36F-4F78-8901-15162E381938}</Project>
       <Name>IdCaptureSimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.20.0" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.20.0" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.AamvaBarcodeVerification.Xamarin" Version="6.20.0" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.19.6" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.19.6" />
+    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin" Version="6.19.6" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />
