@@ -33,7 +33,7 @@ namespace IdCaptureExtendedSample.Extensions
                 new ResultEntry(value: capturedId.LastName, title: "Lastname"),
                 new ResultEntry(value: capturedId.FullName, title: "Full Name"),
                 new ResultEntry(value: capturedId.Sex, title: "Sex"),
-                new ResultEntry(value: capturedId.DateOfBirth?.LocalDate.ToShortDateString(), title: "Date of Birth"),
+                new ResultEntry(value: capturedId.DateOfBirth?.Date.ToShortDateString(), title: "Date of Birth"),
                 new ResultEntry(value: capturedId.Nationality, title: "Nationality"),
                 new ResultEntry(value: capturedId.Address, title: "Address"),
                 new ResultEntry(value: capturedId.CapturedResultType.GetName(), title: "Captured Result Type"),
@@ -41,8 +41,8 @@ namespace IdCaptureExtendedSample.Extensions
                 new ResultEntry(value: capturedId.IssuingCountryIso, title: "Issuing Country ISO"),
                 new ResultEntry(value: capturedId.IssuingCountry, title: "Issuing Country"),
                 new ResultEntry(value: capturedId.DocumentNumber, title: "Document Number"),
-                new ResultEntry(value: capturedId.DateOfExpiry?.LocalDate.ToShortDateString(), title: "Date of Expiry"),
-                new ResultEntry(value: capturedId.DateOfIssue?.LocalDate.ToShortDateString(), title: "Date of Issue")
+                new ResultEntry(value: capturedId.DateOfExpiry?.Date.ToShortDateString(), title: "Date of Expiry"),
+                new ResultEntry(value: capturedId.DateOfIssue?.Date.ToShortDateString(), title: "Date of Issue")
             };
         }
     }

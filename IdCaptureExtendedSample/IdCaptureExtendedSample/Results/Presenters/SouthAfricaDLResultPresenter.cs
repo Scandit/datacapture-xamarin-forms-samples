@@ -59,7 +59,7 @@ namespace IdCaptureExtendedSample.Results.Presenters
                     new ResultEntry(value: string.Join(" ", professionalDrivingPermit.Codes),
                                                title: "Professional Driving Permit - Codes"));
                 southAfricaDlRows.Append(
-                    new ResultEntry(value: professionalDrivingPermit.DateOfExpiry.LocalDate.ToString(),
+                    new ResultEntry(value: professionalDrivingPermit.DateOfExpiry.Date.ToString(),
                                                title: "Professional Driving Permit - Date of Expiry"));
             }
 
@@ -72,7 +72,7 @@ namespace IdCaptureExtendedSample.Results.Presenters
                     new ResultEntry(value: vehicleRestriction.Restriction,
                                            title: "Vehicle Restriction - Vehicle Restriction"));
                 southAfricaDlRows.Append(
-                    new ResultEntry(value: vehicleRestriction.DateOfIssue.LocalDate.ToString(),
+                    new ResultEntry(value: vehicleRestriction.DateOfIssue.Date.ToString(),
                                            title: "Vehicle Restriction - Date of Issue"));
             }
 

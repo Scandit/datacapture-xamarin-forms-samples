@@ -12,8 +12,6 @@
  * limitations under the License.
  */
 
-using System;
-using System.Linq;
 using Scandit.DataCapture.ID.Data.Unified;
 
 namespace IdCaptureExtendedSample.Extensions
@@ -34,16 +32,6 @@ namespace IdCaptureExtendedSample.Extensions
                 CapturedResultType.SouthAfricaIdBarcodeResult => "South Africa Id Barcode Result",
                 _ => "No Result",
             };
-        }
-
-        public static string GetResultTypes(this CapturedResultType resultType)
-        {
-            return string.Join(", ",
-                Enum.GetValues(typeof(CapturedResultType))
-                    .Cast<Enum>()
-                    .Where(m => resultType.HasFlag(m))
-                    .Cast<CapturedResultType>()
-                    .Select(i => i.GetName()));
         }
     }
 }

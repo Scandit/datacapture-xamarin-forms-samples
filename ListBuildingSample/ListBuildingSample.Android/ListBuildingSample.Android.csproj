@@ -56,7 +56,7 @@
     <PackageReference Include="Square.OkHttp3" Version="4.9.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.7.21" />
+    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.5.31.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -77,13 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ListBuildingSample\ListBuildingSample.csproj">
-      <Project>{F0FDAC2A-B214-486E-8090-B9C13C2B71F3}</Project>
+      <Project>{667057C1-3B23-462C-B3DB-A2542AA346D2}</Project>
       <Name>ListBuildingSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.19.6" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.19.6" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.18.3" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.18.3" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

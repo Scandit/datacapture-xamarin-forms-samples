@@ -12,7 +12,6 @@
  * limitations under the License.
  */
 
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using IdCaptureExtendedSample.Extensions;
@@ -31,15 +30,9 @@ namespace IdCaptureExtendedSample.Results.Presenters
 
         public CombinedResultPresenter(CapturedId capturedId, IList<IResultPresenter> presenters)
         {
-            try
-            {
-                this.Rows = capturedId.GetCommonRows()
-                                      .Concat(presenters.SelectMany(p => p.Rows))
-                                      .ToList();
-            }catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
+            this.Rows = capturedId.GetCommonRows()
+                                  .Concat(presenters.SelectMany(p => p.Rows))
+                                  .ToList();
         }
     }
 }
