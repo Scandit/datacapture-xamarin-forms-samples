@@ -122,8 +122,10 @@
       <Project>{70E4D44D-F22C-4B46-B41A-13997B6D4244}</Project>
       <Name>MatrixScanCountSimpleSample</Name>
     </ProjectReference>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.18.3" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.18.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.19.7" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.19.7" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

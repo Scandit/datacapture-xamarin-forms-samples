@@ -55,7 +55,7 @@
     <PackageReference Include="Square.OkHttp3" Version="4.9.0.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
-    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.5.31.2" />
+    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.7.21" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -76,13 +76,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.csproj">
-      <Project>{5C834A0D-6A95-45FA-A62D-E910BABD50D2}</Project>
+      <Project>{A4F859BF-B52D-4B0B-8B49-C1E67EAEC775}</Project>
       <Name>BarcodeSelectionSimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.18.3" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.18.3" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.19.7" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.19.7" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

@@ -55,7 +55,7 @@
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
     <PackageReference Include="Square.OkHttp3" Version="4.9.0.1" />
-    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.5.31.2" />
+    <PackageReference Include="Xamarin.Kotlin.StdLib" Version="1.7.21" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
@@ -76,14 +76,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IdCaptureSimpleSample\IdCaptureSimpleSample.csproj">
-      <Project>{177775D0-B36F-4F78-8901-15162E381938}</Project>
+      <Project>{C3697D27-DDEB-4972-8F96-B6C33111FAA0}</Project>
       <Name>IdCaptureSimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.18.3" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.18.3" />
-    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin" Version="6.18.3" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.19.7" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.19.7" />
+    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin" Version="6.19.7" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />
