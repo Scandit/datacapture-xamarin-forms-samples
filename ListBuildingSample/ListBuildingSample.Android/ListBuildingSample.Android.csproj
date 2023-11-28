@@ -77,13 +77,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ListBuildingSample\ListBuildingSample.csproj">
-      <Project>{F0FDAC2A-B214-486E-8090-B9C13C2B71F3}</Project>
+      <Project>{5114E0D3-B4D2-4F22-A64C-B1EA0352B90A}</Project>
       <Name>ListBuildingSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.19.8" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.19.8" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.20.1" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.20.1" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />
