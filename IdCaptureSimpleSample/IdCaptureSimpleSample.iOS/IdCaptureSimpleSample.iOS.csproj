@@ -124,9 +124,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.20.3" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.20.3" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.AamvaBarcodeVerification.Xamarin" Version="6.20.3" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.21.2" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.21.2" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.AamvaBarcodeVerification.Xamarin" Version="6.21.2" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

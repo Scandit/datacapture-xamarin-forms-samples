@@ -12,7 +12,7 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.20.3" />
-    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin.Forms" Version="6.20.3" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.21.2" />
+    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin.Forms" Version="6.21.2" />
   </ItemGroup>
 </Project>
