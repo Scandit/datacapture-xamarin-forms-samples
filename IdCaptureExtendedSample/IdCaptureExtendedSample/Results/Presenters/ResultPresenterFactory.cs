@@ -20,7 +20,8 @@ namespace IdCaptureExtendedSample.Results.Presenters
 {
     public class ResultPresenterFactory
     {
-        private readonly Dictionary<CapturedResultType, Func<CapturedId, IResultPresenter>> mappings = new Dictionary<CapturedResultType, Func<CapturedId, IResultPresenter>>()
+        private readonly Dictionary<CapturedResultType, Func<CapturedId, IResultPresenter>> mappings =
+            new Dictionary<CapturedResultType, Func<CapturedId, IResultPresenter>>()
         {
             { CapturedResultType.AamvaBarcodeResult, (CapturedId id) => new AAMVABarcodeResultPresenter(id) },
             { CapturedResultType.ArgentinaIdBarcodeResult, (CapturedId id) => new ArgentinaIdResultPresenter(id) },
@@ -30,6 +31,7 @@ namespace IdCaptureExtendedSample.Results.Presenters
             { CapturedResultType.SouthAfricaIdBarcodeResult, (CapturedId id) => new SouthAfricaIdResultPresenter(id) },
             { CapturedResultType.UsUniformedServicesBarcodeResult, (CapturedId id) => new UsUniformedServicesResultPresenter(id) },
             { CapturedResultType.VizResult, (CapturedId id) => new VizResultPresenter(id) },
+            { CapturedResultType.UsVisaVizResult, (CapturedId id) => new UsVisaVizResultPresenter(id) }
         };
 
         public IEnumerable<IResultPresenter> Create(CapturedId capturedId)
@@ -41,7 +43,7 @@ namespace IdCaptureExtendedSample.Results.Presenters
 
             foreach (CapturedResultType value in Enum.GetValues(capturedId.CapturedResultTypes.GetType()))
             {
-                if (capturedId.CapturedResultTypes.HasFlag(value))
+                if (capturedId.CapturedResultTypes.HasFlag(value) && this.mappings.ContainsKey(value))
                 {
                     yield return this.mappings[value].Invoke(capturedId);
                 }

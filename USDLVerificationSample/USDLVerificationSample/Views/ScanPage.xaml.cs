@@ -13,16 +13,21 @@
  */
 
 using System;
-using USDLVerificationSample.ViewModels;
 using Xamarin.Forms;
+using USDLVerificationSample.ViewModels;
+using Scandit.DataCapture.ID.UI.Unified;
 
 namespace USDLVerificationSample.Views
 {
     public partial class ScanPage : ContentPage
     {
+        private readonly IdCaptureOverlay overlay;
+
         public ScanPage()
         {
             this.InitializeComponent();
+            this.overlay = IdCaptureOverlay.Create(this.viewModel.IdCapture);
+            this.overlay.IdLayoutStyle = IdLayoutStyle.Square;
         }
 
         public event EventHandler<CapturedIdEventArgs> IdCaptured
@@ -44,13 +49,18 @@ namespace USDLVerificationSample.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
             _ = this.viewModel.OnResumeAsync();
+
+            if (this.overlay != null)
+            {
+                this.dataCaptureView.AddOverlay(this.overlay);
+            }
         }
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+            this.dataCaptureView.RemoveOverlay(this.overlay);
             this.viewModel.OnSleepAsync();
         }
     }

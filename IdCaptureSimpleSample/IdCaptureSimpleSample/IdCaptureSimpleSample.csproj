@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+    <BuildWithMSBuildOnMono>true</BuildWithMSBuildOnMono>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -14,9 +15,9 @@
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
   </ItemGroup>
-  
+
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.21.2" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.21.2" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.22.0" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.22.0" />
   </ItemGroup>
 </Project>
