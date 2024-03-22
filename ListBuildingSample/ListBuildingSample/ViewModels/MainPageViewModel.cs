@@ -37,8 +37,6 @@ namespace ListBuildingSample.ViewModels
 
         public event EventHandler Sleep;
         public event EventHandler Resume;
-        public event EventHandler ErrorFeedback;
-        public event EventHandler SuccessFeedback;
 
         public ObservableCollection<ListItem> ScanResults { get; set; } = new ObservableCollection<ListItem>();
 
@@ -93,6 +91,11 @@ namespace ListBuildingSample.ViewModels
             }
         }
 
+        public bool IsBarcodeValid(Barcode barcode)
+        {
+            return barcode.Data != "123456789";
+        }
+
         private void Initialize()
         {
             this.SparkScan.BarcodeScanned += BarcodeScanned;
@@ -109,13 +112,8 @@ namespace ListBuildingSample.ViewModels
 
             Device.InvokeOnMainThreadAsync(() =>
             {
-                if (barcode.Data == "123456789")
+                if (IsBarcodeValid(barcode))
                 {
-                    this.ErrorFeedback?.Invoke(this, EventArgs.Empty);
-                }
-                else
-                {
-                    this.SuccessFeedback?.Invoke(this, EventArgs.Empty);
                     this.ScanResults.Add(
                         new ListItem(
                             index: this.ScanResults.Count + 1,

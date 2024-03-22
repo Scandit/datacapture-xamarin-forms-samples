@@ -13,17 +13,32 @@
  */
 
 using System;
-using Scandit.DataCapture.Barcode.Spark.UI.Unified;
+using ListBuildingSample.ViewModels;
+using Scandit.DataCapture.Barcode.Data.Unified;
+using Scandit.DataCapture.Barcode.Spark.Feedback.Unified;
 using Xamarin.Forms;
 
 namespace ListBuildingSample.Views
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : ContentPage, ISparkScanFeedbackDelegate
     {
+        private SparkScanBarcodeErrorFeedback errorFeedback;
+        private SparkScanBarcodeSuccessFeedback successFeedback;
+
         public MainPage()
         {
             this.InitializeComponent();
             this.SubscribeToViewModelEvents();
+            this.SetupSparkScanFeedback();
+        }
+
+        private void SetupSparkScanFeedback()
+        {
+            this.errorFeedback = new SparkScanBarcodeErrorFeedback(
+                message: "This code should not have been scanned",
+                resumeCapturingDelay: TimeSpan.FromSeconds(60));
+
+            this.successFeedback = new SparkScanBarcodeSuccessFeedback();
         }
 
         private void SubscribeToViewModelEvents()
@@ -32,24 +47,13 @@ namespace ListBuildingSample.Views
             {
                 this.SparkScanView.PauseScanning();
             };
-
-            this.viewModel.ErrorFeedback += (object sender, EventArgs args) =>
-            {
-                var feedback = new SparkScanViewErrorFeedback(message: "This code should not have been scanned",
-                                                              resumeCapturingDelay: TimeSpan.FromSeconds(60));
-                this.SparkScanView.EmitFeedback(feedback);
-            };
-
-            this.viewModel.SuccessFeedback += (object sender, EventArgs args) =>
-            {
-                this.SparkScanView.EmitFeedback(new SparkScanViewSuccessFeedback());
-            };
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
             this.SparkScanView.OnAppearing();
+            this.SparkScanView.Feedback = this;
         }
 
         protected override void OnDisappearing()
@@ -61,6 +65,16 @@ namespace ListBuildingSample.Views
         private void ButtonClicked(object sender, EventArgs e)
         {
             this.viewModel.ClearScannedItems();
+        }
+
+        SparkScanBarcodeFeedback ISparkScanFeedbackDelegate.GetFeedbackForBarcode(Barcode barcode)
+        {
+            if (this.viewModel.IsBarcodeValid(barcode))
+            {
+                return this.successFeedback;
+            }
+
+            return this.errorFeedback;
         }
     }
 }
