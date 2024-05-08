@@ -15,6 +15,7 @@
     <MtouchEnableSGenConc>true</MtouchEnableSGenConc>
     <MtouchHttpClientHandler>NSUrlSessionHandler</MtouchHttpClientHandler>
     <ProvisioningType>automatic</ProvisioningType>
+    <MtouchExtraArgs>-gcc_flags "-Xlinker -ld_classic"</MtouchExtraArgs>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -131,8 +132,8 @@
       <Project>{5513CF8B-263A-4171-AE1A-6BDB1E52346C}</Project>
       <Name>BarcodeCaptureSettingsSample</Name>
     </ProjectReference>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.23.2" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.23.2" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.24.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.24.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Renderers\" />
