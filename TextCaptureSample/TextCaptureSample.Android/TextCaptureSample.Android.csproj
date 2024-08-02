@@ -81,8 +81,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.25.1" />
-    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin.Forms" Version="6.25.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.25.2" />
+    <PackageReference Include="Scandit.DataCapture.TextCapture.Xamarin.Forms" Version="6.25.2" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />
