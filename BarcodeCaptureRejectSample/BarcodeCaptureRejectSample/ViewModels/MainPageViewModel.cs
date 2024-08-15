@@ -120,26 +120,26 @@ namespace BarcodeCaptureRejectSample.ViewModels
 
         public void OnBarcodeScanned(BarcodeCapture barcodeCapture, BarcodeCaptureSession session, IFrameData frameData)
         {
-            if (!session.NewlyRecognizedBarcodes.Any())
+            if (session.NewlyRecognizedBarcode == null)
             {
                 return;
             }
 
-            Barcode barcode = session.NewlyRecognizedBarcodes[0];
-            
+            Barcode barcode = session.NewlyRecognizedBarcode;
+
             // If the code scanned doesn't start with "09:", we will just ignore it and continue
             // scanning.
             if (barcode.Data?.StartsWith("09:") == false)
             {
-                this.RejectedCode?.Invoke(this, EventArgs.Empty);                
+                this.RejectedCode?.Invoke(this, EventArgs.Empty);
                 return;
             }
-            
+
             this.AcceptedCode?.Invoke(this, EventArgs.Empty);
 
             // We also want to emit a feedback (vibration and, if enabled, sound).
             this.Feedback.Emit();
-            
+
             // Stop recognizing barcodes for as long as we are displaying the result. There won't be any new results until
             // the capture mode is enabled again. Note that disabling the capture mode does not stop the camera, the camera
             // continues to stream frames until it is turned off.

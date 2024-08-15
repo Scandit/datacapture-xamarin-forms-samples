@@ -48,7 +48,7 @@ namespace ListBuildingSample.ViewModels
 
         public string ItemCount
         {
-            get 
+            get
             {
                 var itemCount = this.ScanResults.Count;
                 var text = itemCount == 1 ? "Item" : "Items";
@@ -103,12 +103,12 @@ namespace ListBuildingSample.ViewModels
 
         private void BarcodeScanned(object sender, SparkScanEventArgs args)
         {
-            if (args.Session.NewlyRecognizedBarcodes.Count == 0)
+            if (args.Session.NewlyRecognizedBarcode == null)
             {
                 return;
             }
 
-            var barcode = args.Session.NewlyRecognizedBarcodes.First();
+            var barcode = args.Session.NewlyRecognizedBarcode;
 
             Device.InvokeOnMainThreadAsync(() =>
             {

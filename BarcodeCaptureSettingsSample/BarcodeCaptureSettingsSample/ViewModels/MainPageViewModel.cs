@@ -174,12 +174,12 @@ namespace BarcodeCaptureSettingsSample.ViewModels
         #region IBarcodeCaptureListener
         public void OnBarcodeScanned(BarcodeCapture barcodeCapture, BarcodeCaptureSession session, IFrameData frameData)
         {
-            if (session.NewlyRecognizedBarcodes.Any())
+            if (session.NewlyRecognizedBarcode != null)
             {
                 if(!settings.ContinuousScanningEnabled)
                     this.PauseScanning();
 
-                Barcode barcode = session.NewlyRecognizedBarcodes[0];
+                Barcode barcode = session.NewlyRecognizedBarcode;
                 _ = ShowScanResultAsync(barcode);
             }
         }
