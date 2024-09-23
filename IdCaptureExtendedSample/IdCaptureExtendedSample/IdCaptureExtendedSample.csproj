@@ -18,8 +18,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.27.1" />
-    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.27.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.27.2" />
+    <PackageReference Include="Scandit.DataCapture.IdCapture.Xamarin.Forms" Version="6.27.2" />
   </ItemGroup>
 
   <ItemGroup>
