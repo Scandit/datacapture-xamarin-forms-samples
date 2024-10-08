@@ -60,9 +60,6 @@ namespace IdCaptureExtendedSample.Results.Presenters
                 new ResultEntry(value: vizResult.IssuingAuthority, title: "Issuing Authority"),
                 new ResultEntry(value: vizResult.CapturedSides.GetName(), title: "Captured Sides"),
                 new ResultEntry(value: vizResult.BackSideCaptureSupported ? "Yes" : "No", title: "Backside Supported"),
-                //new ImageCellProvider(image: capturedId.GetImageBitmapForType(IdImageType.Face), title: "Face Image"),
-                //new ImageCellProvider(image: capturedId.GetImageBitmapForType(IdImageType.IdFront), title: "Front Image"),
-                //new ImageCellProvider(image: capturedId.GetImageBitmapForType(IdImageType.IdBack), title: "Back Image")
             };
 
             return vizRows;
