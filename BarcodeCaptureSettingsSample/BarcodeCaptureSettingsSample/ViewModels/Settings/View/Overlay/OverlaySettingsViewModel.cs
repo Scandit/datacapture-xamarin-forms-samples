@@ -55,7 +55,6 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Overlay
 
         public IList<OverlaySetingsStyleItem> AvailableStyles => new[]
         {
-            new OverlaySetingsStyleItem(BarcodeCaptureOverlayStyle.Legacy, "Legacy"),
             new OverlaySetingsStyleItem(BarcodeCaptureOverlayStyle.Frame, "Frame")
         };
 

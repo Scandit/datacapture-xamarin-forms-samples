@@ -17,7 +17,7 @@
         <string>UIInterfaceOrientationPortraitUpsideDown</string>
     </array>
     <key>MinimumOSVersion</key>
-    <string>13.0</string>
+    <string>14.0</string>
     <key>CFBundleDisplayName</key>
     <string>MatrixScan Count</string>
     <key>CFBundleIdentifier</key>

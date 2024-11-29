@@ -28,7 +28,6 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
 
         public IList<RectangularViewfinderStyleItem> AvailableStyles => new List<RectangularViewfinderStyleItem>
         {
-            new RectangularViewfinderStyleItem(RectangularViewfinderStyle.Legacy),
             new RectangularViewfinderStyleItem(RectangularViewfinderStyle.Rounded),
             new RectangularViewfinderStyleItem(RectangularViewfinderStyle.Square)
         };
@@ -351,7 +350,7 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
 
     public class RectangularViewfinderColorItem : IEquatable<RectangularViewfinderColorItem>
     {
-        private readonly static Color Default = new RectangularViewfinder().Color;
+        private readonly static Color Default = new RectangularViewfinder(RectangularViewfinderStyle.Rounded).Color;
 
         public RectangularViewfinderColorItem(RectangularViewfinderColorItem.Type colorType)
         {
@@ -406,7 +405,7 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
 
     public class RectangularViewfinderDisabledColorItem : IEquatable<RectangularViewfinderDisabledColorItem>
     {
-        private readonly static Color Default = new RectangularViewfinder().DisabledColor;
+        private readonly static Color Default = new RectangularViewfinder(RectangularViewfinderStyle.Rounded).DisabledColor;
 
         public RectangularViewfinderDisabledColorItem(RectangularViewfinderDisabledColorItem.Type colorType)
         {

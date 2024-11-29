@@ -31,7 +31,8 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings
             BarcodeCapture,
             View,
             Camera,
-            Result
+            Result,
+            OpenSourceLicenseInfo,
         }
     }
 }

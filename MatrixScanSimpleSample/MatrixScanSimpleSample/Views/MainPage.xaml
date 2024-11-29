@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:scanditCore="clr-namespace:Scandit.DataCapture.Core.UI.Unified;assembly=ScanditCaptureCoreUnified"
-             xmlns:scanditBarcode="clr-namespace:Scandit.DataCapture.Barcode.Tracking.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
+             xmlns:scanditBarcode="clr-namespace:Scandit.DataCapture.Barcode.Batch.UI.Unified;assembly=ScanditBarcodeCaptureUnified"
              xmlns:vm="clr-namespace:MatrixScanSimpleSample.ViewModels"
              x:Class="MatrixScanSimpleSample.Views.MainPage"
              Title="MatrixScan Simple">
@@ -11,14 +11,14 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
         <AbsoluteLayout>
-            <scanditCore:DataCaptureView 
+            <scanditCore:DataCaptureView
                 AbsoluteLayout.LayoutBounds="0,0,1,1"
                 AbsoluteLayout.LayoutFlags="All"
                 DataCaptureContext="{Binding DataCaptureContext}" >
-                <!-- Add a barcode tracking basic overlay to the data capture view to render the tracked barcodes on top of the video
+                <!-- Add a barcode batch basic overlay to the data capture view to render the tracked barcodes on top of the video
                      preview. This is optional, but recommended for better visual feedback. -->
-                <scanditBarcode:BarcodeTrackingBasicOverlay
-                    BarcodeTracking="{Binding BarcodeTracking}" 
+                <scanditBarcode:BarcodeBatchBasicOverlay
+                    BarcodeBatch="{Binding BarcodeBatch}"
                     Listener="{Binding .}"
                     Style="Frame"/>
             </scanditCore:DataCaptureView>

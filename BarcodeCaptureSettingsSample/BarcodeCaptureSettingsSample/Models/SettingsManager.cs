@@ -58,16 +58,11 @@ namespace BarcodeCaptureSettingsSample.Models
         public Xamarin.Forms.Color RectangularViewfinderDisabledColor { get; set; }
         public SizeSpecification RectangularViewfinderSizeSpecification { get; set; } = SizeSpecification.WidthAndHeight;
         public float RectangularViewfinderLongerDimensionAspect { get; set; }
-        public RectangularViewfinderStyle RectangularViewfinderStyle = RectangularViewfinderStyle.Legacy;
+        public RectangularViewfinderStyle RectangularViewfinderStyle = RectangularViewfinderStyle.Rounded;
         public RectangularViewfinderLineStyle RectangularViewfinderLineStyle = RectangularViewfinderLineStyle.Light;
         public bool RectangularViewfinderAnimationEnabled { get; set; } = false;
         public bool RectangularViewfinderAnimationLoopingEnabled { get; set; } = false;
         public float RectangularViewfinderDimming { get; set; }
-
-        public LaserlineViewfinderStyle LaserlineViewfinderStyle = LaserlineViewfinderStyle.Legacy;
-        public FloatWithUnit LaserlineViewfinderWidth { get; set; } = new FloatWithUnit(0.75f, MeasureUnit.Fraction);
-        public Xamarin.Forms.Color LaserlineViewfinderEnabledColor { get; set; }
-        public Xamarin.Forms.Color LaserlineViewfinderDisabledColor { get; set; }
 
         public Xamarin.Forms.Color AimerViewfinderFrameColor { get; set; }
         public Xamarin.Forms.Color AimerViewfinderDotColor { get; set; }

@@ -16,6 +16,8 @@ using System;
 using BarcodeCaptureSettingsSample.ViewModels.Settings;
 using BarcodeCaptureSettingsSample.Views.Settings.BacodeCapture;
 using BarcodeCaptureSettingsSample.Views.Settings.Camera;
+using BarcodeCaptureSettingsSample.Views.Settings.License;
+using BarcodeCaptureSettingsSample.Views.Settings.Result;
 using BarcodeCaptureSettingsSample.Views.Settings.ViewSettings;
 using Xamarin.Forms;
 
@@ -42,7 +44,10 @@ namespace BarcodeCaptureSettingsSample.Views.Settings
                     await Navigation.PushAsync(new CameraSettingsPage());
                     break;
                 case MainSettingsItem.Type.Result:
-                    await Navigation.PushAsync(new Result.ResultSettingsPage());
+                    await Navigation.PushAsync(new ResultSettingsPage());
+                    break;
+                case MainSettingsItem.Type.OpenSourceLicenseInfo:
+                    await Navigation.PushAsync(new OpenSourceLicenseInfoPage());
                     break;
                 default:
                     throw new InvalidOperationException($"Missing {nameof(MainSettingsItem.Type)} case");

@@ -24,6 +24,9 @@
 	<data name="Setting_Result" xml:space="preserve">
         <value>Result</value>
     </data>
+	<data name="Setting_OpenSourceLicenseInfo" xml:space="preserve">
+		<value>OpenSource License Information</value>
+    </data>
 	<data name="Setting_ScanArea" xml:space="preserve">
         <value>Scan Area</value>
     </data>

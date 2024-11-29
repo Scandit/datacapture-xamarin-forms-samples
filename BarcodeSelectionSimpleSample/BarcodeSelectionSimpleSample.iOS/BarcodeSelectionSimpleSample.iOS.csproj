@@ -121,13 +121,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.csproj">
-      <Project>{D24B6CC7-9626-4281-86C7-DABC079D3B94}</Project>
+      <Project>{023D093C-4442-419F-AC4F-28A6F2A2E8B5}</Project>
       <Name>BarcodeSelectionSimpleSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.28.1" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.28.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="7.0.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

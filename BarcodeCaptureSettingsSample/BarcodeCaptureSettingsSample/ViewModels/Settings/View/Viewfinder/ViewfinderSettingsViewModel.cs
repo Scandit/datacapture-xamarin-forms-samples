@@ -16,7 +16,6 @@ using System;
 using System.Collections.Generic;
 using BarcodeCaptureSettingsSample.Models;
 using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfinder.Aimer;
-using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfinder.Laserline;
 using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfinder.Rectangular;
 using Scandit.DataCapture.Core.UI.Viewfinder.Unified;
 
@@ -38,11 +37,6 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
                 this.CurrentViewfinderSettingsItemType = ViewfinderSettingsItem.Type.Rectangular;
                 this.CurrentViewfinderViewModel = new RectangularViewfinderSettingsViewModel();
             }
-            else if (settings.CurrentViewfinder is LaserlineViewfinder)
-            {
-                this.CurrentViewfinderSettingsItemType = ViewfinderSettingsItem.Type.Laserline;
-                this.CurrentViewfinderViewModel = new LaserlineViewfinderSettingsViewModel();
-            }
             else
             {
                 this.CurrentViewfinderSettingsItemType = ViewfinderSettingsItem.Type.None;
@@ -58,7 +52,6 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
         {
             new ViewfinderSettingsItem(ViewfinderSettingsItem.Type.None, settings.CurrentViewfinder == null),
             new ViewfinderSettingsItem(ViewfinderSettingsItem.Type.Rectangular, settings.CurrentViewfinder is RectangularViewfinder),
-            new ViewfinderSettingsItem(ViewfinderSettingsItem.Type.Laserline, settings.CurrentViewfinder is LaserlineViewfinder),
             new ViewfinderSettingsItem(ViewfinderSettingsItem.Type.Aimer, settings.CurrentViewfinder is AimerViewfinder)
         };
 
@@ -73,12 +66,8 @@ namespace BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfind
                     this.CurrentViewfinderViewModel = null;
                     break;
                 case ViewfinderSettingsItem.Type.Rectangular:
-                    settings.CurrentViewfinder = new RectangularViewfinder();
+                    settings.CurrentViewfinder = new RectangularViewfinder(RectangularViewfinderStyle.Rounded);
                     this.CurrentViewfinderViewModel = new RectangularViewfinderSettingsViewModel();
-                    break;
-                case ViewfinderSettingsItem.Type.Laserline:
-                    settings.CurrentViewfinder = new LaserlineViewfinder();
-                    this.CurrentViewfinderViewModel = new LaserlineViewfinderSettingsViewModel();
                     break;
                 case ViewfinderSettingsItem.Type.Aimer:
                     settings.CurrentViewfinder = new AimerViewfinder();

@@ -103,13 +103,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BarcodeCaptureSettingsSample\BarcodeCaptureSettingsSample.csproj">
-      <Project>{62FFF83F-4C15-4BF2-B260-FC6A69B1F6AE}</Project>
+      <Project>{A81F26E0-59E2-4171-B6FF-7C0D3C42099B}</Project>
       <Name>BarcodeCaptureSettingsSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.28.1" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.28.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="7.0.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\mipmap-hdpi\" />

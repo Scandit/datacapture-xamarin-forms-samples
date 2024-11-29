@@ -21,7 +21,6 @@ using Scandit.DataCapture.Core.Source.Unified;
 using Scandit.DataCapture.ID.Capture.Unified;
 using Scandit.DataCapture.ID.Data.Unified;
 using Scandit.DataCapture.ID.Verification.AamvaBarcode.Unified;
-using Scandit.DataCapture.ID.Verification.AamvaVizBarcode.Unified;
 using USDLVerificationSample.Models;
 using USDLVerificationSample.Services;
 using Xamarin.Essentials;
@@ -81,41 +80,17 @@ namespace USDLVerificationSample.ViewModels
         }
 
         #region IIdCaptureListener
-        public void OnIdCaptured(object sender, IdCaptureEventArgs args)
+        public void OnIdCaptured(object sender, IdCapturedEventArgs args)
         {
-            if (args.Session.NewlyCapturedId == null)
-            {
-                return;
-            }
-
-            CapturedId capturedId = args.Session.NewlyCapturedId;
+            CapturedId capturedId = args.CapturedId;
 
             // Pause the idCapture to not capture while showing the result.
             args.IdCapture.Enabled = false;
 
-            if (capturedId.DocumentType == DocumentType.DrivingLicense &&
-                capturedId.IssuingCountryIso.ToUpper() == "USA" &&
-                capturedId.Viz != null &&
-                capturedId.Viz.BackSideCaptureSupported)
-            {
-                // Until the back side is scanned, IdCapture will keep reporting the front side.
-                // If we are looking for the back side we just return.
-                if (capturedId.Viz.CapturedSides == SupportedSides.FrontOnly)
-                {
-                    args.IdCapture.Enabled = true;
-                }
-                else
-                {
-                    this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
-                }
-            }
-            else
-            {
-                this.OnIdRejected(sender, args);
-            }
+            this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
         }
 
-        public void OnIdRejected(object sender, IdCaptureEventArgs args)
+        public void OnIdRejected(object sender, IdRejectedEventArgs args)
         {
             // Implement to handle documents recognized in a frame, but rejected.
             // A document or its part is considered rejected when (a) it's valid, but not enabled in the settings,

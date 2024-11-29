@@ -18,7 +18,6 @@ using System.Diagnostics;
 using System.Linq;
 using Scandit.DataCapture.ID.Data.Unified;
 using Scandit.DataCapture.ID.Verification.AamvaBarcode.Unified;
-using Scandit.DataCapture.ID.Verification.AamvaVizBarcode.Unified;
 using USDLVerificationSample.Models;
 using USDLVerificationSample.Results;
 using USDLVerificationSample.Results.Presenters;
@@ -30,8 +29,6 @@ namespace USDLVerificationSample.ViewModels
 {
     public class ResultViewModel : BaseViewModel
     {
-        private readonly ResultPresenterFactory factory = new ResultPresenterFactory();
-
         public List<ResultEntry> Items { get; private set; }
 
         public ImageSource? FaceImage { get; private set; }
@@ -39,30 +36,24 @@ namespace USDLVerificationSample.ViewModels
         public ImageSource? IdBackImage { get; private set; }
 
         public bool ImagesVisible { get; private set; }
-        public bool FrontAndBackMatch { get; private set; }
         public bool ExpirationVisible => !string.IsNullOrEmpty(this.ExpirationText);
         public bool IsExpired { get; private set; }
         public bool BarcodeVerificationPass { get; private set; }
         public bool BarcodeVerificationVisible => !string.IsNullOrEmpty(this.BarcodeVerificationText);
         public string ExpirationText { get; private set; }
-        public string FrontAndBackMatchText { get; private set; }
         public string BarcodeVerificationText { get; private set; }
 
         public ResultViewModel(CapturedId capturedId, DriverLicenseVerificationResult verificationResult)
         {
-            IResultPresenter resultPresenter = this.factory.Create(capturedId);
+            IResultPresenter resultPresenter = new CommonResultPresenter(capturedId);
 
             this.Items = resultPresenter.Rows.ToList();
-            this.FaceImage = capturedId.GetImageBitmapForType(IdImageType.Face)?.Source;
-            this.IdFrontImage = capturedId.GetImageBitmapForType(IdImageType.IdFront)?.Source;
-            this.IdBackImage = capturedId.GetImageBitmapForType(IdImageType.IdBack)?.Source;
+            this.FaceImage = capturedId.Images?.Face?.Source;
+            this.IdFrontImage = capturedId.Images?.GetCroppedDocument(IdSide.Front)?.Source;
+            this.IdBackImage = capturedId.Images?.GetCroppedDocument(IdSide.Back)?.Source;
             this.ImagesVisible = this.FaceImage != null || this.IdFrontImage != null || this.IdBackImage != null;
-            this.FrontAndBackMatch = verificationResult.FrontAndBackMatchResult;
-            this.FrontAndBackMatchText = this.FrontAndBackMatch ?
-                "Information on front and back matches." :
-                "Information on front and back does not match.";
 
-            if (this.FrontAndBackMatch && verificationResult.Expired.HasValue)
+            if (verificationResult.Expired.HasValue)
             {
                 this.IsExpired = verificationResult.Expired.Value;
                 this.ExpirationText = this.IsExpired ?

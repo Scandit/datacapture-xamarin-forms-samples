@@ -12,9 +12,6 @@
                        Text="{Binding ExpirationText}"
                        FontSize="Default"
                        IsVisible="{Binding ExpirationVisible}" />
-                <Label x:Name="FrontAndBackMatchLabel"
-                       Text="{Binding FrontAndBackMatchText}"
-                       FontSize="Default"/>
                 <Label x:Name="BarcodeVerificationLabel"
                        Text="{Binding BarcodeVerificationText}"
                        FontSize="Default"

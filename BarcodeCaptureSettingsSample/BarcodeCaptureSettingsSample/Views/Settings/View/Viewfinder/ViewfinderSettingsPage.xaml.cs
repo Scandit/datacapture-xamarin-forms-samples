@@ -16,7 +16,6 @@ using System;
 using System.Threading.Tasks;
 using BarcodeCaptureSettingsSample.ViewModels.Settings.ViewSettings.Viewfinder;
 using BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Aimer;
-using BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Laserline;
 using BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder.Rectangular;
 using Xamarin.Forms;
 
@@ -83,11 +82,6 @@ namespace BarcodeCaptureSettingsSample.Views.Settings.ViewSettings.Viewfinder
 
                 case ViewfinderSettingsItem.Type.Aimer:
                     return new AimerViewfinderSettingsView();
-
-                case ViewfinderSettingsItem.Type.Laserline:
-                    var laserlineView = new LaserlineViewfinderSettingsView();
-                    laserlineView.Dissapering += (object sender, EventArgs args) => this.viewModel.ApplyViewfinderChanges();
-                    return laserlineView;
 
                 default:
                     return null;

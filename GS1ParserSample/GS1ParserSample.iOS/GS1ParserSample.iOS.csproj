@@ -121,14 +121,14 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\GS1ParserSample\GS1ParserSample.csproj">
-      <Project>{BC597100-5DF0-452F-8755-A8AA5408EF81}</Project>
+      <Project>{305CAB4D-E654-498D-92EC-FAEE032394A1}</Project>
       <Name>GS1ParserSample</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.28.1" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.28.1" />
-    <PackageReference Include="Scandit.DataCapture.Parser.Xamarin.Forms" Version="6.28.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="7.0.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="7.0.0" />
+    <PackageReference Include="Scandit.DataCapture.Parser.Xamarin.Forms" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <LinkDescription Include="Linker.xml" />

@@ -14,7 +14,6 @@
  
 using System;
 using Scandit.DataCapture.ID.Data.Unified;
-using Scandit.DataCapture.ID.Verification.AamvaVizBarcode.Unified;
 
 namespace USDLVerificationSample.ViewModels
 {

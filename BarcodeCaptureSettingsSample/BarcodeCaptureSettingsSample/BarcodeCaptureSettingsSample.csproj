@@ -16,8 +16,8 @@
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1687" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="6.28.1" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="6.28.1" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="7.0.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="7.0.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -41,11 +41,9 @@
     <Folder Include="ViewModels\Settings\View\Viewfinder\" />
     <Folder Include="Views\Settings\View\Viewfinder\Rectangular\" />
     <Folder Include="ViewModels\Settings\View\Viewfinder\Rectangular\" />
-    <Folder Include="ViewModels\Settings\View\Viewfinder\Laserline\" />
     <Folder Include="ViewModels\Settings\View\Viewfinder\Aimer\" />
     <Folder Include="Views\Settings\View\Common\" />
     <Folder Include="Views\Settings\View\Viewfinder\Aimer\" />
-    <Folder Include="Views\Settings\View\Viewfinder\Laserline\" />
     <Folder Include="Views\Settings\View\Logo\" />
     <Folder Include="ViewModels\Settings\View\Logo\" />
     <Folder Include="Views\Settings\View\Gestures\" />
@@ -68,6 +66,7 @@
     <Folder Include="Views\Settings\BacodeCapture\DuplicateFilter\" />
     <Folder Include="ViewModels\Settings\Result\" />
     <Folder Include="Views\Settings\Result\" />
+    <Folder Include="Views\Settings\License\" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Condition=" '$(EnableDefaultEmbeddedResourceItems)' == 'true' " Update="Resources\AppResources.resx">

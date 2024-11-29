@@ -13,6 +13,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using Scandit.DataCapture.ID.Capture.Unified;
 using Scandit.DataCapture.ID.Data.Unified;
@@ -30,6 +31,12 @@ namespace IdCaptureExtendedSample.Models
         public static ScannerModel Instance => instance.Value;
 
         public Mode Mode { get; private set; } = Mode.Barcode;
+
+        private IList<IIdCaptureDocument> acceptedDocuments = new List<IIdCaptureDocument> {
+            new IdCard(IdCaptureRegion.Any),
+            new DriverLicense(IdCaptureRegion.Any),
+            new Passport(IdCaptureRegion.Any),
+        };
 
         private ScannerModel()
         {
@@ -84,29 +91,23 @@ namespace IdCaptureExtendedSample.Models
 
         private void ConfigureBarcodeMode(IdCaptureSettings settings)
         {
-            settings.SupportedDocuments = IdDocumentType.AamvaBarcode |
-                                          IdDocumentType.ArgentinaIdBarcode |
-                                          IdDocumentType.ColombiaIdBarcode |
-                                          IdDocumentType.SouthAfricaDlBarcode |
-                                          IdDocumentType.SouthAfricaIdBarcode |
-                                          IdDocumentType.UsUsIdBarcode;
+            settings.AcceptedDocuments = acceptedDocuments;
+            settings.ScannerType = new SingleSideScanner(barcode: true, machineReadableZone: false, visualInspectionZone: false);
+            settings.SetShouldPassImageTypeToResult(IdImageType.Face, true);
         }
 
         private void ConfigureVIZMode(IdCaptureSettings settings)
         {
-            settings.SupportedDocuments = IdDocumentType.DlViz | IdDocumentType.IdCardViz;
+            settings.AcceptedDocuments = acceptedDocuments;
+            settings.ScannerType = new SingleSideScanner(barcode: false, machineReadableZone: false, visualInspectionZone: true);
             settings.SetShouldPassImageTypeToResult(IdImageType.Face, true);
-            settings.SetShouldPassImageTypeToResult(IdImageType.IdBack, true);
-            settings.SetShouldPassImageTypeToResult(IdImageType.IdFront, true);
-            settings.SupportedSides = SupportedSides.FrontAndBack;
+            settings.SetShouldPassImageTypeToResult(IdImageType.CroppedDocument, true);
         }
 
         private void ConfigureMRZMode(IdCaptureSettings settings)
         {
-            settings.SupportedDocuments = IdDocumentType.VisaMrz |
-                                          IdDocumentType.PassportMrz |
-                                          IdDocumentType.IdCardMrz |
-                                          IdDocumentType.SwissDlMrz;
+            settings.AcceptedDocuments = acceptedDocuments;
+            settings.ScannerType = new SingleSideScanner(barcode: false, machineReadableZone: true, visualInspectionZone: false);
         }
     }
 }

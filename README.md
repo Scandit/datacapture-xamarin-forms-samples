@@ -64,8 +64,6 @@ ID Scanning Samples demonstrate the features of the ID Capture API and demonstra
 
 **Barcode Capture Settings Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/BarcodeCaptureSettingsSample))
 
-**Barcode Capture Views Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/BarcodeCaptureViewsSample))
-
 ### MatrixScan AR Sam**ples**
 
 **MatrixScan Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/MatrixScanSimpleSample))

@@ -15,7 +15,6 @@
 using USDLVerificationSample.ViewModels;
 using Scandit.DataCapture.ID.Data.Unified;
 using Xamarin.Forms;
-using Scandit.DataCapture.ID.Verification.AamvaVizBarcode.Unified;
 using USDLVerificationSample.Models;
 
 namespace USDLVerificationSample.Views
@@ -26,7 +25,6 @@ namespace USDLVerificationSample.Views
         {
             this.InitializeComponent();
             var resultViewModel = new ResultViewModel(capturedId, verificationResult);
-            this.FrontAndBackMatchLabel.TextColor = resultViewModel.FrontAndBackMatch ? Color.Green : Color.Red;
             this.ExpirationLabel.TextColor = !resultViewModel.IsExpired ? Color.Green : Color.Red;
             this.BarcodeVerificationLabel.TextColor = resultViewModel.BarcodeVerificationPass ? Color.Green : Color.Red;
             this.BindingContext = resultViewModel;

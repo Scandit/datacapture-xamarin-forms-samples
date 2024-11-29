@@ -17,7 +17,7 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="mainSettingsList" ItemsSource="{Binding Source}"  SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="0,10,0,0" ItemTapped="MainSettingsList_ItemTapped" HeightRequest="180" BackgroundColor="White">
+            <ListView x:Name="mainSettingsList" ItemsSource="{Binding Source}"  SeparatorVisibility="None" VerticalOptions="Start" SelectionMode="None" Margin="0,10,0,0" ItemTapped="MainSettingsList_ItemTapped" HeightRequest="225" BackgroundColor="White">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>

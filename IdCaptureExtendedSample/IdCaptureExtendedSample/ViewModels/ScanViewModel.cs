@@ -44,51 +44,14 @@ namespace IdCaptureExtendedSample.ViewModels
         }
 
         #region IIdCaptureListener
-        public void OnIdCaptured(IdCapture idCapture, IdCaptureSession session, IFrameData frameData)
+        public void OnIdCaptured(IdCapture idCapture, CapturedId capturedId)
         {
-            CapturedId capturedId = session.NewlyCapturedId;
-
-            // Viz documents support multiple sides scanning.
-            // In case the back side is supported and not yet captured we inform the user about the feature.
-            if (capturedId.Viz != null &&
-                capturedId.Viz.BackSideCaptureSupported &&
-                capturedId.Viz.CapturedSides == SupportedSides.FrontOnly)
-            {
-                return;
-            }
-
-            // Pause the idCapture to not capture while showing the result.
             idCapture.Enabled = false;
 
             this.IdCaptured?.Invoke(this, new CapturedIdEventArgs(capturedId));
         }
 
-        public void OnErrorEncountered(IdCapture idCapture, IdCaptureError error, IdCaptureSession session, IFrameData frameData)
-        {
-            // Don't capture unnecessarily when the error is displayed.
-            idCapture.Enabled = false;
-
-            // Implement to handle an error encountered during the capture process.
-            // The error message can be retrieved from the IdCaptureError class type.
-            DependencyService.Get<IMessageService>()
-                             .ShowAlertAsync(GetErrorMessage(error))
-                             .ContinueWith((Task t) =>
-                             {
-                                 // On alert dialog completion resume the IdCapture.
-                                 idCapture.Enabled = true;
-                             });
-        }
-
-        public void OnIdLocalized(IdCapture idCapture, IdCaptureSession session, IFrameData frameData)
-        {
-            // Implement to handle a personal identification document or its part localized within
-            // a frame. A document or its part is considered localized when it's detected in a frame,
-            // but its data is not yet extracted.
-
-            // In this sample we are not interested in this callback.
-        }
-
-        public void OnIdRejected(IdCapture idCapture, IdCaptureSession session, IFrameData frameData)
+        public void OnIdRejected(IdCapture idCapture, CapturedId capturedId, RejectionReason rejection)
         {
             // Implement to handle documents recognized in a frame, but rejected.
             // A document or its part is considered rejected when (a) it's valid, but not enabled in the settings,
@@ -105,21 +68,6 @@ namespace IdCaptureExtendedSample.ViewModels
                                  // On alert dialog completion resume the IdCapture.
                                  idCapture.Enabled = true;
                              });
-        }
-
-        public void OnIdCaptureTimedOut(IdCapture mode, IdCaptureSession session, IFrameData data)
-        {
-            // In this sample we are not interested in this callback.
-        }
-
-        public void OnObservationStarted(IdCapture idCapture)
-        {
-            // In this sample we are not interested in this callback.
-        }
-
-        public void OnObservationStopped(IdCapture idCapture)
-        {
-            // In this sample we are not interested in this callback.
         }
         #endregion
 
@@ -167,11 +115,6 @@ namespace IdCaptureExtendedSample.ViewModels
             // Switch camera on to start streaming frames.
             // The camera is started asynchronously and will take some time to completely turn on.
             await this.model.CurrentCamera?.SwitchToDesiredStateAsync(FrameSourceState.On);
-        }
-
-        private static string GetErrorMessage(IdCaptureError error)
-        {
-            return new StringBuilder(error.Type.ToString()).Append($": {error.Message}").ToString();
         }
     }
 }

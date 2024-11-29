@@ -16,7 +16,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using Scandit.DataCapture.Barcode.Data.Unified;
-using Scandit.DataCapture.Barcode.Tracking.Capture.Unified;
+using Scandit.DataCapture.Barcode.Batch.Capture.Unified;
 using Scandit.DataCapture.Core.Capture.Unified;
 using Scandit.DataCapture.Core.Source.Unified;
 
@@ -43,9 +43,9 @@ namespace MatrixScanSimpleSample.Models
             this.DataCaptureContext = DataCaptureContext.ForLicenseKey(SCANDIT_LICENSE_KEY);
             this.DataCaptureContext.SetFrameSourceAsync(this.CurrentCamera);
 
-            // The barcode tracking process is configured through barcode tracking settings
-            // and are then applied to the barcode tracking instance that manages barcode tracking.
-            this.BarcodeTrackingSettings = BarcodeTrackingSettings.Create(BarcodeTrackingScenario.A);
+            // The barcode batch process is configured through barcode batch settings
+            // and are then applied to the barcode batch instance that manages barcode batch.
+            this.BarcodeBatchSettings = BarcodeBatchSettings.Create();
 
             // The settings instance initially has all types of barcodes (symbologies) disabled.
             // For the purpose of this sample we enable a very generous set of symbologies.
@@ -60,8 +60,8 @@ namespace MatrixScanSimpleSample.Models
                 Symbology.Code128
             };
 
-            this.BarcodeTrackingSettings.EnableSymbologies(symbologies);
-            this.BarcodeTracking = BarcodeTracking.Create(this.DataCaptureContext, this.BarcodeTrackingSettings);
+            this.BarcodeBatchSettings.EnableSymbologies(symbologies);
+            this.BarcodeBatch = BarcodeBatch.Create(this.DataCaptureContext, this.BarcodeBatchSettings);
         }
 
         #region DataCaptureContext
@@ -70,12 +70,12 @@ namespace MatrixScanSimpleSample.Models
 
         #region CamerSettings
         public Camera CurrentCamera { get; private set; } = Camera.GetCamera(CameraPosition.WorldFacing);
-        public CameraSettings CameraSettings { get; } = BarcodeTracking.RecommendedCameraSettings;
+        public CameraSettings CameraSettings { get; } = BarcodeBatch.RecommendedCameraSettings;
         #endregion
 
-        #region BarcodeTracking
-        public BarcodeTracking BarcodeTracking { get; private set; }
-        public BarcodeTrackingSettings BarcodeTrackingSettings { get; private set; }
+        #region BarcodeBatch
+        public BarcodeBatch BarcodeBatch { get; private set; }
+        public BarcodeBatchSettings BarcodeBatchSettings { get; private set; }
         #endregion
     }
 }
