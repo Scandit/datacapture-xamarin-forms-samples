@@ -154,9 +154,11 @@ namespace GS1ParserSample.ViewModels
             // the capture mode is enabled again. Note that disabling the capture mode does not stop the camera, the camera
             // continues to stream frames until it is turned off.
 
-            // If you are not disabling barcode capture here and want to continue scanning, consider
-            // setting the codeDuplicateFilter when creating the barcode capture settings to around 500
-            // or even -1 if you do not want codes to be scanned more than once.
+            // If you don't want the codes to be scanned more than once, consider setting the codeDuplicateFilter when
+            // creating the barcode capture settings to -1.
+            // You can set any other value (e.g. 500) to set a fixed timeout and override the smart behaviour enabled
+            // by default.
+
             barcodeCapture.Enabled = false;
 
             try

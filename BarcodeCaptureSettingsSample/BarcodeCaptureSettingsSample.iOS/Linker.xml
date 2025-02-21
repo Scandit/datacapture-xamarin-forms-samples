@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<linker>
-  <assembly fullname="BarcodeCaptureSettingsSample">
-    <type fullname="BarcodeCaptureSettingsSample.ViewModels.*" />
-    <type fullname="BarcodeCaptureSettingsSample.Services.MessageService" />
-  </assembly>
-</linker>
