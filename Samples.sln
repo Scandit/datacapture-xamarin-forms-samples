@@ -3,21 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.809.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarcodeCaptureRejectSample", "BarcodeCaptureRejectSample\BarcodeCaptureRejectSample\BarcodeCaptureRejectSample.csproj", "{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarcodeCaptureRejectSample", "BarcodeCaptureRejectSample", "{140B36E6-CB03-4A24-8B96-FB592E1BC130}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeCaptureRejectSample.Android", "BarcodeCaptureRejectSample\BarcodeCaptureRejectSample.Android\BarcodeCaptureRejectSample.Android.csproj", "{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeCaptureRejectSample.iOS", "BarcodeCaptureRejectSample\BarcodeCaptureRejectSample.iOS\BarcodeCaptureRejectSample.iOS.csproj", "{96C33726-CC5B-4935-AD77-C8A9F767BC37}"
-EndProject
+
+
+
+
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarcodeCaptureSimpleSample", "BarcodeCaptureSimpleSample", "{721C9169-ADE3-49AE-82B8-F7752B43BC70}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarcodeCaptureSimpleSample", "BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.csproj", "{1801977E-6143-456C-A49A-9F3E48AA9C0F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarcodeCaptureSimpleSample", "01_Single_Scanning_Samples\02_Barcode_Scanning_with_Low_Level_API\BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.csproj", "{1801977E-6143-456C-A49A-9F3E48AA9C0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeCaptureSimpleSample.Android", "BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.Android\BarcodeCaptureSimpleSample.Android.csproj", "{6C1B957E-6C6B-4B70-B0FB-170511B29901}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeCaptureSimpleSample.Android", "01_Single_Scanning_Samples\02_Barcode_Scanning_with_Low_Level_API\BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.Android\BarcodeCaptureSimpleSample.Android.csproj", "{6C1B957E-6C6B-4B70-B0FB-170511B29901}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeCaptureSimpleSample.iOS", "BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.iOS\BarcodeCaptureSimpleSample.iOS.csproj", "{4D337E98-4139-4DD6-BF8C-D1C3F68C41D1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeCaptureSimpleSample.iOS", "01_Single_Scanning_Samples\02_Barcode_Scanning_with_Low_Level_API\BarcodeCaptureSimpleSample\BarcodeCaptureSimpleSample.iOS\BarcodeCaptureSimpleSample.iOS.csproj", "{4D337E98-4139-4DD6-BF8C-D1C3F68C41D1}"
 EndProject
 
 
@@ -25,75 +21,75 @@ EndProject
 
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MatrixScanBubblesSample", "MatrixScanBubblesSample", "{23DFD14C-9061-4605-899A-4148929E0D3E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixScanBubblesSample", "MatrixScanBubblesSample\MatrixScanBubblesSample\MatrixScanBubblesSample.csproj", "{6BF5E7AB-1306-4587-AA9D-D34F75F585A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixScanBubblesSample", "03_Advanced_Batch_Scanning_Samples\01_Batch_Scanning_and_AR_Info_Lookup\MatrixScanBubblesSample\MatrixScanBubblesSample\MatrixScanBubblesSample.csproj", "{6BF5E7AB-1306-4587-AA9D-D34F75F585A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanBubblesSample.Android", "MatrixScanBubblesSample\MatrixScanBubblesSample.Android\MatrixScanBubblesSample.Android.csproj", "{255C91DD-9586-4DCF-86E4-CDD2AAAC77AA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanBubblesSample.Android", "03_Advanced_Batch_Scanning_Samples\01_Batch_Scanning_and_AR_Info_Lookup\MatrixScanBubblesSample\MatrixScanBubblesSample.Android\MatrixScanBubblesSample.Android.csproj", "{255C91DD-9586-4DCF-86E4-CDD2AAAC77AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanBubblesSample.iOS", "MatrixScanBubblesSample\MatrixScanBubblesSample.iOS\MatrixScanBubblesSample.iOS.csproj", "{F819A61B-E844-4B63-B6D5-C03B74E4C68D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanBubblesSample.iOS", "03_Advanced_Batch_Scanning_Samples\01_Batch_Scanning_and_AR_Info_Lookup\MatrixScanBubblesSample\MatrixScanBubblesSample.iOS\MatrixScanBubblesSample.iOS.csproj", "{F819A61B-E844-4B63-B6D5-C03B74E4C68D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MatrixScanSimpleSample", "MatrixScanSimpleSample", "{906F4867-F321-49F5-96C0-F5EDF64A6DB9}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixScanSimpleSample", "MatrixScanSimpleSample\MatrixScanSimpleSample\MatrixScanSimpleSample.csproj", "{79EA19BA-E766-43C9-960D-7757F96EDC41}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MatrixScanSimpleSample", "03_Advanced_Batch_Scanning_Samples\01_Batch_Scanning_and_AR_Info_Lookup\MatrixScanSimpleSample\MatrixScanSimpleSample\MatrixScanSimpleSample.csproj", "{79EA19BA-E766-43C9-960D-7757F96EDC41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanSimpleSample.Android", "MatrixScanSimpleSample\MatrixScanSimpleSample.Android\MatrixScanSimpleSample.Android.csproj", "{0865D3A3-6C44-4A76-844D-D5862AB58314}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanSimpleSample.Android", "03_Advanced_Batch_Scanning_Samples\01_Batch_Scanning_and_AR_Info_Lookup\MatrixScanSimpleSample\MatrixScanSimpleSample.Android\MatrixScanSimpleSample.Android.csproj", "{0865D3A3-6C44-4A76-844D-D5862AB58314}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanSimpleSample.iOS", "MatrixScanSimpleSample\MatrixScanSimpleSample.iOS\MatrixScanSimpleSample.iOS.csproj", "{36B73C65-4E52-438A-84E1-59B5B6205175}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanSimpleSample.iOS", "03_Advanced_Batch_Scanning_Samples\01_Batch_Scanning_and_AR_Info_Lookup\MatrixScanSimpleSample\MatrixScanSimpleSample.iOS\MatrixScanSimpleSample.iOS.csproj", "{36B73C65-4E52-438A-84E1-59B5B6205175}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "GS1ParserSample", "GS1ParserSample", "{3D1E1B33-657D-4DAE-8A42-479346DD0F80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS1ParserSample", "GS1ParserSample\GS1ParserSample\GS1ParserSample.csproj", "{305CAB4D-E654-498D-92EC-FAEE032394A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GS1ParserSample", "04_Parser_Samples\GS1ParserSample\GS1ParserSample\GS1ParserSample.csproj", "{305CAB4D-E654-498D-92EC-FAEE032394A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS1ParserSample.Android", "GS1ParserSample\GS1ParserSample.Android\GS1ParserSample.Android.csproj", "{5FE175BD-F4F3-470D-8143-B8E94543E247}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS1ParserSample.Android", "04_Parser_Samples\GS1ParserSample\GS1ParserSample.Android\GS1ParserSample.Android.csproj", "{5FE175BD-F4F3-470D-8143-B8E94543E247}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS1ParserSample.iOS", "GS1ParserSample\GS1ParserSample.iOS\GS1ParserSample.iOS.csproj", "{7AC95E05-8496-427D-8798-D26271A1BDF6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GS1ParserSample.iOS", "04_Parser_Samples\GS1ParserSample\GS1ParserSample.iOS\GS1ParserSample.iOS.csproj", "{7AC95E05-8496-427D-8798-D26271A1BDF6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdCaptureSimpleSample", "IdCaptureSimpleSample", "{11777E0D-2DF7-4EDC-BF37-A830EE290F8E}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdCaptureSimpleSample", "IdCaptureSimpleSample\IdCaptureSimpleSample\IdCaptureSimpleSample.csproj", "{DD8C1999-9A67-48C3-89D7-B5DAB2B03235}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdCaptureSimpleSample", "02_ID_Scanning_Samples\IdCaptureSimpleSample\IdCaptureSimpleSample\IdCaptureSimpleSample.csproj", "{DD8C1999-9A67-48C3-89D7-B5DAB2B03235}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureSimpleSample.Android", "IdCaptureSimpleSample\IdCaptureSimpleSample.Android\IdCaptureSimpleSample.Android.csproj", "{21D9D405-C7BB-43B6-B3FB-9CD7CF7DC139}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureSimpleSample.Android", "02_ID_Scanning_Samples\IdCaptureSimpleSample\IdCaptureSimpleSample.Android\IdCaptureSimpleSample.Android.csproj", "{21D9D405-C7BB-43B6-B3FB-9CD7CF7DC139}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureSimpleSample.iOS", "IdCaptureSimpleSample\IdCaptureSimpleSample.iOS\IdCaptureSimpleSample.iOS.csproj", "{3932A541-6866-46C0-A1FD-22DF5A48A7E7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureSimpleSample.iOS", "02_ID_Scanning_Samples\IdCaptureSimpleSample\IdCaptureSimpleSample.iOS\IdCaptureSimpleSample.iOS.csproj", "{3932A541-6866-46C0-A1FD-22DF5A48A7E7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BarcodeSelectionSimpleSample", "BarcodeSelectionSimpleSample", "{F62FFE59-313B-4CE2-88C9-7414ED9AE707}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarcodeSelectionSimpleSample", "BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.csproj", "{023D093C-4442-419F-AC4F-28A6F2A2E8B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BarcodeSelectionSimpleSample", "01_Single_Scanning_Samples\02_Barcode_Scanning_with_Low_Level_API\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.csproj", "{023D093C-4442-419F-AC4F-28A6F2A2E8B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeSelectionSimpleSample.Android", "BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.Android\BarcodeSelectionSimpleSample.Android.csproj", "{630B3322-BB91-4959-9BC1-A233E04BE476}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeSelectionSimpleSample.Android", "01_Single_Scanning_Samples\02_Barcode_Scanning_with_Low_Level_API\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.Android\BarcodeSelectionSimpleSample.Android.csproj", "{630B3322-BB91-4959-9BC1-A233E04BE476}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeSelectionSimpleSample.iOS", "BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.iOS\BarcodeSelectionSimpleSample.iOS.csproj", "{4934990A-3590-4D3C-8997-BF3FE6626E90}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BarcodeSelectionSimpleSample.iOS", "01_Single_Scanning_Samples\02_Barcode_Scanning_with_Low_Level_API\BarcodeSelectionSimpleSample\BarcodeSelectionSimpleSample.iOS\BarcodeSelectionSimpleSample.iOS.csproj", "{4934990A-3590-4D3C-8997-BF3FE6626E90}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdCaptureExtendedSample", "IdCaptureExtendedSample", "{0CB1D9A8-CE8A-486A-985E-3C37C22FECDB}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdCaptureExtendedSample", "IdCaptureExtendedSample\IdCaptureExtendedSample\IdCaptureExtendedSample.csproj", "{242B1C2E-159E-457D-BF68-6F9A64D1E427}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdCaptureExtendedSample", "02_ID_Scanning_Samples\IdCaptureExtendedSample\IdCaptureExtendedSample\IdCaptureExtendedSample.csproj", "{242B1C2E-159E-457D-BF68-6F9A64D1E427}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureExtendedSample.Android", "IdCaptureExtendedSample\IdCaptureExtendedSample.Android\IdCaptureExtendedSample.Android.csproj", "{66566D3D-6726-4756-AAA0-6B61CEAFDFFF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureExtendedSample.Android", "02_ID_Scanning_Samples\IdCaptureExtendedSample\IdCaptureExtendedSample.Android\IdCaptureExtendedSample.Android.csproj", "{66566D3D-6726-4756-AAA0-6B61CEAFDFFF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureExtendedSample.iOS", "IdCaptureExtendedSample\IdCaptureExtendedSample.iOS\IdCaptureExtendedSample.iOS.csproj", "{9A2806D5-BC05-46A0-90A6-2DB06E1582FF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdCaptureExtendedSample.iOS", "02_ID_Scanning_Samples\IdCaptureExtendedSample\IdCaptureExtendedSample.iOS\IdCaptureExtendedSample.iOS.csproj", "{9A2806D5-BC05-46A0-90A6-2DB06E1582FF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "USDLVerificationSample", "USDLVerificationSample", "{C1429A3F-4911-434C-83EE-25B6F2F2B8E0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USDLVerificationSample", "USDLVerificationSample\USDLVerificationSample\USDLVerificationSample.csproj", "{49004E54-57DA-40C1-8631-F8BF8D350E00}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USDLVerificationSample", "02_ID_Scanning_Samples\USDLVerificationSample\USDLVerificationSample\USDLVerificationSample.csproj", "{49004E54-57DA-40C1-8631-F8BF8D350E00}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USDLVerificationSample.Android", "USDLVerificationSample\USDLVerificationSample.Android\USDLVerificationSample.Android.csproj", "{DF22912E-FD71-4F2B-BAFF-9D531AE2D19D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USDLVerificationSample.Android", "02_ID_Scanning_Samples\USDLVerificationSample\USDLVerificationSample.Android\USDLVerificationSample.Android.csproj", "{DF22912E-FD71-4F2B-BAFF-9D531AE2D19D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USDLVerificationSample.iOS", "USDLVerificationSample\USDLVerificationSample.iOS\USDLVerificationSample.iOS.csproj", "{D821C274-D966-4F86-87EB-2AEA85656290}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USDLVerificationSample.iOS", "02_ID_Scanning_Samples\USDLVerificationSample\USDLVerificationSample.iOS\USDLVerificationSample.iOS.csproj", "{D821C274-D966-4F86-87EB-2AEA85656290}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ListBuildingSample", "ListBuildingSample", "{9E7695AB-D280-4977-B88C-20E2AC7196BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuildingSample", "ListBuildingSample\ListBuildingSample\ListBuildingSample.csproj", "{0F1E2118-AD11-45D8-94DE-F2EBDE03C360}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuildingSample", "01_Single_Scanning_Samples\01_Barcode_Scanning_with_Pre_Built_UI\ListBuildingSample\ListBuildingSample\ListBuildingSample.csproj", "{0F1E2118-AD11-45D8-94DE-F2EBDE03C360}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuildingSample.Android", "ListBuildingSample\ListBuildingSample.Android\ListBuildingSample.Android.csproj", "{B7622715-28BD-4526-B5CD-E60A0C1E06DE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuildingSample.Android", "01_Single_Scanning_Samples\01_Barcode_Scanning_with_Pre_Built_UI\ListBuildingSample\ListBuildingSample.Android\ListBuildingSample.Android.csproj", "{B7622715-28BD-4526-B5CD-E60A0C1E06DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuildingSample.iOS", "ListBuildingSample\ListBuildingSample.iOS\ListBuildingSample.iOS.csproj", "{450979A2-441C-421A-8CB5-B110AADD7D99}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListBuildingSample.iOS", "01_Single_Scanning_Samples\01_Barcode_Scanning_with_Pre_Built_UI\ListBuildingSample\ListBuildingSample.iOS\ListBuildingSample.iOS.csproj", "{450979A2-441C-421A-8CB5-B110AADD7D99}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MatrixScanCountSimpleSample", "MatrixScanCountSimpleSample", "{2D7DB7C1-B8F4-439D-A9BB-70C375F86133}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanCountSimpleSample", "MatrixScanCountSimpleSample\MatrixScanCountSimpleSample\MatrixScanCountSimpleSample.csproj", "{F7614356-6E10-4A6D-B298-9C67995941C5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanCountSimpleSample", "03_Advanced_Batch_Scanning_Samples\02_Counting_and_Receiving\MatrixScanCountSimpleSample\MatrixScanCountSimpleSample\MatrixScanCountSimpleSample.csproj", "{F7614356-6E10-4A6D-B298-9C67995941C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanCountSimpleSample.Android", "MatrixScanCountSimpleSample\MatrixScanCountSimpleSample.Android\MatrixScanCountSimpleSample.Android.csproj", "{0A73C9D9-3F93-4EDD-9075-564421D2A896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanCountSimpleSample.Android", "03_Advanced_Batch_Scanning_Samples\02_Counting_and_Receiving\MatrixScanCountSimpleSample\MatrixScanCountSimpleSample.Android\MatrixScanCountSimpleSample.Android.csproj", "{0A73C9D9-3F93-4EDD-9075-564421D2A896}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanCountSimpleSample.iOS", "MatrixScanCountSimpleSample\MatrixScanCountSimpleSample.iOS\MatrixScanCountSimpleSample.iOS.csproj", "{22F1C406-5C00-42A3-9D4C-2C4FE05B13B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MatrixScanCountSimpleSample.iOS", "03_Advanced_Batch_Scanning_Samples\02_Counting_and_Receiving\MatrixScanCountSimpleSample\MatrixScanCountSimpleSample.iOS\MatrixScanCountSimpleSample.iOS.csproj", "{22F1C406-5C00-42A3-9D4C-2C4FE05B13B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,42 +101,42 @@ Global
 		Release|iPhoneSimulator = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Release|iPhone.Build.0 = Release|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Release|iPhone.Build.0 = Release|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Debug|Any CPU.ActiveCfg = Debug|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Debug|Any CPU.Build.0 = Debug|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Debug|iPhone.Build.0 = Debug|iPhone
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Release|iPhone.ActiveCfg = Release|iPhone
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Release|iPhone.Build.0 = Release|iPhone
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		{1801977E-6143-456C-A49A-9F3E48AA9C0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1801977E-6143-456C-A49A-9F3E48AA9C0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1801977E-6143-456C-A49A-9F3E48AA9C0F}.Debug|iPhone.ActiveCfg = Debug|Any CPU
@@ -546,9 +542,8 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B7689EC6-9B46-4294-B8DE-4C84C3FB5BE8} = {140B36E6-CB03-4A24-8B96-FB592E1BC130}
-		{002F0E57-5CD4-4BC2-8F8E-753CD815CE97} = {140B36E6-CB03-4A24-8B96-FB592E1BC130}
-		{96C33726-CC5B-4935-AD77-C8A9F767BC37} = {140B36E6-CB03-4A24-8B96-FB592E1BC130}
+		
+		
 		{1801977E-6143-456C-A49A-9F3E48AA9C0F} = {721C9169-ADE3-49AE-82B8-F7752B43BC70}
 		{6C1B957E-6C6B-4B70-B0FB-170511B29901} = {721C9169-ADE3-49AE-82B8-F7752B43BC70}
 		{4D337E98-4139-4DD6-BF8C-D1C3F68C41D1} = {721C9169-ADE3-49AE-82B8-F7752B43BC70}

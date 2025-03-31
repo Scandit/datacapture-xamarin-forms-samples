@@ -12,7 +12,7 @@ SparkScan is a camera-based solution for high-speed single scanning and scan-int
 
 ![SparkScan.png](https://github.com/Scandit/.github/blob/main/images/SparkScan.png)
 
-**List Building Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/ListBuildingSample))
+**List Building Sample** (Xamarin [Forms](<https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/01_Barcode_Scanning_with_Pre_Built_UI/ListBuildingSample>))
 
 ### MatrixScan Count Samples
 
@@ -20,7 +20,7 @@ MatrixScan Count is an out-of-the-box scan and count solution for counting and r
 
 ![MSCount.png](https://github.com/Scandit/.github/blob/main/images/MSCount.png)
 
-**MatrixScan Count Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/MatrixScanCountSimpleSample/MatrixScanCountSimpleSample))
+**MatrixScan Count Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/MatrixScanCountSimpleSample/03_Advanced_Batch_Scanning_Samples/02_Counting_and_Receiving/MatrixScanCountSimpleSample))
 
 ### Barcode Selection Samples
 
@@ -32,13 +32,11 @@ Consider Barcode Selection when **accuracy** is more important than **speed**.
 
   ![AimToSelect.png](https://github.com/Scandit/.github/blob/main/images/AimToSelect.png)
 
-
 - **Tap to select** is quicker when you need to select several barcodes, as demonstrated by the **Catalog Reordering Sample** (yep, those are teeth).
 
   ![TapToSelect.png](https://github.com/Scandit/.github/blob/main/images/TapToSelect.png)
 
-
-**Barcode Selection Simple Sample (**Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/BarcodeSelectionSimpleSample))
+**Barcode Selection Simple Sample (**Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeSelectionSimpleSample))
 
 ## Fully-flexible API
 
@@ -50,25 +48,25 @@ ID Scanning Samples demonstrate the features of the ID Capture API and demonstra
 
 ![IDScanning.png](https://github.com/Scandit/.github/blob/main/images/IDScanning.png)
 
-**ID Capture Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/IdCaptureSimpleSample))
+**ID Capture Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/02_ID_Scanning_Samples/IdCaptureSimpleSample))
 
-**US Drivers’ License Verification Sample** ([Xamarin Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/USDLVerificationSample))
+**US Drivers’ License Verification Sample** ([Xamarin Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/02_ID_Scanning_Samples/USDLVerificationSample))
 
-**ID Capture Extended Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/IdCaptureExtendedSample))
+**ID Capture Extended Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/02_ID_Scanning_Samples/IdCaptureExtendedSample))
 
 ### Barcode Capture Samples
 
-**Barcode Capture Simple Sample (**Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/BarcodeCaptureSimpleSample))
+**Barcode Capture Simple Sample (**Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureSimpleSample))
 
-**Barcode Capture Reject Sample** ([i](https://github.com/Scandit/datacapture-ios-samples/tree/master/BarcodeCaptureRejectSample)Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/BarcodeCaptureRejectSample))
+**Barcode Capture Reject Sample** ([i](https://github.com/Scandit/datacapture-ios-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureRejectSample)Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureRejectSample))
 
-**Barcode Capture Settings Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/BarcodeCaptureSettingsSample))
+**Barcode Capture Settings Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureSettingsSample))
 
 ### MatrixScan AR Sam**ples**
 
-**MatrixScan Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/MatrixScanSimpleSample))
+**MatrixScan Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/03_Advanced_Batch_Scanning_Samples/01_Batch_Scanning_and_AR_Info_Lookup/MatrixScanSimpleSample))
 
-**MatrixScan Bubbles Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/MatrixScanBubblesSample))
+**MatrixScan Bubbles Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/03_Advanced_Batch_Scanning_Samples/01_Batch_Scanning_and_AR_Info_Lookup/MatrixScanBubblesSample))
 
 ## Samples on Other Frameworks
 
@@ -86,7 +84,7 @@ Once you get the sample up and running, go find some barcodes to scan. Don’t f
 
 ## Trial Signup
 
-To add the Scandit Data Capture SDK to your app, sign up for your Scandit Developer Account  and get instant access to your license key: [https://ssl.scandit.com/dashboard/sign-up?p=test](https://ssl.scandit.com/dashboard/sign-up?p=test)
+To add the Scandit Data Capture SDK to your app, sign up for your Scandit Developer Account and get instant access to your license key: [https://ssl.scandit.com/dashboard/sign-up?p=test](https://ssl.scandit.com/dashboard/sign-up?p=test)
 
 ## Support
 
