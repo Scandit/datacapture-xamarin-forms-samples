@@ -4,32 +4,19 @@
              xmlns:effects="clr-namespace:MatrixScanBubblesSample.Effects"
              x:Class="MatrixScanBubblesSample.Views.StockOverlay">
     <ContentView.Content>
-        <StackLayout effects:RoundCornersEffect.CornerRadius="25"
+        <StackLayout effects:RoundCornersEffect.CornerRadius="30"
                      BackgroundColor="White">
             <StackLayout.GestureRecognizers>
                 <TapGestureRecognizer Tapped="TapGestureRecognizerTapped"/>
             </StackLayout.GestureRecognizers>
-            <Grid ColumnSpacing="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="50"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <Image
-                    Grid.Column="0"
-                    effects:RoundCornersEffect.CornerRadius="25"
-                    x:Name="StockCountImage"
-                    HeightRequest="50"
-                    WidthRequest="50"
-                    Source="stock_count.png" />
-                <StackLayout
-                    Grid.Column="1"
-                    Padding="5,5"
-                    Spacing="0">
-                    <Label x:Name="Title" Text="Report stock count" FontAttributes="Bold" FontSize="15" />
-                    <Label x:Name="Description" Text="Shelf: 4 Back room: 8" />
-                    <Label x:Name="Barcode" IsVisible="false" Margin="0,10" />
-                </StackLayout>
-            </Grid>
+            <StackLayout
+                Padding="7,7" Spacing="0" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label x:Name="Title" Text="Report stock count" FontAttributes="Bold" FontSize="14"
+                        HorizontalTextAlignment="Center" />
+                <Label x:Name="Description" Text="Shelf: 4 Back room: 8" TextColor="Gray" FontSize="11"
+                        HorizontalTextAlignment="Center" />
+                <Label x:Name="Barcode" IsVisible="false" Margin="0,10" HorizontalTextAlignment="Center" />
+            </StackLayout>
         </StackLayout>
     </ContentView.Content>
 </ContentView>

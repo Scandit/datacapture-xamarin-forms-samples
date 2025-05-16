@@ -23,8 +23,7 @@ namespace MatrixScanBubblesSample.Views
         public StockOverlay(string barcode, int shelfCount, int backRoom)
         {
             this.InitializeComponent();
-            this.StockCountImage.BackgroundColor = Color.FromRgba(0.35, 0.84, 0.78, 1);
-            
+
             this.Barcode.Text = barcode;
             this.Description.Text = string.Format("Shelf: {0} Back room: {1}", shelfCount, backRoom);
 

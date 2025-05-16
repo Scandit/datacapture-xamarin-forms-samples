@@ -120,12 +120,6 @@
     <ImageAsset Include="Assets.xcassets\freeze_enabled.imageset\freeze_enabled.png">
       <Visible>false</Visible>
     </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\stock_count.imageset\Contents.json">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="Assets.xcassets\stock_count.imageset\stock_count.png">
-      <Visible>false</Visible>
-    </ImageAsset>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -146,13 +140,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="7.2.2" />
-    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="7.2.2" />
+    <PackageReference Include="Scandit.DataCapture.Core.Xamarin.Forms" Version="7.3.0" />
+    <PackageReference Include="Scandit.DataCapture.Barcode.Xamarin.Forms" Version="7.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets.xcassets\freeze_disabled.imageset\" />
     <Folder Include="Assets.xcassets\freeze_enabled.imageset\" />
-    <Folder Include="Assets.xcassets\stock_count.imageset\" />
     <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
