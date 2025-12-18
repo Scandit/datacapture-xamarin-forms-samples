@@ -20,7 +20,7 @@ MatrixScan Count is an out-of-the-box scan and count solution for counting and r
 
 ![MSCount.png](https://github.com/Scandit/.github/blob/main/images/MSCount.png)
 
-**MatrixScan Count Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/MatrixScanCountSimpleSample/03_Advanced_Batch_Scanning_Samples/02_Counting_and_Receiving/MatrixScanCountSimpleSample))
+**MatrixScan Count Simple Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/03_Advanced_Batch_Scanning_Samples/02_Counting_and_Receiving/MatrixScanCountSimpleSample))
 
 ### Barcode Selection Samples
 
@@ -57,10 +57,6 @@ ID Scanning Samples demonstrate the features of the ID Capture API and demonstra
 ### Barcode Capture Samples
 
 **Barcode Capture Simple Sample (**Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureSimpleSample))
-
-**Barcode Capture Reject Sample** ([i](https://github.com/Scandit/datacapture-ios-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureRejectSample)Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureRejectSample))
-
-**Barcode Capture Settings Sample** (Xamarin [Forms](https://github.com/Scandit/datacapture-xamarin-forms-samples/tree/master/01_Single_Scanning_Samples/02_Barcode_Scanning_with_Low_Level_API/BarcodeCaptureSettingsSample))
 
 ### MatrixScan AR Sam**ples**
 
